@@ -23,7 +23,7 @@ class Dish extends Node {
     // call to MYSQL file here
   }
 
-  function updateInDatabase(){
+  function deleteInDatabase(){
     // call to MYSQL file here
   }
 
