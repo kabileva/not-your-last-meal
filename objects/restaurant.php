@@ -4,13 +4,13 @@ require_once "node.php";
 
 class Restaurant extends Node {
 
-  private $name, $country, $location, $description, $image, $type, $is_menu_friendly;
+  private $name, $country, $location, $presentation, $image, $type, $is_menu_friendly;
 
-  function __construct($name, $country, $description, $image, $type, $is_menu_friendly, $alergen_friendly, $comments){
+  function __construct($name, $country, $presentation, $image, $type, $is_menu_friendly, $alergen_friendly, $comments){
     $this->name = $name;
     $this->country = $country;
     $this->location = $location;
-    $this->description = $description;
+    $this->presentation = $presentation;
     $this->image = $image;
     $this->type = $type;
     $this->is_menu_friendly = $is_menu_friendly; // Does the restaurant have informative menues?

@@ -4,9 +4,9 @@ require_once "node.php";
 
 class User extends Node {
 
-  private $id, $name, $password, $want_notifications, $country, $allergies, $image, $description, $comments;
+  private $id, $name, $password, $want_notifications, $country, $allergies, $image, $presentation, $comments;
 ""
-  function __construct($id, $name, $email, $password, $want_notifications, $country, $allergies, $image, $description){
+  function __construct($id, $name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation){
     $this->id = $id;
     $this->name = $name;
     $this->email = $email;
@@ -15,7 +15,7 @@ class User extends Node {
     $this->country = $country;
     $this->allergies = $allergies;
     $this->image = $image;
-    $this->description = $description;
+    $this->presentation = $presentation;
   }
 
   function createInDatabase(){
