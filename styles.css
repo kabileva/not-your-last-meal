@@ -4,12 +4,14 @@
 	margin: 0;
 	padding: 0;
 	font-family: 'Quicksand', sans-serif;
+	text-decoration: none;
 }
 
+/*  This is the Index Style  */
 
 #topbar {
  
-  background-color: black;
+  background-color: #558C89;
   position: fixed;
   top: 0;
   width: 100%;
@@ -26,7 +28,8 @@
 }
 
 #topbar a:hover {
-background-color: grey;
+background-color: #74AFAD;
+
 }
 
 #logout{
@@ -51,10 +54,14 @@ background-color: grey;
 	padding: 10px;
 	height: 200px;
 	color: white;
+	border-radius: 10px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 90px;
 }
 
 .dish:hover{	
-	background-color: grey;
+	background-color: #74AFAD;
 
 }
 
@@ -62,7 +69,7 @@ background-color: grey;
 
 
  #dishtitle{
-	 background-color: black;
+	 background-color: #558C89;
 	 height: 40px;
 	 color: white;
 	 font-size: 30px;
@@ -72,4 +79,127 @@ background-color: grey;
 	 
 	 
  }
+ 
+ #back{
+    position: fixed;
+    margin-top: 90px;
+    margin-left: 20px;
+ }
+ 
+  #back:hover{
+	opacity: 0.5; 
+ }
+ 
+ 
+#wrapper {
+    width: 80%;
+    overflow: hidden;
+    padding-top: 10%;
+	margin:auto;
+}
+#picture {
+    width: 300px;
+    height: 300px;
+    float: left;
+    background-color: #558C89;
+		border-radius: 10px;
+    color: white;
+	padding: 20px;
+
+}
+#dishinfo {
+	overflow: hidden;
+    background-color: #558C89;
+    color: white;
+    height: 600px;
+		border-radius: 10px;
+    border-left: white solid 30px;
+	padding: 20px;
+
+}
+
+/*  This is the Profile Style  */
+
+#profile_picture {
+    width: 200px;
+    height: 200px;
+    float: left;
+    background-color: #558C89;
+		border-radius: 10px;
+    color: white;
+	padding: 20px;
+
+}
+#profile_info {
+	overflow: hidden;
+    background-color: #558C89;
+		border-radius: 10px;
+    color: white;
+    height: 600px;
+    border-left: white solid 30px;
+	padding: 20px;
+
+}
+
+
+/*  This is the Log In Style  */
+
+#main_logo  {
+text-align: center;
+margin-top: 2%;
+margin-bottom: 2%;
+}
+
+
+#login_wrapper{
+	
+	width: 50%;
+    overflow: hidden;
+    padding-top: 10%;
+	margin:auto;	
+	
+}
+
+#register_form{
+	
+	width: 40%;
+	height: 500px;
+	background-color: #D8D8D8;
+	 float:left;
+	
+		
+}
+
+#register_title{
+    background-color: #558C89;
+    color: white;
+    height: 6%;
+    font-size: 23px;
+    text-align: center;
+    padding: 10px;
+	
+}
+
+#login_form{
+	
+    width: 40%;
+    height: 315px;
+    background-color: #D8D8D8;
+    float: left;
+    margin-left: 2%;
+		
+}
+
+#login_title{
+    background-color: #558C89;
+    color: white;
+    height: 10%;
+    font-size: 23px;
+    text-align: center;
+    padding: 10px;
+	
+}
+
+
+
 
