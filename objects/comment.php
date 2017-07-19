@@ -6,11 +6,11 @@ class Comment extends Node{
 
   private $user, $content, $date, $comments;
 
-  function __construct($user, $content, $date, $alergens){
+  function __construct($user, $content, $date, $allergens){
     $this->user = $user;
     $this->content = $content;
     $date->date = $date;
-    $this->alergens = $alergens;
+    $this->allergens = $allergens;
   }
 
   function createInDatabase(){
@@ -26,5 +26,3 @@ class Comment extends Node{
   }
 
 }
-
-
