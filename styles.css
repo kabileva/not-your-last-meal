@@ -1,0 +1,75 @@
+
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Quicksand', sans-serif;
+}
+
+
+#topbar {
+ 
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#topbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#topbar a:hover {
+background-color: grey;
+}
+
+#logout{
+	float: right;
+}
+
+#size{
+	height: 50px;
+}
+
+
+#main{
+	
+	width: 80%;
+    margin: auto;
+	
+}
+
+.dish{	
+	background-color: black;
+	margin: 20px;
+	padding: 10px;
+	height: 200px;
+	color: white;
+}
+
+.dish:hover{	
+	background-color: grey;
+
+}
+
+/*  This is the Info Style  */
+
+
+ #dishtitle{
+	 background-color: black;
+	 height: 40px;
+	 color: white;
+	 font-size: 30px;
+	 text-align: center;
+	 vertical-align: center;
+	 padding-top:5px;
+	 
+	 
+ }
+
