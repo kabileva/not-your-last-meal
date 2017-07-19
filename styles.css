@@ -94,7 +94,7 @@ background-color: #74AFAD;
 #wrapper {
     width: 80%;
     overflow: hidden;
-    padding-top: 10%;
+    padding-top: 10%; /* on my laptop this padding is too much, maybe just fix it in px rather than % ? */
 	margin:auto;
 }
 #picture {
