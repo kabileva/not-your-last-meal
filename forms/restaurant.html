@@ -32,20 +32,26 @@
             </select><br><br>
 
             Presentation<br>
-            <textarea name="message" rows="11" cols="60">Present the restaurant.
+            <textarea name="message" rows="8" cols="60">Present the restaurant.
             </textarea><br><br>
             
             Image<br>
             <input type="file" name="image" id="image"><br><br>
             
-            Does the restaurant have informative menues?
-            <input type="radio" name="$is_menu_friendly" value="Yes">Yes
-            <input type="radio" name="$is_menu_friendly" value="No">No<br><br>
             
+            <fieldset style="border:none" id="is_menu_friendly">
+            Does the restaurant have informative menues?
+            <input type="radio" name="is_menu_friendly" value="Yes">Yes
+            <input type="radio" name="is_menu_friendly" value="No">No<br><br>
+            </fieldset>
+                
+
+            <fieldset style="border:none" id="is_alergen_friendly">
             List of alergens that the restaurant have optional food for
             <!--somebody help me to chane it with right question. my English is not good-->
-            <input type="radio" name="$is_menu_friendly" value="Yes">Yes
-            <input type="radio" name="$is_menu_friendly" value="No">No
+            <input type="radio" name="is_alergen_friendly" value="Yes">Yes
+            <input type="radio" name="is_alergen_friendly" value="No">No
+            </fieldset>
             <br><br>
             <input type="submit" value="Confirm"> <input type="reset" value="Clear">
         </form>
