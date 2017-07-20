@@ -1,12 +1,9 @@
-<html>
+<?php
 
-	<head>
-		<title>Not your last meal</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="stylesheet" href="styles.css" />
-		<link href="https://fonts.googleapis.com/css?family=Quicksand:300,700" rel="stylesheet">
-	</head>
+include 'templates/head.php';
+
+echo '	<title>Not your last meal</title>
+
 
 	
 	<body>
@@ -32,5 +29,6 @@
 	</div>
 		
 	</body>
-	
-</html>
+';
+
+?>
