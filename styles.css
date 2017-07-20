@@ -7,6 +7,69 @@
 	text-decoration: none;
 }
 
+/* html { 
+  background: url(img/world.gif) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+*/
+
+/* This is the side bar */
+		
+#sidebar {
+    background-color: #558C89;
+    text-align: center;
+    color: white;
+    padding: 14px;
+    position: fixed;
+    width: 5%;
+    border-radius: 0px 10px 10px 0px;
+    margin-top: 200;
+	transition: background-color 0.3s ease;
+	}
+	
+#sidebar:hover{
+background-color: #74AFAD;
+}
+
+#sidebar2 {
+    background-color: #558C89;
+    text-align: center;
+    color: white;
+    padding: 14px;
+    position: fixed;
+    width: 5%;
+    border-radius: 0px 10px 10px 0px;
+    margin-top: 150;
+		transition: background-color 0.3s ease;
+	}
+	
+#sidebar2:hover{
+background-color: #74AFAD;
+}
+
+#sidebar3{
+    background-color: #558C89;
+    text-align: center;
+    color: white;
+    padding: 14px;
+    position: fixed;
+    width: 5%;
+    border-radius: 0px 10px 10px 0px;
+    margin-top: 100;
+	transition: background-color 0.3s ease;
+	}
+	
+#sidebar3:hover{
+background-color: #74AFAD;
+}
+
+
+
+
 /*  This is the Index Style  */
 
 #topbar {
@@ -25,6 +88,7 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  transition: background-color 0.3s ease;
 }
 
 #topbar a:hover {
@@ -58,11 +122,30 @@ background-color: #74AFAD;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 90px;
+	transition: background-color 0.3s ease;
 }
 
 .dish:hover{	
 	background-color: #74AFAD;
 
+}
+
+
+.restaurants_link{
+	background-color: #558C89;
+	margin: 20px;
+	padding: 10px;
+	height: 100px;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 90px;
+	transition: background-color 0.3s ease;
+}
+
+.restaurants_link:hover{
+	background-color: #74AFAD;
 }
 
 /*  This is the Info Style  */
@@ -84,17 +167,19 @@ background-color: #74AFAD;
     position: fixed;
     margin-top: 90px;
     margin-left: 20px;
+	transition: background-color 0.3s ease;
  }
  
   #back:hover{
-	opacity: 0.5; 
+	opacity: 0.5;
+
  }
  
  
 #wrapper {
     width: 80%;
     overflow: hidden;
-    padding-top: 10%; /* on my laptop this padding is too much, maybe just fix it in px rather than % ? */
+    padding-top: 10%;
 	margin:auto;
 }
 #picture {
@@ -125,9 +210,10 @@ background-color: #74AFAD;
     height: 200px;
     float: left;
     background-color: #558C89;
-		border-radius: 10px;
+    border-radius: 10px;
     color: white;
-	padding: 20px;
+    padding: 20px;
+    margin-right: 20px;
 
 }
 #profile_info {
@@ -163,7 +249,7 @@ margin-bottom: 2%;
 #register_form{
 	
 	width: 40%;
-	height: 500px;
+	height: 600px;
 	background-color: #D8D8D8;
 	 float:left;
 	
