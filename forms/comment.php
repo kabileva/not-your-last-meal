@@ -5,6 +5,27 @@
 .error {color: #FF0000;}
 .time {font-size: 7px;}
 .user{font-size: 20px;}
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: green;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
 </style>
 </head>
 <body>
@@ -17,7 +38,7 @@ $username="username";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["comment"])) {
-    $comment = "";
+    $comment="";
     $commentErr= "comment is required";
   } else {
     $comment = test_input($_POST["comment"]);
@@ -42,19 +63,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <h2>comment:</h2>
 
+
 <span class = "user">
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (!empty($_POST["comment"]))
   {
-      echo $username . "       ";
+      echo "<a href='http://localhost/mine/userprofile.html'; target='_blank';>".$username."</a>" . "       ";
   }
 }
 ?>
 </span>
 
 <?php
-echo $comment ;
+echo $comment;
 ?>
 
 <span class = "time">
@@ -66,6 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
 }
 ?>
+
 </span>
 </body>
 </html>
