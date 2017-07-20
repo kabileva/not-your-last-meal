@@ -1,18 +1,6 @@
-
-<html>
-	<head>
-		<title>Not your last meal</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="stylesheet" href="styles.css" />
-		<link href="https://fonts.googleapis.com/css?family=Quicksand:300,700" rel="stylesheet">
-	</head>
-
-	<body>
+<?php
+echo '	<div id="back"><button onclick="goBack()">
 	
-	
-	<button onclick="goBack()">
-	<div id="back">
 	
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -25,26 +13,13 @@
 
 	
 	
-	</div>
-	</button>
+	
+	</button></div>
 
 	<script>
 	function goBack() {
 		window.history.back();
 	}
-	</script>	
-
-			<div id="dishtitle">
-				<p> Dish title </p>
-			</div>
-		
-<div id="wrapper">
-	
-	<div id="picture">Picture</div>
-	
-	<div id="dishinfo">Text with info</div>
-	
-</div>
-		
-	</body>
-</html>
+	</script>
+'
+?>
