@@ -1,0 +1,59 @@
+            <!--action must be modified-->
+<html>
+    <body>
+        <h1>Register/Edit a Restaurant</h1>
+        <form action="/action_page.php">
+
+            Name
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+            Country<br>
+            <input type="text" name="name">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select name="Country">
+                  <option value="Argentina">Argentina</option>
+                  <option value="Kazakhstan">Kazakhstan</option>
+                  <option value="Norway">Norway</option>
+                  <option value="Republic of Korea">Republic of Korea</option>
+            </select><br><br>
+            
+            Location
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            Type<br>
+            <input type="text" name="Location">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select name="Type">
+                <option value="Cafe">Cafe</option>
+                <option value="Restaurant">Restaurant</option>
+                <option value="Bar">Bar</option>
+            </select><br><br>
+
+            Presentation<br>
+            <textarea name="message" rows="8" cols="60">Present the restaurant.
+            </textarea><br><br>
+            
+            Image<br>
+            <input type="file" name="image" id="image"><br><br>
+            
+            
+            <fieldset style="border:none" id="is_menu_friendly">
+            Does the restaurant have informative menues?
+            <input type="radio" name="is_menu_friendly" value="Yes">Yes
+            <input type="radio" name="is_menu_friendly" value="No">No<br><br>
+            </fieldset>
+                
+
+            <fieldset style="border:none" id="is_alergen_friendly">
+            List of alergens that the restaurant have optional food for
+            <!--somebody help me to chane it with right question. my English is not good-->
+            <input type="radio" name="is_alergen_friendly" value="Yes">Yes
+            <input type="radio" name="is_alergen_friendly" value="No">No
+            </fieldset>
+            <br><br>
+            <input type="submit" value="Confirm"> <input type="reset" value="Clear">
+        </form>
+    </body>
+</html>
