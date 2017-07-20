@@ -14,8 +14,8 @@
   E-mail<br><input type="email" name="email">
   <br><br> 
     
-  Country<br> <!-- I think "country" is more clear than nationality (people can have other nationalities than the country where they live) -->
-  <select name="Nationality">
+  Country<br>
+  <select name="Country">
     <option value="Argentina">Argentina</option>
     <option value="Kazakhstan">Kazakhstan</option>
     <option value="Norway">Norway</option>
@@ -24,27 +24,28 @@
   <br><br>
     
   Allergens<br>
+    <p style="font-size: 12px">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+  <select name="Allergens" multiple>
+  <option value="fruit">fruit</option>
+  <option value="legumes">legumes</option>
+  <option value="beans">beans</option>
+  <option value="celery and celeriac">celery and celeriac</option>
+  <option value="peas">peas</option>
+  <option value="corn or maize">corn or maize</option>
+  <option value="peanuts">peanuts</option>
+  <option value="soybeans">soybeans</option>
+  <option value="milk">milk</option>
+  <option value="seafood">seafood</option>
+  <option value="sesame">sesame</option>
+  <option value="soy">soy</option>
+  <option value="tree nuts">tree nuts</option>
+  <option value="pecans">pecans</option>
+  <option value="almonds">almonds</option>
+  <option value="wheat">wheat</option>
+  <option value="eggs (typically albumen, the white)">eggs (typically albumen, the white)</option>
+  <option value="pumpkin, eggplant">pumpkin, eggplant</option>
+  </select>
 
-  <input type="checkbox" name="fruit" value="fruit">fruit
-  <input type="checkbox" name="legumes" value="legumes">legumes
-  <input type="checkbox" name="beans" value="beans">beans
-  <input type="checkbox" name="celery" value="celery">celery and celeriac<br>
-  <input type="checkbox" name="peas" value="peas">peas
-  <input type="checkbox" name="corn" value="corn">corn or maize
-  <input type="checkbox" name="peanuts" value="peanuts">peanuts
-  <input type="checkbox" name="soybeans" value="soybeans">soybeans<br>
-  <input type="checkbox" name="milk" value="milk">milk
-  <input type="checkbox" name="seafood" value="seafood">seafood
-  <input type="checkbox" name="sesame" value="sesame">sesame
-  <input type="checkbox" name="soy" value="soy">soy<br>
-  <input type="checkbox" name="treeNuts" value="treeNuts">tree nuts
-  <input type="checkbox" name="pecans" value="pecans">pecans
-  <input type="checkbox" name="almonds" value="almonds">almonds
-  <input type="checkbox" name="wheat" value="">wheat<br>
-  <input type="checkbox" name="eggs" value="">eggs (typically albumen, the white)
-  <input type="checkbox" name="pumpkin" value="pumpkin">pumpkin, eggplant
-
-  <!-- What about using a multiselect like this https://www.w3schools.com/tags/att_select_multiple.asp ? -->
 
   <br><br>
   Profile image<br>
