@@ -4,6 +4,10 @@ echo '		<a href="forum.html">
 		</a>
 		
 		<a href="dishes.html">
+			<div id="sidebar2"> Restaurants </div>
+		</a>	
+
+		<a href="dishes.html">
 			<div id="sidebar2"> All dishes </div>
 		</a>	
 '

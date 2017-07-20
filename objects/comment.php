@@ -4,13 +4,12 @@ require_once "node.php";
 
 class Comment extends Node{
 
-  private $user, $content, $date, $comments;
+  private $content, $user, $dateTime;
 
-  function __construct($user, $content, $date, $allergens){
-    $this->user = $user;
+  function __construct($content, $user, $dateTime){
     $this->content = $content;
-    $date->date = $date;
-    $this->allergens = $allergens;
+    $this->user = $user;
+    $date->dateTime = $dateTime;
   }
 
   function createInDatabase(){
