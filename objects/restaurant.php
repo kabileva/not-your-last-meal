@@ -6,7 +6,7 @@ class Restaurant extends Node {
 
   private $name, $country, $location, $presentation, $image, $type, $is_menu_friendly, $is_alergen_friendly;
 
-  function __construct($name, $country, $presentation, $image, $type, $is_menu_friendly, $is_alergen_friendly, $comments){
+  function __construct($name, $country, $location, $presentation, $image, $type, $is_menu_friendly, $is_alergen_friendly, $comments){
     $this->name = $name;
     $this->country = $country;
     $this->location = $location;

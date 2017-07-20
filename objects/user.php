@@ -4,7 +4,7 @@ require_once "node.php";
 
 class User extends Node {
 
-  private $id, $name, $password, $want_notifications, $country, $allergies, $image, $presentation, $comments;
+  private $id, $name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation, $comments;
 ""
   function __construct($id, $name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation){
     $this->id = $id;

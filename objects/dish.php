@@ -6,13 +6,14 @@ class Dish extends Node {
 
   private $name, $country, $ingredients, $presentation, $image, $type, $comments;
 
-  function __construct($name, $country, $ingredients, $presentation, $image, $type){
+  function __construct($name, $country, $ingredients, $presentation, $image, $type, $comments){
     $this->name = $name;
     $this->country = $country;
     $this->ingredients = $ingredients;
     $this->presentation = $presentation;
     $this->image = $image;
     $this->type = $type;
+    $this->comments = $comments;
   }
 
   function createInDatabase(){
