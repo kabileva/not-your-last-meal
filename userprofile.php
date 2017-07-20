@@ -1,5 +1,13 @@
+<?php
 
-<div id="profile-wrapper">
+include_once 'templates/layout.php';
+
+include_once 'templates/go-back.php';		
+
+echo '<title>Not your last meal</title>';
+
+
+echo '<div id="profile-wrapper">
 	<div id="user-profile">User profile</div>
 	
 	<div id="user-picture"><img src="user-picture" alt="pic"></div>
@@ -20,4 +28,4 @@
 	
 	<div id="user-about"><p>Info about user</p></div>
 	
-</div>
+</div>';

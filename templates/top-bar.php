@@ -1,8 +1,6 @@
 <?php
 
 echo '<header>
-			<div id="size"></div>
-			
 
 <div class="topnav" id="myTopnav">
 					<a href="main.html"><img src="img/burger.gif" alt="Mountain View" style="width:20px;height:20px;"></a>

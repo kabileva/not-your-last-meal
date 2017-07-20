@@ -4,7 +4,12 @@ include_once 'templates/layout.php';
 
 include_once 'templates/go-back.php';	
 
+echo'
+
 			<div id="dishtitle">
+<head>
+		<link rel="stylesheet" href="css/styles.css" />
+</head>
 				<p> All dishes </p>
 			</div>
 			
@@ -80,4 +85,4 @@ include_once 'templates/go-back.php';
 		
 		
 	</body>
-</html>
+</html>';
