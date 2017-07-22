@@ -11,7 +11,7 @@ echo '	<title>Not your last meal</title>
 		<div id="main_logo">
 			<img src="img/logo.svg" alt="Not your last meal">
 		</div>
-		<h2 style="text-align: center;">Your guide to alergie safe food when traveling!</h2>
+		<h2 style="text-align: center;">Your guide to allergy safe food when traveling!</h2>
 		
 	<div id="login_wrapper">
 	
