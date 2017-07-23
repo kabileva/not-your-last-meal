@@ -17,20 +17,19 @@
 }
 
 .title{
-    background-color: #558C89;
-    color: white;
-    height: 6%;
-    font-size: 23px;
-    text-align: center;
-    padding: 10px;
+  background-color: #558C89;
+  color: white;
+  height: 6%;
+  font-size: 23px;
+  text-align: center;
+  padding: 10px;
 }
 
 .form{	
   max-width: 400px;
-    height: 315px;
-    background-color: #D8D8D8;
-    float: left;
-    margin-left: 2%;
+  background-color: #D8D8D8;
+  float: left;
+  margin-left: 2%;
 }
 
 .title{
