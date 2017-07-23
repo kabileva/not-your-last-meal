@@ -1,35 +1,4 @@
 <!DOCTYPE HTML>
-<html>
-<head>
-<style>
-.error {color: #FF0000;}
-.time {font-size: 7px;}
-.user{font-size: 20px;}
-a:link {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-}
-a:visited {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-}
-a:hover {
-    color: green;
-    background-color: transparent;
-    text-decoration: underline;
-}
-a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline;
-}
-
-</style>
-</head>
-<body>
-
 <?php
 
 $comment="";
@@ -88,7 +57,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
 }
 ?>
-
-</span>
-</body>
-</html>
