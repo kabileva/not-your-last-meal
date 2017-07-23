@@ -1,88 +1,94 @@
 <?php
-
 include_once 'templates/layout.php';
 
 include_once 'templates/go-back.php';	
 
-echo'
+echo '
 
-			<div id="dishtitle">
 <head>
-		<link rel="stylesheet" href="css/styles.css" />
+   <link rel="stylesheet" href="css/dish.css">
 </head>
-				<p> All dishes </p>
-			</div>
-			
-			
-					<div id="size"></div>
 
+<div id="dishtitle">
+   <p>All dishes</p>
+</div>
 
-		<div id="main">
+<div id="main">
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+      /a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+   <a href="info.html">
+      <div class="dish">
+         <h2>Name and picture</h2>
+      </div>
+   </a>
+</div>
 
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-				<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-				<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			<a href="info.html">
-			<div class="dish"><h2>Name and picture</h2></div>
-			</a>
-			
-			
-			
-			
-		</div>
-		
-		
-	</body>
-</html>';
+';

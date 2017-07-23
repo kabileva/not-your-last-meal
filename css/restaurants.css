@@ -1,0 +1,16 @@
+.restaurants_link{
+	background-color: #558C89;
+	margin: 20px;
+	padding: 10px;
+	height: 100px;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 90px;
+	transition: background-color 0.3s ease;
+}
+
+.restaurants_link:hover{
+	background-color: #74AFAD;
+}

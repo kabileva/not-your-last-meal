@@ -4,19 +4,16 @@ include_once 'templates/layout.php';
 
 include_once 'templates/go-back.php';		
 
-echo '<title>Not your last meal</title>';
+echo '
 
+<head>
+   <link rel="stylesheet" href="css/restaurants.css">
+</head>
 
-echo'
-	
-			<div id="dishtitle">
-				<p> Restaurants </p>
-			</div>
-			
-			
-	
+<title>Not your last meal</title>
 
-		
-		
-	</body>
-</html>';
+<div id="dishtitle">
+   <p> Restaurants </p>
+</div>
+
+';

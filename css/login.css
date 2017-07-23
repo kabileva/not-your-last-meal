@@ -1,0 +1,39 @@
+#login_wrapper{
+  width: 50%;
+  overflow: hidden;
+  padding-top: 50px;
+  margin:auto;		
+}
+
+#register_form{
+  width: 40%;
+  height: 600px;
+  background-color: #D8D8D8;
+  float:left;		
+}
+
+#register_title{
+    background-color: #558C89;
+    color: white;
+    height: 6%;
+    font-size: 23px;
+    text-align: center;
+    padding: 10px;
+}
+
+#login_form{	
+    width: 40%;
+    height: 315px;
+    background-color: #D8D8D8;
+    float: left;
+    margin-left: 2%;
+}
+
+#login_title{
+    background-color: #558C89;
+    color: white;
+    height: 10%;
+    font-size: 23px;
+    text-align: center;
+    padding: 10px;	
+}
