@@ -1,19 +1,4 @@
 <!DOCTYPE HTML>
-<html>
-<head>
-<style>
-.error {color: #FF0000;}
-div.aaa{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 420px;
-  margin: auto;
-}
-
-</style>
-
-</head>
-<body>
-
 <?php
 // define variables and set to empty values
 $titleErr = $countryErr = $typeErr = $allegicErr = "";
@@ -60,28 +45,28 @@ function test_input($data) {
 ?>
 
 <div class="aaa">
-<h2 style="text-align:center;">Posting dish/ Editing</h2>
-<p><span class="error">&nbsp;&nbsp;* required field.</span></p>
+<h2>Posting dish/ Editing</h2>
+<p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-  &nbsp;&nbsp;&nbsp;Title<span class="error">*</span>
+  Title<span class="error">*</span>
   <span class="error"><?php echo $titleErr;?></span>
   <br>
-  &nbsp;&nbsp;<input type="text" name="title" size="60">
+  <input type="text" name="title" size="60">
   <br><br>
 
-  &nbsp;&nbsp;&nbsp;Type<span class="error">*</span>
+  Type<span class="error">*</span>
   <span class="error"><?php echo $typeErr;?></span>
   <br>
-  &nbsp;&nbsp;<input type="checkbox" name="type" value="breakfast" >breakfast
+  <input type="checkbox" name="type" value="breakfast" >breakfast
   <input type="checkbox" name="type" value="lunch" >lunch
   <input type="checkbox" name="type" value="dinner" >dinner
   <input type="checkbox" name="type" value="brunch" >brunch
   <input type="checkbox" name="type" value="dessert">dessert
   <br><br>
 
-  &nbsp;&nbsp;&nbsp;Country<br>
-  &nbsp;&nbsp;<select id="mySelect" name="country">
+  Country<br>
+  <select id="mySelect" name="country">
     <option value="Argentina">Argentina</option>
     <option value="Kazakhstan">Kazakhstan</option>
     <option value="Norway">Norway</option>
@@ -89,10 +74,10 @@ function test_input($data) {
   </select>
   <br><br>
 
-  &nbsp;&nbsp;&nbsp;Allergens<span class="error">*</span>
+  Allergens<span class="error">*</span>
   <span class="error"><?php echo $allegicErr;?></span>
-  <p style="font-size: 12px">&nbsp;&nbsp;&nbsp;Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
-  &nbsp;&nbsp;<select multiple name="allegic" >
+  <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+  <select multiple name="allegic" >
   <option value="fruit">fruit</option>
   <option value="legumes">legumes</option>
   <option value="beans">beans</option>
@@ -114,17 +99,13 @@ function test_input($data) {
   </select>
   <br><br>
 
-
-  &nbsp;&nbsp;&nbsp;Image upload<br>
-  &nbsp;&nbsp;<input type="file" name="image" id="image">
+  Image upload<br>
+  <input type="file" name="image" id="image">
   <br><br>
 
-  &nbsp;&nbsp;Ingredients and Information<br>
-  &nbsp;&nbsp;<textarea name="comment" rows="5" cols="47"></textarea>
+  Ingredients and Information<br>
+  <textarea name="comment" rows="5" cols="47"></textarea>
   <br><br>
 
-  &nbsp;&nbsp;<input type="submit" name="submit" value="Submit" onclick="myFunction()">
+  <input type="submit" name="submit" value="Submit" onclick="myFunction()">
 </form>
-</div>
-</body>
-</html>

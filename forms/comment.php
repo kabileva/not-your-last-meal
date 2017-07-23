@@ -32,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <h2>comment:</h2>
 
-
 <span class = "user">
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -42,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
+
 </span>
 
 <?php
