@@ -1,19 +1,18 @@
 .login-wrapper {
   padding-top: 50px;
+  margin:auto;
+  max-width:800px;
 }
 
-.form {
-  width: 50%;
-  overflow: hidden;
-  padding-top: 40px;
-  margin:auto;		
+.login-wrapper .form {
+  width: 50%;	
 }
 
 .form{
-  max-width: 400px;
-  height: 600px;
+  max-width: 380px;
   background-color: #D8D8D8;
-  float:left;		
+  float:left;	
+  margin: 10px;	
 }
 
 .title{
@@ -23,20 +22,4 @@
   font-size: 23px;
   text-align: center;
   padding: 10px;
-}
-
-.form{	
-  max-width: 400px;
-  background-color: #D8D8D8;
-  float: left;
-  margin-left: 2%;
-}
-
-.title{
-    background-color: #558C89;
-    color: white;
-    height: 10%;
-    font-size: 23px;
-    text-align: center;
-    padding: 10px;	
 }
