@@ -6,10 +6,6 @@ include_once 'templates/go-back.php';
 
 echo '
 
-<head>
-   <link rel="stylesheet" href="css/userprofile.css">
-</head>
-
 <title>Not your last meal</title>
 
 <div id="profile-wrapper">

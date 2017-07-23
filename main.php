@@ -1,14 +1,10 @@
 <?php
 
-  include_once 'templates/layout.php';
+include_once 'templates/layout.php';
 
-  include_once 'templates/go-back.php';
+include_once 'templates/go-back.php';
 
 echo '
-
-<head>
-   <link rel="stylesheet" href="css/dish.css">
-</head>
 
 <title>Not your last meal</title>
 
@@ -39,6 +35,7 @@ echo '
       </div>
    </a>
 </div>
+
 ';
 
 
