@@ -1,18 +1,22 @@
-#login_wrapper{
+.login-wrapper {
+  padding-top: 50px;
+}
+
+.form {
   width: 50%;
   overflow: hidden;
-  padding-top: 50px;
+  padding-top: 40px;
   margin:auto;		
 }
 
-#register_form{
-  width: 40%;
+.form{
+  max-width: 400px;
   height: 600px;
   background-color: #D8D8D8;
   float:left;		
 }
 
-#register_title{
+.title{
     background-color: #558C89;
     color: white;
     height: 6%;
@@ -21,15 +25,15 @@
     padding: 10px;
 }
 
-#login_form{	
-    width: 40%;
+.form{	
+  max-width: 400px;
     height: 315px;
     background-color: #D8D8D8;
     float: left;
     margin-left: 2%;
 }
 
-#login_title{
+.title{
     background-color: #558C89;
     color: white;
     height: 10%;
