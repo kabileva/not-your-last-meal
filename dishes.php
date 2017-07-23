@@ -1,10 +1,11 @@
+<!DOCTYPE HTML>
 <?php
 
 include_once 'templates/layout.php';
 
 include_once 'templates/go-back.php';	
 
-echo '
+?>
 
 <head>
    <link rel="stylesheet" href="css/dish.css">
@@ -92,4 +93,3 @@ echo '
    </a>
 </div>
 
-';

@@ -1,10 +1,11 @@
+<!DOCTYPE HTML>
 <?php
 
 include_once 'templates/layout.php';
 
 include_once 'templates/go-back.php';
 
-echo '
+?>
 
 <title>Not your last meal</title>
 <div class="main-image">
@@ -14,5 +15,3 @@ echo '
    <div id="picture">Picture</div>
    <div id="dishinfo">Text with info</div>
 </div>
-
-';

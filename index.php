@@ -1,9 +1,10 @@
+<!DOCTYPE HTML>
 <?php
 
 include 'templates/head.php';
    
-echo '
-   
+?>
+ 
 <head>
    <link rel="stylesheet" href="css/login.css">
 </head>
@@ -22,5 +23,3 @@ echo '
       </div>
    </div>
 </body>
-
-';
