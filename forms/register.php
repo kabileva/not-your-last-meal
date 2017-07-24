@@ -64,36 +64,31 @@
   <br><br> 
 
   Country<br>
-  <select name="Country">
-    <option value="Argentina">Argentina</option>
-    <option value="Kazakhstan">Kazakhstan</option>
-    <option value="Norway">Norway</option>
-    <option value="Republic of Korea">Republic of Korea</option>
-  </select>
+  <?php 
+  //php script for listing all the countries
+  include_once("../db/db_init.php");
+  include_once("../db/list_countries.php");
+  $countries = listItems($link, 'Countries', 'CountryName');
+  echo '<select name="Country">';
+  foreach ($countries as $country) {
+    echo '<option value=' . $country['CountryName'] . '>' . $country['CountryName'] . '</option>';
+  }
+  echo '</select>';
+  ?>
   <br><br>
     
-  Allergens<br>
-    <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
-  <select name="Allergens" multiple>
-  <option value="fruit">fruit</option>
-  <option value="legumes">legumes</option>
-  <option value="beans">beans</option>
-  <option value="celery and celeriac">celery and celeriac</option>
-  <option value="peas">peas</option>
-  <option value="corn or maize">corn or maize</option>
-  <option value="peanuts">peanuts</option>
-  <option value="soybeans">soybeans</option>
-  <option value="milk">milk</option>
-  <option value="seafood">seafood</option>
-  <option value="sesame">sesame</option>
-  <option value="soy">soy</option>
-  <option value="tree nuts">tree nuts</option>
-  <option value="pecans">pecans</option>
-  <option value="almonds">almonds</option>
-  <option value="wheat">wheat</option>
-  <option value="eggs (typically albumen, the white)">eggs (typically albumen, the white)</option>
-  <option value="pumpkin, eggplant">pumpkin, eggplant</option>
-  </select>
+Allergens<br>
+    <p style="font-size: 12px">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+  <?php
+  //php script for listing all the ingredients
+
+  echo '<select name="Allergens[]" multiple>';
+  $ingredients = listItems($link, 'Ingredients', 'IngredientName');
+  foreach ($ingredients as $ingredient) {
+    echo  '<option value=' . $ingredient['IngredientName'] .'>' .$ingredient['IngredientName']. '</option>';
+  }
+  echo '</select>';
+  ?>
 
 
   <br><br>
