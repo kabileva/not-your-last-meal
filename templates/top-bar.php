@@ -17,9 +17,10 @@ echo '
 	  </div>
 	  </a>
 	  
-      <a href="#dish">Dishes</a>
-      <a href="#restaurants">Restaurants</a>
-      <a href="#questionsAnswers">Questions and answers</a>
+      <a href="dishes.php">Dishes</a>
+      <a href="restaurants.php">Restaurants</a>
+      <a href="forum.php">Questions and answers</a>
+
       <a href="login.html" style="float:right;"><strong>Log Out</strong></a>
       <a href="profile.html" style="float:right;"><strong>User Name</strong></a>
       <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
