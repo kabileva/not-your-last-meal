@@ -3,76 +3,53 @@
 
 include_once 'templates/layout.php';
 
-include_once 'templates/go-back.php';		
+include_once 'templates/go-back.php';
 
-// define variables and set to empty values
-$titleErr = $countryErr = $typeErr = $allegicErr = $imageErr ="";
-$title = $comment = $country = $type = $allegic = $image ="";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["title"])) {
-    $titleErr = "title is required";
-  } else {
-    $title = test_input($_POST["title"]);
-  }
-
-  if (($_POST["country"])=="None") {
-    $countryErr = "country is required";
-  } else {
-    $country = test_input($_POST["country"]);
-  }
-
-  if (empty($_POST["allegic"])) {
-    $allegicErr = "allergens is required";
-  } else {
-    $allegic = test_input($_POST["allegic"]);
-  }
-
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
-
-  if (empty($_POST["type"])) {
-    $typeErr = "type is required";
-  } else {
-    $type = test_input($_POST["type"]);
-  }
-
-  if (empty($_POST["type"])) {
-    $typeErr = "type is required";
-  } else {
-    $type = test_input($_POST["type"]);
-  }
-
-  if (empty($_POST["image"])) {
-    $imageErr = "image is required";
-  } else {
-    $image = test_input($_POST["image"]);
-  }
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
 ?>
+
+
+<script>
+    function validateForm(){
+
+        var title=document.forms["dishForm"]["title"].value;
+        var image=document.forms["dishForm"]["image"].value;
+        var count= 0;
+
+        if((title=="")||(image=="")){
+
+            if(title==""){
+                document.getElementById("titleSp").innerHTML="Required area";
+            }
+
+            if(image==""){
+                document.getElementById("imageSp").innerHTML="Required area";
+            }
+            count++;
+        }
+
+
+        if(count==0)
+            return true;
+        else
+            return false;
+    }
+
+</script>
+
 
 <h1>Add a dish</h1>
 <title>Add a dish</title>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form name="dishForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
   <fieldset>
-    <legend>Title</legend><?php echo $titleErr;?></span><br>
+    <legend>Title</legend>
     <input type="text" name="title" size="60">
+      <span id="titleSp"></span>
   </fieldset>
   <br><br>
 
   <fieldset>
-    <legend>Type</legend><?php echo $typeErr;?></span>
+    <legend>Type</legend>
   <br>
   <input type="checkbox" name="type" value="breakfast" >breakfast
   <input type="checkbox" name="type" value="lunch" >lunch
@@ -95,7 +72,6 @@ function test_input($data) {
 
   <fieldset>
     <legend>Allergens<span>
-  <span class="error"><?php echo $allegicErr;?></span>
   <p style="font-size: 12px">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
   <select multiple name="allegic" >
   <option value="fruit">fruit</option>
@@ -121,9 +97,10 @@ function test_input($data) {
   <br><br>
 
   <fieldset>
-  <legend>Image upload</legend><?php echo $imageErr;?></span>
+  <legend>Image upload</legend>
   <br>
   <input type="file" name="image" id="image">
+<span id="imageSp"></span>
   <br>
 </fieldset>
 
@@ -136,4 +113,6 @@ function test_input($data) {
   <fieldset>
   <input type="submit" name="submit" value="Submit">
   </fieldset>
+
+
 </form>

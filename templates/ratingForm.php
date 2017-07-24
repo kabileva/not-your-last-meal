@@ -1,50 +1,35 @@
-<html>
-<head>
-</head>
+<script>
+    function validateForm(){
 
-<body>
+        var comment=document.forms["ratForm"]["star"].value;
+        var count= 0;
 
-  <?php
-  // define variables and set to empty values
-  $starErr = "";
-  $star = "";
+        if(comment==""){
+            document.getElementById("commSp").innerHTML="Select Star!";
+            count++;
+        }
 
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    if (empty($_POST["star"])) {
-      $starErr = "rating is required";
-    } else {
-      $star = test_input($_POST["star"]);
+        if(count==0)
+            return true;
+        else
+            return false;
     }
-  }
 
-  function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-  }
-  ?>
+</script>
 
 
-<h1>Star rating:</h1><br>
-
-
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<fieldset>
-<input type="radio" name="star" value="0">☆☆☆☆☆
-<input type="radio" name="star" value="1">★☆☆☆☆
-<input type="radio" name="star" value="2">★★☆☆☆
-<input type="radio" name="star" value="3">★★★☆☆
-<input type="radio" name="star" value="4">★★★★☆
-<input type="radio" name="star" value="5">★★★★★
-<br><?php echo $starErr;?></span>
-<br><br>
-</fieldset>
-<fieldset>
-<input type="submit" name="submit" value="Submit">
-</fieldset>
+<form name="ratForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
+    <fieldset>
+        <legend>Rating</legend>
+        <input type="radio" name="star" value="0">☆☆☆☆☆
+        <input type="radio" name="star" value="1">★☆☆☆☆
+        <input type="radio" name="star" value="2">★★☆☆☆
+        <input type="radio" name="star" value="3">★★★☆☆
+        <input type="radio" name="star" value="4">★★★★☆
+        <input type="radio" name="star" value="5">★★★★★
+    </fieldset>
+    <fieldset>
+        <input type="submit" name="submit" value="Submit"> <span id="commSp"></span>
+    </fieldset>
 </form>
-
-</body>
-</html>
