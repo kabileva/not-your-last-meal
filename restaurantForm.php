@@ -7,7 +7,9 @@ include_once 'templates/go-back.php';
 
 ?>
 
-<h1>Register/Edit a Restaurant</h1>
+<h1>Register a restaurant</h1>
+<title>Register a restaurant</title>
+
 <form name="resForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
 
     <fieldset>

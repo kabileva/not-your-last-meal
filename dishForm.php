@@ -61,7 +61,8 @@ function test_input($data) {
 }
 ?>
 
-<h1>Posting dish/ Editing</h1>
+<h1>Add a dish</h1>
+<title>Add a dish</title>
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <fieldset>

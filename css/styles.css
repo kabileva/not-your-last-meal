@@ -5,6 +5,15 @@
 	text-decoration: none;
 }
 
+h1{
+    color: #558C89;
+    height: 40px;
+    font-size: 32px;
+    text-align: center;
+    vertical-align: center;
+    margin-top: 10px;	 
+}
+
 /*  Back-button style  */
  
 #back{

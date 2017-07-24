@@ -7,9 +7,8 @@ include_once 'templates/go-back.php';
 
 ?>
 
-<div id="dishtitle">
-   <p>All dishes</p>
-</div>
+<h1>Dishes</h1>
+<title>Dishes</title>
 
 <a href="dishForm.php" class="callToAction">Add dish<a>
 

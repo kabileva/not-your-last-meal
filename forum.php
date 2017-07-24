@@ -7,10 +7,8 @@ include_once 'templates/go-back.php';
 
 ?>
 
-<title>Not your last meal</title>
-<div id="dishtitle">
-   <p> Questions and answers </p>
-</div>
+<title>Question and answers</title>
+<h1>Question and answers</h1>
 
 <a href="questionForm.php" class="callToAction">Ask a question<a>
 

@@ -7,14 +7,7 @@ include_once 'templates/go-back.php';
 
 ?>
 
-<head>
-   <link rel="stylesheet" href="css/restaurants.css">
-</head>
-
-<title>Not your last meal</title>
-
-<div id="dishtitle">
-   <p> Restaurants </p>
-</div>
+<title>Restaurants</title>
+<h1>Restaurants</h1>
 
 <a href="restaurantForm.php" class="callToAction">Add restaurant<a>
