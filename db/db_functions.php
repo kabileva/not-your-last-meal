@@ -1,6 +1,6 @@
 <?php 
 function listItems($link, $table, $column) {
-	$query = 'Select ' . $column . ' From ' . $table;
+	$query = 'Select * From ' . $table;
 	$result = mysqli_query($link, $query);   
 	if (!$result)   
 	{   

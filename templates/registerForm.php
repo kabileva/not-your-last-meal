@@ -49,7 +49,7 @@
 </script>
 
 
-<form name="regForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
+<form name="regForm" action="../db/save_user.php" method="post" onsubmit="return validateForm()">
 
     <fieldset>
         <legend>Name</legend>
@@ -77,11 +77,11 @@
         <?php 
         //php script for listing all the countries
         include_once("../db/db_init.php");
-        include_once("../db/list_countries.php");
+        include_once("../db/db_functions.php");
         $countries = listItems($link, 'Countries', 'CountryName');
         echo '<select name="Country">';
         foreach ($countries as $country) {
-        echo '<option value=' . $country['CountryName'] . '>' . $country['CountryName'] . '</option>';
+        echo '<option value=' . $country['CountryID'] . '>' . $country['CountryName'] . '</option>';
         }
         echo '</select>';
         ?>
@@ -96,7 +96,7 @@
         echo '<select name="Allergens[]" multiple>';
         $ingredients = listItems($link, 'Ingredients', 'IngredientName');
         foreach ($ingredients as $ingredient) {
-        echo  '<option value=' . $ingredient['IngredientName'] .'>' .$ingredient['IngredientName']. '</option>';
+        echo  '<option value=' . $ingredient['IngredientID'] .'>' .$ingredient['IngredientName']. '</option>';
         }
         echo '</select>';
         ?>
