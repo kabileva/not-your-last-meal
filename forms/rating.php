@@ -1,9 +1,5 @@
 <html>
 <head>
-<style>
-.aaa{font-size: 20px;}
-.error {color: #FF0000;}
-</style>
 </head>
 
 <body>
