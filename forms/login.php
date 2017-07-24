@@ -1,0 +1,11 @@
+<form action="/action_page.php">
+
+  Username<br><input type="text" name="name">
+  <br><br>
+    
+  Password<br><input type="password" name="password">
+  <br><br>
+  <input type="submit" value="Sign In">
+</form>
+
+<!-- action must be modified!! -->
