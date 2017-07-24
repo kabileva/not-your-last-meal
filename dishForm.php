@@ -3,10 +3,15 @@
 
 include_once 'templates/layout.php';
 
-include_once 'templates/go-back.php';
+include_once 'TEST-DATA.php';
 
 ?>
 
+<ul class="breadcrumb">
+  <li><a href="main.php"><?php print($userCountry) ?></a></li>
+  <li><a href="dishes.php">Dishes</a></li>
+  <li><a href="dishForm.php">Add a dish</a></li>
+</ul>
 
 <script>
     function validateForm(){

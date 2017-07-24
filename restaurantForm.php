@@ -3,9 +3,15 @@
 
 include_once 'templates/layout.php';
 
-include_once 'templates/go-back.php';		
+include_once 'TEST-DATA.php';	
 
 ?>
+
+<ul class="breadcrumb">
+  <li><a href="main.php"><?php print($userCountry) ?></a></li>
+  <li><a href="restaurants.php">Restaurants</a></li>
+  <li><a href="restaurantForm.php">Add a restaurant</a></li>
+</ul>
 
 <h1>Register a restaurant</h1>
 <title>Register a restaurant</title>

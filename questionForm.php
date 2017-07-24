@@ -3,8 +3,14 @@
 
 include_once 'templates/layout.php';
 
-include_once 'templates/go-back.php';	
+include_once 'TEST-DATA.php';		
 ?>
+
+<ul class="breadcrumb">
+  <li><a href="main.php"><?php print($userCountry) ?></a></li>
+  <li><a href="forum.php">Questions and answers</a></li>
+  <li><a href="questionForm.php">Ask a question</a></li>
+</ul>
 
 <h1>Ask a question</h1>
 <title>Ask a question</title>
