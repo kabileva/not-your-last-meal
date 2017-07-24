@@ -1,16 +1,6 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<style>
-.error {color: #FF0000;}
-div.aaa{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  margin: auto;
-}
-
-</style>
-
 </head>
 <body>
 
@@ -71,7 +61,6 @@ function test_input($data) {
 }
 ?>
 
-<div class="aaa">
 <h2 style="text-align:center;">Posting dish/ Editing</h2>
 <p><span class="error">&nbsp;&nbsp;* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -138,6 +127,5 @@ function test_input($data) {
 
   &nbsp;&nbsp;<input type="submit" name="submit" value="Submit" onclick="myFunction()">
 </form>
-</div>
 </body>
 </html>
