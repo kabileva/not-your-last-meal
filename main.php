@@ -1,12 +1,25 @@
-<!DOCTYPE HTML>
 <?php
+
+session_start();
+
+if (!isset($_SESSION['username'])) {
+	$_SESSION['msg'] = "You must log in first";
+	header('location: templates/loginForm.php');
+}
+
+if (isset($_GET['logout'])) {
+	session_destroy();
+	unset($_SESSION['username']);
+	header("location: templates/loginForm.php");
+}
 
 include_once 'templates/layout.php';
 
 include_once 'templates/go-back.php';
 
 ?>
-
+<!DOCTYPE HTML>
+<html>
 <title>Not your last meal</title>
 
 <div id="main">
@@ -36,4 +49,4 @@ include_once 'templates/go-back.php';
       </div>
    </a>
 </div>
-
+</html>

@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<?php
 
-include_once 'templates/head.php';
-   
-?>
- 
 <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width">
    <link rel="stylesheet" href="css/login.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/forms.css">
+   <link href="https://fonts.googleapis.com/css?family=Quicksand:300,700" rel="stylesheet">
 </head>
+
 <title>Not your last meal</title>
 <body>
    <div id="main_logo">
@@ -17,11 +18,11 @@ include_once 'templates/head.php';
    <div class="login-wrapper">
       <div class="form">
          <h3 class="title">Log in</h3>
-         <?php include_once 'forms/login.php'?>
+         <?php include_once 'templates/loginForm.php'?>
       </div>
       <div class="form">
          <h3 class="title">Register</h3>
-         <?php include_once 'forms/register.php'?>
+         <?php include_once 'templates/registerForm.php'?>
       </div>
    </div>
 </body>
