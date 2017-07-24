@@ -1,74 +1,66 @@
 <!-- action must be modified!! -->
 
-        <script>
-            function validateForm(){
+<script>
+    function validateForm(){
 
-                var name=document.forms["regForm"]["name"].value;
-                var pass=document.forms["regForm"]["password"].value;
-                var passconf=document.forms["regForm"]["passconf"].value;
-                var email=document.forms["regForm"]["email"].value;
-                var notification=document.forms["regForm"]["want_notifications"].value;
-                var count= 0;
-                
-                if((name=="")||(pass=="")||(email=="")||(passconf=="")||(notification=="")){
-                    
-                    if(pass==""){
-                        document.getElementById("passSp").innerHTML="Required area";
-                    }
-                    
-                    if(passconf==""){
-                        document.getElementById("passconfSp").innerHTML="Required area";
-                    }
-                    
-                    if(name==""){
-                        document.getElementById("nameSp").innerHTML="Required area";
-                    }
-                    
-                    if(email==""){
-                        document.getElementById("emailSp").innerHTML="Required area";
-                    }
-                    
-                    if(notification==""){
-                        document.getElementById("notifSp").innerHTML="Required area";
-                    }
-                    count++;
-                }
-                
-                if(pass.length<7){
-                    document.getElementById("passSp").innerHTML="7 characters minimum";
-                    document.getElementById("passconfSp").innerHTML="7 characters minimum";
-                    count++;
-                }
-                else{
-                    if(!(pass==passconf)){
-                        document.getElementById("passSp").innerHTML="Must be same as password confirm";
-                        document.getElementById("passconfSp").innerHTML="Must be same as password";
-                        count++;
-                     }   
-                }
+        var name=document.forms["regForm"]["name"].value;
+        var pass=document.forms["regForm"]["password"].value;
+        var passconf=document.forms["regForm"]["passconf"].value;
+        var email=document.forms["regForm"]["email"].value;
+        var notification=document.forms["regForm"]["want_notifications"].value;
+        var count= 0;
 
-                
-                if(count==0)
-                    return true;
-                else
-                    return false;
+        if((name=="")||(email=="")||(notification=="")){
+
+            if(name==""){
+                document.getElementById("nameSp").innerHTML="Required area";
             }
-            
-        </script>
+
+            if(email==""){
+                document.getElementById("emailSp").innerHTML="Required area";
+            }
+
+            if(notification==""){
+                document.getElementById("notifSp").innerHTML="Required area";
+            }
+            count++;
+        }
+
+        if(pass.length<7){
+            document.getElementById("passSp").innerHTML="7 characters minimum";
+            document.getElementById("passconfSp").innerHTML="7 characters minimum";
+            count++;
+        }
+        else{
+            if(!(pass==passconf)){
+                document.getElementById("passSp").innerHTML="Must be same as password confirm";
+                document.getElementById("passconfSp").innerHTML="Must be same as password";
+                count++;
+             }   
+        }
+
+
+        if(count==0)
+            return true;
+        else
+            return false;
+    }
+
+</script>
 
 
 <form name="regForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
 
-    Name<br><input type="text" name="name"><span id="nameSp"></span>
+    Name<br><input type="text" name="name"> <span id="nameSp"></span>
   <br><br>
     
-  Password<br><input type="password" name="password"><span id="passSp"></span>
+  Password<br><input type="password" name="password"> <span id="passSp"></span>
   <br><br>
     
-  Password Confirm<br><input type="password" name="passconf"><span id="passconfSp"></span>
+  Password Confirm<br><input type="password" name="passconf"> <span id="passconfSp"></span>
   <br><br>
     
-  E-mail<br><input type="email" name="email"><span id="emailSp"></span>
+  E-mail<br><input type="email" name="email"> <span id="emailSp"></span>
   <br><br> 
 
   Country<br>
