@@ -1,10 +1,4 @@
 <!DOCTYPE HTML>
-<?php
-
-$pageStyles = basename(__FILE__, '.php');
-$pageStyles = $pageStyles . ".css";
-
-?>
 
 <head>
    <meta charset="UTF-8" />
