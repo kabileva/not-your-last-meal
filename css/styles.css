@@ -108,3 +108,18 @@
     text-align: left;
   }
 }
+
+#country-list{
+	
+	
+}
+
+#country-list>select{
+	
+	background-color: 558C89;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+	
+	
+}
