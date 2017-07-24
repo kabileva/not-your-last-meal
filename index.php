@@ -17,11 +17,11 @@ include_once 'templates/head.php';
    <div class="login-wrapper">
       <div class="form">
          <h3 class="title">Log in</h3>
-         <?php include_once 'forms/login.html'?>
+         <?php include_once 'forms/login.php'?>
       </div>
       <div class="form">
          <h3 class="title">Register</h3>
-         <?php include_once 'forms/register.html'?>
+         <?php include_once 'forms/register.php'?>
       </div>
    </div>
 </body>
