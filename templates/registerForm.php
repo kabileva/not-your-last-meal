@@ -105,17 +105,17 @@
 
  
     <fieldset>
-        <legend>Profile image</legend>legend>
+        <legend>Profile image</legend>
         <input type="file" name="image" id="image">
     </fieldset>
         
     <fieldset>
-        <legend>About me</legend>legend>
+        <legend>About me</legend>
         <textarea name="message" rows="5" cols="30">Present yourself</textarea>
     </fieldset>
 
     <fieldset>
-        <legend>Receive email notification</legend>legend>
+        <legend>Receive email notification</legend>
         <input type="radio" name="want_notifications" value="Yes">Yes
         <input type="radio" name="want_notifications" value="No">No <span id="notifSp"></span>
     </fieldset>

@@ -16,7 +16,7 @@ if (get_magic_quotes_gpc())
   $_REQUEST = array_map('stripslashes_deep', $_REQUEST);
 }
 
-$link = mysqli_connect('localhost', 'root', '951129');
+$link = mysqli_connect('localhost', 'root', 'root');
 if (!$link)
 {
   $error = 'Unable to connect to the database server.';
@@ -31,7 +31,7 @@ if (!mysqli_set_charset($link, 'utf8'))
   exit();
 }
 
-if (!mysqli_select_db($link, 'notlastmeal'))
+if (!mysqli_select_db($link, 'id2305220_data'))
 {
   $error = 'Unable to locate the database.';
   include 'error.html.php';
