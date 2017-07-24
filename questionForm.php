@@ -6,6 +6,9 @@ include_once 'templates/layout.php';
 include_once 'templates/go-back.php';	
 ?>
 
+<h1>Ask a question</h1>
+<title>Ask a question</title>
+
 <form name="quesForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return quesvalidateForm()">
     
     
