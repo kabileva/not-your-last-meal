@@ -1,5 +1,7 @@
 <?php
+
 echo '		
+
 <div class="menu">
 
 <a href="forum.html">
@@ -15,6 +17,7 @@ echo '
 		</a>	
 
 </div>
+
 
 '
 ?>

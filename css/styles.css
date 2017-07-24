@@ -4,26 +4,6 @@
 	font-family: 'Quicksand', sans-serif;
 	text-decoration: none;
 }
-	
-
-.menu {
-  position: fixed;
-  margin-top: 200;
-  transition: background-color 0.3s ease;
-}
-	
-.menu-button {
-  background-color: #558C89;
-  text-align: center;
-  color: white;
-  padding: 14px;
-  border-radius: 0px 10px 10px 0px;
-  margin: 5px 0px 5px;
-	}
-	
-.menu-button:hover{
-background-color: #74AFAD;
-}
 
 /*  Back-button style  */
  
