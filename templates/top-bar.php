@@ -4,7 +4,7 @@ echo '
 
 <header>
    <div class="topnav" id="myTopnav">
-      <a href="main.html"><img src="img/burger.gif" alt="Mountain View" style="width:50px;height:50px;"></a>
+      <a href="main.php"><img src="img/burger.gif" alt="Mountain View" style="width:50px;height:50px;"></a>
 
 	  <a>
 	  <div id="country-list">
