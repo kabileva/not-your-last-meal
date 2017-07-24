@@ -1,8 +1,9 @@
+<!DOCTYPE HTML>
 <?php
 
 class User {
 
-  private $name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation, $comments;
+  public $name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation, $comments;
 
   function __construct($name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation){
     $this->name = $name;
@@ -36,6 +37,21 @@ class User {
 
   function getPosts(){
     // Retrieve comments for node from database
+  }
+
+  function getTeaser(){
+    return "
+      <a href=\"user?=$this->name\">
+      <div class=\"profile-teaser\">
+        <div class=\"user-profile\"><img src=\"$this->image\"></div>
+        <h2 class=\"user-name\"> $this->name </h2>
+      </div>
+      </a>
+    ";
+  }
+
+  function getUserLink() {
+    return 'link';
   }
 
 }
