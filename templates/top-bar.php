@@ -20,7 +20,7 @@ echo '
       <a href="dishes.php">Dishes</a>
       <a href="restaurants.php">Restaurants</a>
       <a href="forum.php">Questions and answers</a>
-      <a href="forum.php">People</a>
+      <a href="people.php">People</a>
 
       <a href="profile.html" style="float:right;"><strong>User Name</strong></a>
       <a href="login.html" style="float:right;"><strong>Log Out</strong></a>
