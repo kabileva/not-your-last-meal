@@ -1,3 +1,34 @@
+<!DOCTYPE HTML>
+<?php
+
+include_once 'templates/layout.php';
+
+include_once 'templates/go-back.php';	
+?>
+
+<form name="quesForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return quesvalidateForm()">
+    
+    
+    <fieldset>
+        <legend>Title</legend>
+        <input type="text" name="title"> <span id="titleSp"></span>
+    </fieldset>
+    
+    
+    <fieldset>
+        <legend>Post a question</legend>
+        <textarea name="question" rows="10" cols="60"></textarea>
+        <span id="quesSp"></span>
+    </fieldset>
+    
+    
+    <fieldset>
+        <input type="submit" value="Confirm"> <input type="reset" value="Clear">
+    </fieldset>
+    
+    
+</form>
+
 <script>
     function quesvalidateForm(){
 
@@ -23,26 +54,3 @@
     }
 
 </script>
-
-<form name="quesForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return quesvalidateForm()">
-    
-    
-    <fieldset>
-        <legend>Title</legend>
-        <input type="text" name="title"> <span id="titleSp"></span>
-    </fieldset>
-    
-    
-    <fieldset>
-        <legend>Post a question</legend>
-        <textarea name="question" rows="10" cols="60"></textarea>
-        <span id="quesSp"></span>
-    </fieldset>
-    
-    
-    <fieldset>
-        <input type="submit" value="Confirm"> <input type="reset" value="Clear">
-    </fieldset>
-    
-    
-</form>
