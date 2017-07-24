@@ -1,4 +1,35 @@
 <!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.error {color: #FF0000;}
+.time {font-size: 7px;}
+.user{font-size: 20px;}
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: green;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+
 <?php
 
 $comment="";
@@ -8,7 +39,7 @@ $username="username";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["comment"])) {
     $comment="";
-    $commentErr= "comment is required";
+    $commentErr= "*comment is required";
   } else {
     $comment = test_input($_POST["comment"]);
   }
@@ -22,8 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-  Comment:<br> <textarea name="comment" rows="2" cols="50"><?php echo $comment;?>  </textarea>
-<span class="error"><?php echo $commentErr;?></span>
+  Comment&nbsp;&nbsp;<span class="error"><?php echo $commentErr;?></span>
+  <br> <textarea name="comment" rows="2" cols="50"><?php echo $comment;?></textarea>
 
   </textarea>
 
@@ -31,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </form>
 
 <h2>comment:</h2>
+
 
 <span class = "user">
 <?php
@@ -41,7 +73,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
-
 </span>
 
 <?php
@@ -57,3 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
 }
 ?>
+
+</span>
+</body>
+</html>
