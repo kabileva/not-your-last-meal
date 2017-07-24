@@ -87,8 +87,4 @@ class User {
     ";
   }
 
-  function getUserLink() {
-    return 'link';
-  }
-
 }
