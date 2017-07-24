@@ -18,6 +18,12 @@ include_once 'TEST-DATA.php';
 
         var title=document.forms["dishForm"]["title"].value;
         var image=document.forms["dishForm"]["image"].value;
+        var breakfast=document.forms["dishForm"]["breakfast"].checked;
+        var lunch=document.forms["dishForm"]["lunch"].checked;
+        var dinner=document.forms["dishForm"]["dinner"].checked;
+        var brunch=document.forms["dishForm"]["brunch"].checked;
+        var dessert=document.forms["dishForm"]["dessert"].checked;
+
         var count= 0;
 
         if((title=="")||(image=="")){
@@ -31,6 +37,14 @@ include_once 'TEST-DATA.php';
             }
             count++;
         }
+   
+            if((brunch=="")&&(breakfast=="")&&(lunch=="")&&(dinner=="")&&(dessert==""))
+       {
+
+          count++;
+
+           document.getElementById("typeSp").innerHTML="Required area";
+       }
 
 
         if(count==0)
@@ -56,11 +70,12 @@ include_once 'TEST-DATA.php';
   <fieldset>
     <legend>Type</legend>
   <br>
-  <input type="checkbox" name="type" value="breakfast" >breakfast
-  <input type="checkbox" name="type" value="lunch" >lunch
-  <input type="checkbox" name="type" value="dinner" >dinner
-  <input type="checkbox" name="type" value="brunch" >brunch
-  <input type="checkbox" name="type" value="dessert">dessert
+  <input type="checkbox" name="breakfast" value="breakfast" >breakfast
+  <input type="checkbox" name="lunch" value="lunch" >lunch
+  <input type="checkbox" name="dinner" value="dinner" >dinner
+  <input type="checkbox" name="brunch" value="brunch" >brunch
+  <input type="checkbox" name="dessert" value="dessert">dessert
+<span id="typeSp"></span>
   <br><br>
   </fieldset>
 
