@@ -7,10 +7,6 @@ include_once 'templates/go-back.php';
 
 ?>
 
-<head>
-   <link rel="stylesheet" href="css/dish.css">
-</head>
-
 <div id="dishtitle">
    <p>All dishes</p>
 </div>

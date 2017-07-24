@@ -4,10 +4,7 @@
 include_once 'templates/head.php';
    
 ?>
- 
-<head>
-   <link rel="stylesheet" href="css/login.css">
-</head>
+
 <title>Not your last meal</title>
 <body>
    <div id="main_logo">

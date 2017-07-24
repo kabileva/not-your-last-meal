@@ -136,5 +136,3 @@ function test_input($data) {
   <input type="submit" name="submit" value="Submit">
   </fieldset>
 </form>
-</body>
-</html>
