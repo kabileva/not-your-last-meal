@@ -61,35 +61,39 @@ function test_input($data) {
 }
 ?>
 
-<h2 style="text-align:center;">Posting dish/ Editing</h2>
-<p><span class="error">&nbsp;&nbsp;* required field.</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<h1>Posting dish/ Editing</h1>
 
-  &nbsp;&nbsp;&nbsp;Title<span class="error">*</span>
-  <span class="error"><?php echo $titleErr;?></span><br>
-  &nbsp;&nbsp;<input type="text" name="title" size="60">
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+  <fieldset>
+    <legend>Title</legend><?php echo $titleErr;?></span><br>
+    <input type="text" name="title" size="60">
+  </fieldset>
   <br><br>
 
-  &nbsp;&nbsp;&nbsp;Type<span class="error">*</span>
-  <span class="error"><?php echo $typeErr;?></span>
+  <fieldset>
+    <legend>Type</legend><?php echo $typeErr;?></span>
   <br>
-  &nbsp;&nbsp;<input type="checkbox" name="type" value="breakfast" >breakfast
+  <input type="checkbox" name="type" value="breakfast" >breakfast
   <input type="checkbox" name="type" value="lunch" >lunch
   <input type="checkbox" name="type" value="dinner" >dinner
   <input type="checkbox" name="type" value="brunch" >brunch
   <input type="checkbox" name="type" value="dessert">dessert
   <br><br>
+  </fieldset>
 
-  &nbsp;&nbsp;&nbsp;Country<br>
-  &nbsp;&nbsp;<select id="mySelect" name="country">
+  <fieldset>
+    <legend>Country</legend>
+    <select name="country">
     <option value="Argentina">Argentina</option>
     <option value="Kazakhstan">Kazakhstan</option>
     <option value="Norway">Norway</option>
     <option value="Republic of Korea">Republic of Korea</option>
-  </select>
+    </select>
   <br><br>
+</fieldset>
 
-  &nbsp;&nbsp;&nbsp;Allergens<span class="error">*</span>
+  <fieldset>
+    <legend>Allergens<span>
   <span class="error"><?php echo $allegicErr;?></span>
   <p style="font-size: 12px">&nbsp;&nbsp;&nbsp;Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
   &nbsp;&nbsp;<select multiple name="allegic" >
@@ -112,20 +116,25 @@ function test_input($data) {
   <option value="eggs (typically albumen, the white)">eggs (typically albumen, the white)</option>
   <option value="pumpkin, eggplant">pumpkin, eggplant</option>
   </select>
+</fieldset>
   <br><br>
 
-
-  &nbsp;&nbsp;&nbsp;Image upload<span class="error">*</span>
-  <span class="error"><?php echo $imageErr;?></span>
+  <fieldset>
+  <legend>Image upload</legend><?php echo $imageErr;?></span>
   <br>
-  &nbsp;&nbsp;<input type="file" name="image" id="image">
-  <br><br>
+  <input type="file" name="image" id="image">
+  <br>
+</fieldset>
 
-  &nbsp;&nbsp;Ingredients and Information<br>
-  &nbsp;&nbsp;<textarea name="comment" rows="5" cols="47"></textarea>
+  <fieldset>
+  <legend>Ingredients and Information</legend>
+  <textarea name="comment" rows="5" cols="47"></textarea>
   <br><br>
+  </fieldset>
 
-  &nbsp;&nbsp;<input type="submit" name="submit" value="Submit" onclick="myFunction()">
+  <fieldset>
+  <input type="submit" name="submit" value="Submit">
+  </fieldset>
 </form>
 </body>
 </html>
