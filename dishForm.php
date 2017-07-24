@@ -96,8 +96,8 @@ function test_input($data) {
   <fieldset>
     <legend>Allergens<span>
   <span class="error"><?php echo $allegicErr;?></span>
-  <p style="font-size: 12px">&nbsp;&nbsp;&nbsp;Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
-  &nbsp;&nbsp;<select multiple name="allegic" >
+  <p style="font-size: 12px">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+  <select multiple name="allegic" >
   <option value="fruit">fruit</option>
   <option value="legumes">legumes</option>
   <option value="beans">beans</option>

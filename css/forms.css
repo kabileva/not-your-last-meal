@@ -21,3 +21,11 @@ a:active {
     background-color: transparent;
     text-decoration: underline;
 }
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-weight: bold;
+}
