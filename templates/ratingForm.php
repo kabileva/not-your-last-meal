@@ -27,19 +27,24 @@
   ?>
 
 
-<b>Star rating:</b><br>
+<h1>Star rating:</h1><br>
 
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<div class="aaa">
+<fieldset>
 <input type="radio" name="star" value="0">☆☆☆☆☆
 <input type="radio" name="star" value="1">★☆☆☆☆
 <input type="radio" name="star" value="2">★★☆☆☆
 <input type="radio" name="star" value="3">★★★☆☆
 <input type="radio" name="star" value="4">★★★★☆
 <input type="radio" name="star" value="5">★★★★★
-</div>
-<span class="error"><br><?php echo $starErr;?></span>
+<br><?php echo $starErr;?></span>
 <br><br>
+</fieldset>
+<fieldset>
 <input type="submit" name="submit" value="Submit">
+</fieldset>
 </form>
+
+</body>
+</html>
