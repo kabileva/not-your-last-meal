@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
-<html>
-<head>
-</head>
-<body>
-
 <?php
+
+include_once 'templates/layout.php';
+
+include_once 'templates/go-back.php';		
+
 // define variables and set to empty values
 $titleErr = $countryErr = $typeErr = $allegicErr = $imageErr ="";
 $title = $comment = $country = $type = $allegic = $image ="";
