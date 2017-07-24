@@ -1,9 +1,6 @@
 <?php
 
-
-require_once "node.php";
-
-class User extends Node {
+class User {
 
   private $name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation, $comments;
 
@@ -31,6 +28,14 @@ class User extends Node {
 
   function deleteInDatabase(){
     // call to MYSQL file here
+  }
+
+  function addPost($post){
+    // Add posts
+  }
+
+  function getPosts(){
+    // Retrieve comments for node from database
   }
 
 }

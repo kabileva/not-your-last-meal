@@ -1,8 +1,6 @@
 <?php
 
-require_once "node.php";
-
-class Dish extends Node {
+class Dish {
 
   private $name, $country, $ingredients, $presentation, $image, $type, $comments;
 
@@ -28,4 +26,14 @@ class Dish extends Node {
     // call to MYSQL file here
   }
 
+  function addPost($post){
+    // Add posts
+  }
+
+  function getPosts(){
+    // Retrieve comments for node from database
+  }
+
+
 }
+

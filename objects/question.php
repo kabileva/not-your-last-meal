@@ -1,13 +1,13 @@
 <?php
 
-require_once "node.php";
+class Question {
 
-class Question extends Comment{
-
-  private $questionTitle, $allergens, $comments;
+  private $content, $user, $dateTime, $questionTitle, $allergens, $comments;
 
   function __construct($questionTitle, $content, $user, $dateTime, $allergens, $comments){
-    parent::__construct($content, $user, $dateTime;);
+    $this->content = $content;
+    $this->user = $user;
+    $date->dateTime = $dateTime;
     $this->questionTitle = $questionTitle;
     $this->allergens = $allergens;
     $this->comments = $comments;
@@ -25,4 +25,13 @@ class Question extends Comment{
     // call to MYSQL file here
   }
 
+  function addPost($post){
+    // Add posts
+  }
+
+  function getPosts(){
+    // Retrieve comments for node from database
+  }
+
 }
+
