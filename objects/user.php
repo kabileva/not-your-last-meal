@@ -16,11 +16,25 @@ class User {
     $this->presentation = $presentation;
   }
   function createInDatabase(){
-    // include_once("../db/db_init.php");
+    include_once("../db/db_init.php");
 
-    // $query = "INSERT INTO Users(UserID, Password, UserName, Email, WantNotifications, CountryID, Presentation, Image) VALUES (DEFAULT,'".$this->'
-    // $result = mysqli_query($link, $query);   
-    // echo $result;
+    $query = "INSERT INTO Users(UserID, Password, UserName, Email, WantNotifications, CountryID, Presentation, Image) VALUES (DEFAULT,'".$this->password."','".$this->name."','".$this->email."',".$this->want_notifications.",".$this->country.",'".$this->presentation."','".$this->image."')";
+
+    $result = mysqli_query($link, $query);   
+    //  $id = $this->findID();
+    //  echo $id;
+
+    // foreach($this->allergies as $allergy) {
+    //     $query = "INSERT INTO users_allergens(UserID, IngredientID) VALUES (".$this->id.",".$allergy.")";
+    //     mysqli_query($link, $query); }
+    
+  }
+  function findID() {
+    $query = "SELECT UserID FROM Users WHERE Email='".$this->email."'";
+    echo $query;
+    $result= mysqli_query($link, $query); 
+    echo $result;
+    return $result; 
   }
 
   function updateInDatabase(){
