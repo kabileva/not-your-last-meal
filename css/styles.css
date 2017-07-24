@@ -123,3 +123,21 @@
 	
 	
 }
+
+.callToAction {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 24px;
+    border: 1px solid #5c5c5c;
+    border-radius: 8px;
+    background: #4d807d;
+    background: -webkit-gradient(linear, left top, left bottom, from(#4d807d), to(#4db0ab));
+    background: -moz-linear-gradient(top, #4d807d, #4db0ab);
+    background: linear-gradient(to bottom, #4d807d, #4db0ab);
+    text-shadow: #591717 1px 1px 1px;
+    font: normal normal bold 16px arial;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 10px;
+}

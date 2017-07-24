@@ -17,3 +17,4 @@ include_once 'templates/go-back.php';
    <p> Restaurants </p>
 </div>
 
+<a href="restaurantForm.php" class="callToAction">Add restaurant<a>

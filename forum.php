@@ -11,6 +11,6 @@ include_once 'templates/go-back.php';
 <div id="dishtitle">
    <p> Questions and answers </p>
 </div>
-</body>
-</html>
+
+<a href="questionForm.php" class="callToAction">Add question<a>
 
