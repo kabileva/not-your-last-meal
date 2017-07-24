@@ -5,6 +5,15 @@
 	text-decoration: none;
 }
 
+h1{
+    color: #558C89;
+    height: 40px;
+    font-size: 32px;
+    text-align: center;
+    vertical-align: center;
+    margin-top: 10px;	 
+}
+
 /*  Back-button style  */
  
 #back{
@@ -109,3 +118,57 @@
   }
 }
 
+#country-list{
+	
+	
+}
+
+#country-list>select{
+	
+	background-color: 558C89;
+    color: #558C89;
+    padding: 7px;
+    border-radius: 5px;
+	
+	
+}
+
+.callToAction {
+    float:left;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 24px;
+    border-radius: 6px;
+    background-color: #558C89;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 10px;
+}
+.callToAction:after {
+  display: inline-block;
+  content: '+';
+  margin: 0 .6em;
+}
+
+.breadcrumb {
+  margin: 10px;
+  list-style-type: none;
+}
+
+.breadcrumb li {
+  float: left;
+}
+
+.breadcrumb li:after {
+  display: inline-block;
+  content: '\00bb';
+  margin: 0 .6em;
+  color: black;
+}
+.breadcrumb li:last-child {
+  float:none;
+}
+.breadcrumb li:last-child:after {
+  content: '';
+}

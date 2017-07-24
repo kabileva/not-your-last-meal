@@ -3,24 +3,27 @@
 
 include_once 'templates/layout.php';
 
-include_once 'templates/go-back.php';	
+include_once 'TEST-DATA.php';
 
 ?>
 
-<head>
-   <link rel="stylesheet" href="css/dish.css">
-</head>
+<ul class="breadcrumb">
+  <li><a href="main.php"><?php print($userCountry) ?></a></li>
+  <li><a href="dishes.php">Dishes</a></li>
+</ul>
 
-<div id="dishtitle">
-   <p>All dishes</p>
-</div>
+<a href="dishForm.php" class="callToAction">Add dish<a>
+
+<h1>Dishes</h1>
+<title>Dishes</title>
+
+
 
 <div id="main">
    <a href="info.html">
       <div class="dish">
          <h2>Name and picture</h2>
       </div>
-      /a>
    <a href="info.html">
       <div class="dish">
          <h2>Name and picture</h2>

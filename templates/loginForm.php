@@ -25,12 +25,19 @@
 
 <form name="logForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
 
-    Username<br><input type="text" name="name"> <span id="nameSp"></span>
-  <br><br>
+    <fieldset>
+        <legend>Username</legend>
+        <input type="text" name="name"> <span id="nameSp"></span>
+    </fieldset>
     
-  Password<br><input type="password" name="password"> <span id="passSp"></span>
-  <br><br>
-  <input type="submit" value="Sign In">
+    <fieldset>
+        <legend>Password</legend>
+        <input type="password" name="password"> <span id="passSp"></span>
+    </fieldset>
+    
+    <fieldset>
+        <input type="submit" value="Sign In">
+    </fieldset>
 </form>
 
 <!-- action must be modified!! -->

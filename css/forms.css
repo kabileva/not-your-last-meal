@@ -1,23 +1,12 @@
-.error {color: #FF0000;}
-.time {font-size: 7px;}
-.user{font-size: 20px;}
-a:link {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
+fieldset {
+  padding-bottom: 15px;
+  border: none;
 }
-a:visited {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
+
+legend {
+  font-weight: bold;
 }
-a:hover {
-    color: green;
-    background-color: transparent;
-    text-decoration: underline;
-}
-a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline;
+
+form {
+  margin: 10px;
 }
