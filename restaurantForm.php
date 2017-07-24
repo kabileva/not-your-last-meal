@@ -1,3 +1,12 @@
+<!DOCTYPE HTML>
+<?php
+
+include_once 'templates/layout.php';
+
+include_once 'templates/go-back.php';		
+
+?>
+
 <h1>Register/Edit a Restaurant</h1>
 <form name="resForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
 
