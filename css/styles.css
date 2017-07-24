@@ -134,7 +134,8 @@ h1{
 }
 
 .callToAction {
-display: inline-block;
+    float:left;
+    display: inline-block;
     text-align: center;
     vertical-align: middle;
     padding: 10px 24px;
@@ -143,4 +144,31 @@ display: inline-block;
     color: #ffffff;
     text-decoration: none;
     margin: 10px;
+}
+.callToAction:after {
+  display: inline-block;
+  content: '+';
+  margin: 0 .6em;
+}
+
+.breadcrumb {
+  margin: 10px;
+  list-style-type: none;
+}
+
+.breadcrumb li {
+  float: left;
+}
+
+.breadcrumb li:after {
+  display: inline-block;
+  content: '\00bb';
+  margin: 0 .6em;
+  color: black;
+}
+.breadcrumb li:last-child {
+  float:none;
+}
+.breadcrumb li:last-child:after {
+  content: '';
 }
