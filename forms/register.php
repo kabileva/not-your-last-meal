@@ -49,9 +49,9 @@
 </script>
 
 
-<form name="regForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
+<form name="regForm" action = "../objects/get_user.php" method="post" onsubmit="return validateForm()">
 
-    Name<br><input type="text" name="name"> <span id="nameSp"></span>
+  Name<br><input type="text" name="name"> <span id="nameSp"></span>
   <br><br>
     
   Password<br><input type="password" name="password"> <span id="passSp"></span>
@@ -78,7 +78,7 @@
   <br><br>
     
 Allergens<br>
-    <p style="font-size: 12px">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+    <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
   <?php
   //php script for listing all the ingredients
 
@@ -89,7 +89,6 @@ Allergens<br>
   }
   echo '</select>';
   ?>
-
 
   <br><br>
   Profile image<br>

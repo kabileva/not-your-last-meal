@@ -1,13 +1,13 @@
 <?php
 
+
 require_once "node.php";
 
 class User extends Node {
 
-  private $id, $name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation, $comments;
-""
-  function __construct($id, $name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation){
-    $this->id = $id;
+  private $name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation, $comments;
+
+  function __construct($name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation){
     $this->name = $name;
     $this->email = $email;
     $this->password = $password;
@@ -17,9 +17,12 @@ class User extends Node {
     $this->image = $image;
     $this->presentation = $presentation;
   }
-
   function createInDatabase(){
-    // call to MYSQL file here
+    // include_once("../db/db_init.php");
+
+    // $query = "INSERT INTO Users(UserID, Password, UserName, Email, WantNotifications, CountryID, Presentation, Image) VALUES (DEFAULT,'".$this->'
+    // $result = mysqli_query($link, $query);   
+    // echo $result;
   }
 
   function updateInDatabase(){
