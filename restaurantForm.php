@@ -48,63 +48,72 @@
 <h1>Register/Edit a Restaurant</h1>
 <form name="resForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
 
-    <p>
-    Name<br>
-    <input type="text" name="name"> <span id="nameSp"></span><br>
-    </p>
+    <fieldset>
+        <legend>Name</legend>
+        <input type="text" name="name"> <span id="nameSp"></span>
+    </fieldset>
 
-    <p>
-    Country<br>
-    <select name="country">
-          <option value="argentina">Argentina</option>
-          <option value="kazakhstan">Kazakhstan</option>
-          <option value="norway">Norway</option>
-          <option value="republic of Korea">Republic of Korea</option>
-    </select>
-    </p>
+    <fieldset>
+        <legend>Country</legend>
+        <select name="country">
+              <option value="argentina">Argentina</option>
+              <option value="kazakhstan">Kazakhstan</option>
+              <option value="norway">Norway</option>
+              <option value="republic of Korea">Republic of Korea</option>
+        </select>
+    </fieldset>
 
-    <p>
-    Location<br>
-    <input type="text" name="location"> <span id="locaSp"></span>
-    </p>
+    <fieldset>
+        <legend>Location</legend>legend>
+        <input type="text" name="location"> <span id="locaSp"></span>
+    </fieldset>
 
-    <p>
-    Type<br>
-    <select name="type">
-        <option value="cafe">Cafe</option>
-        <option value="restaurant">Restaurant</option>
-        <option value="bar">Bar</option>
-    </select>
-    </p>
+    <fieldset>
+        <legend>Type</legend>
+        <select name="type">
+            <option value="cafe">Cafe</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="bar">Bar</option>
+        </select>
+    </fieldset>
 
-    <p>
-    Presentation<br>
-    <textarea name="message" rows="8" cols="60">Present the restaurant.
-    </textarea>
-    </p>
+    <fieldset>
+        <legend>Presentation</legend>
+        <textarea name="message" rows="8" cols="60">Present the restaurant.
+        </textarea>
+    </fieldset>
 
-    <p>
-    Image<br>
-    <input type="file" name="image" id="image"> <span id="imageSp"></span>
-    </p>
+    <fieldset>
+        <legend>Image</legend>
+        <input type="file" name="image" id="image"> <span id="imageSp"></span>
+    </fieldset>
 
-    <p>
-    Does the restaurant have informative menues?<br>
-    <input type="radio" name="is_menu_friendly" value="Yes">Yes
-    <input type="radio" name="is_menu_friendly" value="No">No
-    <span id="menufSp"></span><br>
-    </p>
+    <fieldset>
+        <legend>Does the restaurant have informative menues?</legend>
+        <input type="radio" name="is_menu_friendly" value="Yes">Yes
+        <input type="radio" name="is_menu_friendly" value="No">No
+        <span id="menufSp"></span><br>
+    </fieldset>
 
-    <p>
-    List of alergens that the restaurant have optional food for<br>
-    <!--somebody help me to change it with right question. my English is not good-->
-    <input type="radio" name="is_alergen_friendly" value="Yes">Yes
-    <input type="radio" name="is_alergen_friendly" value="No">No
-    <span id="alerfSp"></span>
-    </p>
+    <fieldset>
+        <legend>What alergens does the restaurant has optional food for?</legend>
+        <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+        <?php
+        //php script for listing all the ingredients
 
-    <p>
+        echo '<select name="Allergens[]" multiple>';
+        $ingredients = listItems($link, 'Ingredients', 'IngredientName');
+        foreach ($ingredients as $ingredient) {
+        echo  '<option value=' . $ingredient['IngredientName'] .'>' .$ingredient['IngredientName']. '</option>';
+        }
+        echo '</select>';
+        ?>
+
+        <span id="alerfSp"></span>
+    </fieldset>
+
+    <fieldset>
     <input type="submit" value="Confirm"> <input type="reset" value="Clear">
-    </p>
+    </fieldset>
 
 </form>
