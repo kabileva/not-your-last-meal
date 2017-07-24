@@ -75,7 +75,7 @@ include_once 'TEST-DATA.php';
   <input type="checkbox" name="dinner" value="dinner" >dinner
   <input type="checkbox" name="brunch" value="brunch" >brunch
   <input type="checkbox" name="dessert" value="dessert">dessert
-<span id="typeSp"></span>
+<br><span id="typeSp"></span>
   <br><br>
   </fieldset>
 
