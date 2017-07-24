@@ -27,17 +27,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-  Comment&nbsp;&nbsp;<span class="error"><?php echo $commentErr;?></span>
+  <fieldset>
+  <legend>Comment</legend><?php echo $commentErr;?>
   <br> <textarea name="comment" rows="2" cols="50"><?php echo $comment;?></textarea>
+</fieldset>
 
-  </textarea>
-
+  <fieldset>
   <input type="submit" name="submit" value="Submit">
+</fieldset>
 </form>
 
-<h2>comment:</h2>
-
-
+<fieldset>
+<legend>comment</legend>
 <span class = "user">
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -48,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 </span>
+<fieldset>
 
 <?php
 echo $comment;
