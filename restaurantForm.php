@@ -1,50 +1,3 @@
-<!--action must be modified-->
-<script>
-    function validateForm(){
-
-        var name=document.forms["resForm"]["name"].value;
-        var location=document.forms["resForm"]["location"].value;
-        var is_menu_friendly=document.forms["resForm"]["is_menu_friendly"].value;
-        var is_alergen_friendly=document.forms["resForm"]["is_alergen_friendly"].value;
-        var image=document.forms["resForm"]["image"].value;
-        var count= 0;
-
-
-        if((name=="")||(is_menu_friendly=="")||(is_alergen_friendly=="")||(location=="")||(image=="")){
-
-            if(name==""){
-                document.getElementById("nameSp").innerHTML="Required area";
-            }
-
-            if(location==""){
-                document.getElementById("locaSp").innerHTML="Required area";
-            }
-
-            if(is_menu_friendly==""){
-                document.getElementById("menufSp").innerHTML="Required area";
-            }
-
-            if(is_alergen_friendly==""){
-                document.getElementById("alerfSp").innerHTML="Required area";
-            }
-
-            if(image==""){
-                document.getElementById("imageSp").innerHTML="Required area";
-            }
-            count++;
-        }
-
-
-
-
-        if(count==0)
-            return true;
-        else
-            return false;
-    }
-
-</script>
-
 <h1>Register/Edit a Restaurant</h1>
 <form name="resForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
 
@@ -117,3 +70,50 @@
     </fieldset>
 
 </form>
+
+<!--action must be modified-->
+<script>
+    function validateForm(){
+
+        var name=document.forms["resForm"]["name"].value;
+        var location=document.forms["resForm"]["location"].value;
+        var is_menu_friendly=document.forms["resForm"]["is_menu_friendly"].value;
+        var is_alergen_friendly=document.forms["resForm"]["is_alergen_friendly"].value;
+        var image=document.forms["resForm"]["image"].value;
+        var count= 0;
+
+
+        if((name=="")||(is_menu_friendly=="")||(is_alergen_friendly=="")||(location=="")||(image=="")){
+
+            if(name==""){
+                document.getElementById("nameSp").innerHTML="Required area";
+            }
+
+            if(location==""){
+                document.getElementById("locaSp").innerHTML="Required area";
+            }
+
+            if(is_menu_friendly==""){
+                document.getElementById("menufSp").innerHTML="Required area";
+            }
+
+            if(is_alergen_friendly==""){
+                document.getElementById("alerfSp").innerHTML="Required area";
+            }
+
+            if(image==""){
+                document.getElementById("imageSp").innerHTML="Required area";
+            }
+            count++;
+        }
+
+
+
+
+        if(count==0)
+            return true;
+        else
+            return false;
+    }
+
+</script>
