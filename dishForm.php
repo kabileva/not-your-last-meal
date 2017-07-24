@@ -76,7 +76,7 @@ include_once 'TEST-DATA.php';
 </fieldset>
 
   <fieldset>
-    <legend>Allergens<span>
+    <legend>Allergens</legend>
   <p style="font-size: 12px">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
   <select multiple name="allegic" >
   <option value="fruit">fruit</option>
