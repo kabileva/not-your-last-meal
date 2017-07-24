@@ -16,14 +16,23 @@ $userList = array($testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $t
   <li><a href="people.php">People</a></li>
 </ul>
 
-
-
-
-
+<?php
+  if(isset($_GET['selectedUser'])){
+    $content = $testUser1->getContent();
+    echo $content;
+    echo '<h2>More people</h2>';
+  }
+  else {
+    echo'
       <h1>People</h1>
       <title>People</title>
       <div class="undertitle">Find people with same alergies as yourself at the destination</div>
+    ';
 
+  }
+?>
+
+<!-- Lists of users -->
 <?php
 foreach($userList as $user){
   $teaser = $user->getTeaser();

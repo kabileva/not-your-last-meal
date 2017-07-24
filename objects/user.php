@@ -55,7 +55,7 @@ class User {
 
   function getTeaser(){
     return "
-      <a class=\"profile-teaser-wrapper\" href=\"user?=$this->name\">
+      <a class=\"profile-teaser-wrapper\" href=\"selectedUser?=$this->name\">
       <div class=\"profile-teaser\">
         <div class=\"user-profile\"><img src=\"$this->image\"></div>
         <h2 class=\"user-name\"> $this->name </h2>
