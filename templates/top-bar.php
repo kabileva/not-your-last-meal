@@ -7,12 +7,12 @@ echo '
       <a href="main.html"><img src="img/burger.gif" alt="Mountain View" style="width:50px;height:50px;"></a>
 
 	  <a>
-	  <div>
+	  <div id="country-list">
 		 <select>
-		  <option value="ar">Argentina</option>
+		  <option value="ar">Argentine</option>
 		  <option value="no">Norway</option>
-		  <option value="ko">South-Korea</option>
-		  <option value="ky">Kazakstan</option>
+		  <option value="ko">South Korea</option>
+		  <option value="ky">Kazakhstan</option>
 		</select> 
 	  </div>
 	  </a>
@@ -33,9 +33,9 @@ echo '
       		x.className = "topnav";
       	}
       }
+	 
    </script>
-
-
+  
 </header>
 
 '
