@@ -1,7 +1,12 @@
 fieldset {
-    border: none;
+  padding-bottom: 15px;
+  border: none;
 }
 
 legend {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+form {
+  margin: 10px;
 }

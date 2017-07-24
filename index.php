@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width">
    <link rel="stylesheet" href="css/login.css">
    <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/forms.css">
    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,700" rel="stylesheet">
 </head>
 
