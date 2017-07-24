@@ -1,8 +1,6 @@
 <?php
 
-require_once "node.php";
-
-class Comment extends Node{
+class Comment{
 
   private $content, $user, $dateTime;
 
@@ -25,3 +23,4 @@ class Comment extends Node{
   }
 
 }
+

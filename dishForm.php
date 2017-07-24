@@ -1,98 +1,99 @@
 <!DOCTYPE HTML>
-<html>
-<head>
-</head>
-<body>
-
 <?php
-// define variables and set to empty values
-$titleErr = $countryErr = $typeErr = $allegicErr = $imageErr ="";
-$title = $comment = $country = $type = $allegic = $image ="";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["title"])) {
-    $titleErr = "title is required";
-  } else {
-    $title = test_input($_POST["title"]);
-  }
+include_once 'templates/layout.php';
 
-  if (($_POST["country"])=="None") {
-    $countryErr = "country is required";
-  } else {
-    $country = test_input($_POST["country"]);
-  }
+include_once 'TEST-DATA.php';
 
-  if (empty($_POST["allegic"])) {
-    $allegicErr = "allergens is required";
-  } else {
-    $allegic = test_input($_POST["allegic"]);
-  }
-
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
-
-  if (empty($_POST["type"])) {
-    $typeErr = "type is required";
-  } else {
-    $type = test_input($_POST["type"]);
-  }
-
-  if (empty($_POST["type"])) {
-    $typeErr = "type is required";
-  } else {
-    $type = test_input($_POST["type"]);
-  }
-
-  if (empty($_POST["image"])) {
-    $imageErr = "image is required";
-  } else {
-    $image = test_input($_POST["image"]);
-  }
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
 ?>
 
-<h2 style="text-align:center;">Posting dish/ Editing</h2>
-<p><span class="error">&nbsp;&nbsp;* required field.</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<ul class="breadcrumb">
+  <li><a href="main.php"><?php print($userCountry) ?></a></li>
+  <li><a href="dishes.php">Dishes</a></li>
+  <li><a href="dishForm.php">Add a dish</a></li>
+</ul>
 
-  &nbsp;&nbsp;&nbsp;Title<span class="error">*</span>
-  <span class="error"><?php echo $titleErr;?></span><br>
-  &nbsp;&nbsp;<input type="text" name="title" size="60">
+<script>
+    function validateForm(){
+
+        var title=document.forms["dishForm"]["title"].value;
+        var image=document.forms["dishForm"]["image"].value;
+        var breakfast=document.forms["dishForm"]["breakfast"].checked;
+        var lunch=document.forms["dishForm"]["lunch"].checked;
+        var dinner=document.forms["dishForm"]["dinner"].checked;
+        var brunch=document.forms["dishForm"]["brunch"].checked;
+        var dessert=document.forms["dishForm"]["dessert"].checked;
+
+        var count= 0;
+
+        if((title=="")||(image=="")){
+
+            if(title==""){
+                document.getElementById("titleSp").innerHTML="Required area";
+            }
+
+            if(image==""){
+                document.getElementById("imageSp").innerHTML="Required area";
+            }
+            count++;
+        }
+   
+            if((brunch=="")&&(breakfast=="")&&(lunch=="")&&(dinner=="")&&(dessert==""))
+       {
+
+          count++;
+
+           document.getElementById("typeSp").innerHTML="Required area";
+       }
+
+
+        if(count==0)
+            return true;
+        else
+            return false;
+    }
+
+</script>
+
+
+<h1>Add a dish</h1>
+<title>Add a dish</title>
+
+<form name="dishForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
+  <fieldset>
+    <legend>Title</legend>
+    <input type="text" name="title" size="60">
+      <span id="titleSp"></span>
+  </fieldset>
   <br><br>
 
-  &nbsp;&nbsp;&nbsp;Type<span class="error">*</span>
-  <span class="error"><?php echo $typeErr;?></span>
+  <fieldset>
+    <legend>Type</legend>
   <br>
-  &nbsp;&nbsp;<input type="checkbox" name="type" value="breakfast" >breakfast
-  <input type="checkbox" name="type" value="lunch" >lunch
-  <input type="checkbox" name="type" value="dinner" >dinner
-  <input type="checkbox" name="type" value="brunch" >brunch
-  <input type="checkbox" name="type" value="dessert">dessert
+  <input type="checkbox" name="breakfast" value="breakfast" >breakfast
+  <input type="checkbox" name="lunch" value="lunch" >lunch
+  <input type="checkbox" name="dinner" value="dinner" >dinner
+  <input type="checkbox" name="brunch" value="brunch" >brunch
+  <input type="checkbox" name="dessert" value="dessert">dessert
+<br><span id="typeSp"></span>
   <br><br>
+  </fieldset>
 
-  &nbsp;&nbsp;&nbsp;Country<br>
-  &nbsp;&nbsp;<select id="mySelect" name="country">
+  <fieldset>
+    <legend>Country</legend>
+    <select name="country">
     <option value="Argentina">Argentina</option>
     <option value="Kazakhstan">Kazakhstan</option>
     <option value="Norway">Norway</option>
     <option value="Republic of Korea">Republic of Korea</option>
-  </select>
+    </select>
   <br><br>
+</fieldset>
 
-  &nbsp;&nbsp;&nbsp;Allergens<span class="error">*</span>
-  <span class="error"><?php echo $allegicErr;?></span>
-  <p style="font-size: 12px">&nbsp;&nbsp;&nbsp;Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
-  &nbsp;&nbsp;<select multiple name="allegic" >
+  <fieldset>
+    <legend>Allergens</legend>
+  <p style="font-size: 12px">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+  <select multiple name="allegic" >
   <option value="fruit">fruit</option>
   <option value="legumes">legumes</option>
   <option value="beans">beans</option>
@@ -112,20 +113,26 @@ function test_input($data) {
   <option value="eggs (typically albumen, the white)">eggs (typically albumen, the white)</option>
   <option value="pumpkin, eggplant">pumpkin, eggplant</option>
   </select>
+</fieldset>
   <br><br>
 
-
-  &nbsp;&nbsp;&nbsp;Image upload<span class="error">*</span>
-  <span class="error"><?php echo $imageErr;?></span>
+  <fieldset>
+  <legend>Image upload</legend>
   <br>
-  &nbsp;&nbsp;<input type="file" name="image" id="image">
-  <br><br>
+  <input type="file" name="image" id="image">
+<span id="imageSp"></span>
+  <br>
+</fieldset>
 
-  &nbsp;&nbsp;Ingredients and Information<br>
-  &nbsp;&nbsp;<textarea name="comment" rows="5" cols="47"></textarea>
+  <fieldset>
+  <legend>Ingredients and Information</legend>
+  <textarea name="comment" rows="5" cols="47"></textarea>
   <br><br>
+  </fieldset>
 
-  &nbsp;&nbsp;<input type="submit" name="submit" value="Submit" onclick="myFunction()">
+  <fieldset>
+  <input type="submit" name="submit" value="Submit">
+  </fieldset>
+
+
 </form>
-</body>
-</html>

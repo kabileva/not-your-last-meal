@@ -1,68 +1,34 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-</head>
-<body>
+<script>
+    function validateForm(){
 
-<?php
+        var comment=document.forms["comForm"]["comment"].value;
+        var count= 0;
 
-$comment="";
-$commentErr= "";
-$username="username";
+        if(comment==""){
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["comment"])) {
-    $comment="";
-    $commentErr= "*comment is required";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
-}
-  function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-?>
+            document.getElementById("commSp").innerHTML="Required area";
+            count++;
+        }
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-  Comment&nbsp;&nbsp;<span class="error"><?php echo $commentErr;?></span>
-  <br> <textarea name="comment" rows="2" cols="50"><?php echo $comment;?></textarea>
 
-  </textarea>
+        if(count==0)
+            return true;
+        else
+            return false;
+    }
 
-  <input type="submit" name="submit" value="Submit">
+</script>
+
+
+<form name="comForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
+
+    <fieldset>
+        <legend>Comment</legend>
+        <textarea name="comment" rows="2" cols="50"></textarea> <span id="commSp"></span>
+    </fieldset>
+
+    <fieldset>
+        <input type="submit" name="submit" value="Submit">
+    </fieldset>
 </form>
 
-<h2>comment:</h2>
-
-
-<span class = "user">
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (!empty($_POST["comment"]))
-  {
-      echo "<a href='http://localhost/mine/userprofile.html'; target='_blank';>".$username."</a>" . "       ";
-  }
-}
-?>
-</span>
-
-<?php
-echo $comment;
-?>
-
-<span class = "time">
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (!empty($_POST["comment"]))
-      {
-      echo "  " . date("h:i:a") . "  " . date("Y-m-d");
-      }
-}
-?>
-
-</span>
-</body>
-</html>

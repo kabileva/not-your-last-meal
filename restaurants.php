@@ -1,19 +1,18 @@
 <!DOCTYPE HTML>
 <?php
 
-include_once 'templates/layout.php';
+include_once 'templates/layout.php';	
 
-include_once 'templates/go-back.php';		
+include_once 'TEST-DATA.php';
 
 ?>
 
-<head>
-   <link rel="stylesheet" href="css/restaurants.css">
-</head>
+<ul class="breadcrumb">
+  <li><a href="main.php"><?php print($userCountry) ?></a></li>
+  <li><a href="restaurants.php">Restaurants</a></li>
+</ul>
 
-<title>Not your last meal</title>
+<a href="restaurantForm.php" class="callToAction">Add restaurant<a>
 
-<div id="dishtitle">
-   <p> Restaurants </p>
-</div>
-
+<title>Restaurants</title>
+<h1>Restaurants</h1>

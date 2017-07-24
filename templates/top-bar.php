@@ -14,7 +14,7 @@
 <html>
 <header>
    <div class="topnav" id="myTopnav">
-      <a href="main.html"><img src="img/burger.gif" alt="Mountain View" style="width:50px;height:50px;"></a>
+      <a href="main.php"><img src="img/burger.gif" alt="Mountain View" style="width:50px;height:50px;"></a>
 
 	  <a>
 	  <div id="country-list">
@@ -27,13 +27,15 @@
 	  </div>
 	  </a>
 
-      <a href="#dish">Dishes</a>
-      <a href="#restaurants">Restaurants</a>
-      <a href="#questionsAnswers">Questions and answers</a>
+      <a href="dishes.php">Dishes</a>
+      <a href="restaurants.php">Restaurants</a>
+      <a href="forum.php">Questions and answers</a>
+      <a href="people.php">People</a>
+
       <?php  if (isset($_SESSION['username'])) : ?>
         <a href="profile.html" style="float:right;"><strong><?php echo $_SESSION['username']; ?></strong></a>
       <?php endif ?>
-      <a href="login.html" style="float:right;"><strong>Log Out</strong></a>
+      <a href="loginForm.php" style="float:right;"><strong>Log Out</strong></a>
 
       <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
    </div>

@@ -15,12 +15,13 @@ if (isset($_GET['logout'])) {
 
 include_once 'templates/layout.php';
 
-include_once 'templates/go-back.php';
+include_once 'TEST-DATA.php';
 
 ?>
 <!DOCTYPE HTML>
 <html>
 <title>Not your last meal</title>
+<h1><?php print($userCountry) ?></h1>
 
 <div id="main">
    <a href="info.html">

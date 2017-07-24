@@ -1,4 +1,9 @@
 <?php 
+ echo "here";
+ echo $_POST['name'];
+
+  echo $_POST['email'];
+
 function makeUser() {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {   
@@ -16,10 +21,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
    }
 
    $image = 'img/user_default.jpg';
+   include_once "user.php";
+   echo "included";
    $newUser = new User($name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation);
    return $newUser;
 }   
 
 }
+$newUser = makeUser();
+ echo "here2";
+
+print_r($newUser);
+
+$newUser->createInDatabase();
 
 ?>

@@ -51,58 +51,76 @@
 
 <form name="regForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
 
-    Name<br><input type="text" name="name"> <span id="nameSp"></span>
-  <br><br>
+    <fieldset>
+        <legend>Name</legend>
+        <input type="text" name="name"> <span id="nameSp"></span>
+    </fieldset>
     
-  Password<br><input type="password" name="password"> <span id="passSp"></span>
-  <br><br>
+    <fieldset>
+      <legend>Password</legend>
+      <input type="password" name="password"> <span id="passSp"></span>
+    </fieldset>
+
+    <fieldset>
+        <legend>Password Confirm</legend>
+        <input type="password" name="passconf"> <span id="passconfSp"></span>
+    </fieldset>
+
+    <fieldset>
+        <legend>E-mail</legend>
+        <input type="email" name="email"> <span id="emailSp"></span>
+    </fieldset>
+
     
-  Password Confirm<br><input type="password" name="passconf"> <span id="passconfSp"></span>
-  <br><br>
-    
-  E-mail<br><input type="email" name="email"> <span id="emailSp"></span>
-  <br><br> 
+    <fieldset>
+        <legend>Country</legend>
+        <?php 
+        //php script for listing all the countries
+        include_once("../db/db_init.php");
+        include_once("../db/list_countries.php");
+        $countries = listItems($link, 'Countries', 'CountryName');
+        echo '<select name="Country">';
+        foreach ($countries as $country) {
+        echo '<option value=' . $country['CountryName'] . '>' . $country['CountryName'] . '</option>';
+        }
+        echo '</select>';
+        ?>
+    </fieldset>
 
-  Country<br>
-  <?php 
-  //php script for listing all the countries
-  include_once("../db/db_init.php");
-  include_once("../db/list_countries.php");
-  $countries = listItems($link, 'Countries', 'CountryName');
-  echo '<select name="Country">';
-  foreach ($countries as $country) {
-    echo '<option value=' . $country['CountryName'] . '>' . $country['CountryName'] . '</option>';
-  }
-  echo '</select>';
-  ?>
-  <br><br>
-    
-Allergens<br>
-    <p style="font-size: 12px">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
-  <?php
-  //php script for listing all the ingredients
+    <fieldset>
+        <legend>Allergens</legend>
+        <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+        <?php
+        //php script for listing all the ingredients
 
-  echo '<select name="Allergens[]" multiple>';
-  $ingredients = listItems($link, 'Ingredients', 'IngredientName');
-  foreach ($ingredients as $ingredient) {
-    echo  '<option value=' . $ingredient['IngredientName'] .'>' .$ingredient['IngredientName']. '</option>';
-  }
-  echo '</select>';
-  ?>
+        echo '<select name="Allergens[]" multiple>';
+        $ingredients = listItems($link, 'Ingredients', 'IngredientName');
+        foreach ($ingredients as $ingredient) {
+        echo  '<option value=' . $ingredient['IngredientName'] .'>' .$ingredient['IngredientName']. '</option>';
+        }
+        echo '</select>';
+        ?>
+    </fieldset>
 
 
-  <br><br>
-  Profile image<br>
-  <input type="file" name="image" id="image">
-  <br><br>
-  About me<br>
-  <textarea name="message" rows="5" cols="30">Present yourself</textarea>
-  <br>
-    
-  Receive email notification
-  <input type="radio" name="want_notifications" value="Yes">Yes
-  <input type="radio" name="want_notifications" value="No">No <span id="notifSp"></span>
+ 
+    <fieldset>
+        <legend>Profile image</legend>legend>
+        <input type="file" name="image" id="image">
+    </fieldset>
+        
+    <fieldset>
+        <legend>About me</legend>legend>
+        <textarea name="message" rows="5" cols="30">Present yourself</textarea>
+    </fieldset>
 
-  <br>
-  <input type="submit" value="Confirm"> <input type="reset" value="Clear">
+    <fieldset>
+        <legend>Receive email notification</legend>legend>
+        <input type="radio" name="want_notifications" value="Yes">Yes
+        <input type="radio" name="want_notifications" value="No">No <span id="notifSp"></span>
+    </fieldset>
+
+    <fieldset>
+        <input type="submit" value="Confirm"> <input type="reset" value="Clear">
+    </fieldset>
 </form>

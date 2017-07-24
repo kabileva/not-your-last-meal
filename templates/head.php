@@ -13,6 +13,7 @@ $pageStyles = $pageStyles . ".css";
    <link rel="stylesheet" href="css/comments.css">
    <link rel="stylesheet" href="css/dish.css">
    <link rel="stylesheet" href="css/forum.css">
+   <link rel="stylesheet" href="css/forms.css">
    <link rel="stylesheet" href="css/restaurants.css">
    <link rel="stylesheet" href="css/userprofile.css">
    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,700" rel="stylesheet">
