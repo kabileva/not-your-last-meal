@@ -28,7 +28,7 @@ include_once 'templates/go-back.php';
     </fieldset>
 
     <fieldset>
-        <legend>Location</legend>legend>
+        <legend>Location</legend>
         <input type="text" name="location"> <span id="locaSp"></span>
     </fieldset>
 
