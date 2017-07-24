@@ -4,6 +4,7 @@ include_once 'head.php';
 
 include_once 'top-bar.php';
 
+/*
 session_start();
 
 if (!isset($_SESSION['username'])) {
@@ -16,5 +17,6 @@ if (isset($_GET['logout'])) {
 	unset($_SESSION['username']);
 	header("location: templates/loginForm.php");
 }
+*/
 
 ?>
