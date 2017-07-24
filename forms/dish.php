@@ -1,8 +1,23 @@
 <!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.error {color: #FF0000;}
+div.aaa{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: auto;
+}
+
+</style>
+
+</head>
+<body>
+
 <?php
 // define variables and set to empty values
-$titleErr = $countryErr = $typeErr = $allegicErr = "";
-$title = $comment = $country = $type = $allegic = "";
+$titleErr = $countryErr = $typeErr = $allegicErr = $imageErr ="";
+$title = $comment = $country = $type = $allegic = $image ="";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["title"])) {
@@ -34,6 +49,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $type = test_input($_POST["type"]);
   }
+
+  if (empty($_POST["type"])) {
+    $typeErr = "type is required";
+  } else {
+    $type = test_input($_POST["type"]);
+  }
+
+  if (empty($_POST["image"])) {
+    $imageErr = "image is required";
+  } else {
+    $image = test_input($_POST["image"]);
+  }
 }
 
 function test_input($data) {
@@ -45,28 +72,27 @@ function test_input($data) {
 ?>
 
 <div class="aaa">
-<h2>Posting dish/ Editing</h2>
-<p><span class="error">* required field.</span></p>
+<h2 style="text-align:center;">Posting dish/ Editing</h2>
+<p><span class="error">&nbsp;&nbsp;* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-  Title<span class="error">*</span>
-  <span class="error"><?php echo $titleErr;?></span>
-  <br>
-  <input type="text" name="title" size="60">
+  &nbsp;&nbsp;&nbsp;Title<span class="error">*</span>
+  <span class="error"><?php echo $titleErr;?></span><br>
+  &nbsp;&nbsp;<input type="text" name="title" size="60">
   <br><br>
 
-  Type<span class="error">*</span>
+  &nbsp;&nbsp;&nbsp;Type<span class="error">*</span>
   <span class="error"><?php echo $typeErr;?></span>
   <br>
-  <input type="checkbox" name="type" value="breakfast" >breakfast
+  &nbsp;&nbsp;<input type="checkbox" name="type" value="breakfast" >breakfast
   <input type="checkbox" name="type" value="lunch" >lunch
   <input type="checkbox" name="type" value="dinner" >dinner
   <input type="checkbox" name="type" value="brunch" >brunch
   <input type="checkbox" name="type" value="dessert">dessert
   <br><br>
 
-  Country<br>
-  <select id="mySelect" name="country">
+  &nbsp;&nbsp;&nbsp;Country<br>
+  &nbsp;&nbsp;<select id="mySelect" name="country">
     <option value="Argentina">Argentina</option>
     <option value="Kazakhstan">Kazakhstan</option>
     <option value="Norway">Norway</option>
@@ -74,10 +100,10 @@ function test_input($data) {
   </select>
   <br><br>
 
-  Allergens<span class="error">*</span>
+  &nbsp;&nbsp;&nbsp;Allergens<span class="error">*</span>
   <span class="error"><?php echo $allegicErr;?></span>
-  <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
-  <select multiple name="allegic" >
+  <p style="font-size: 12px">&nbsp;&nbsp;&nbsp;Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+  &nbsp;&nbsp;<select multiple name="allegic" >
   <option value="fruit">fruit</option>
   <option value="legumes">legumes</option>
   <option value="beans">beans</option>
@@ -99,13 +125,19 @@ function test_input($data) {
   </select>
   <br><br>
 
-  Image upload<br>
-  <input type="file" name="image" id="image">
+
+  &nbsp;&nbsp;&nbsp;Image upload<span class="error">*</span>
+  <span class="error"><?php echo $imageErr;?></span>
+  <br>
+  &nbsp;&nbsp;<input type="file" name="image" id="image">
   <br><br>
 
-  Ingredients and Information<br>
-  <textarea name="comment" rows="5" cols="47"></textarea>
+  &nbsp;&nbsp;Ingredients and Information<br>
+  &nbsp;&nbsp;<textarea name="comment" rows="5" cols="47"></textarea>
   <br><br>
 
-  <input type="submit" name="submit" value="Submit" onclick="myFunction()">
+  &nbsp;&nbsp;<input type="submit" name="submit" value="Submit" onclick="myFunction()">
 </form>
+</div>
+</body>
+</html>
