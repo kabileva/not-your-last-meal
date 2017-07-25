@@ -47,7 +47,7 @@ include_once 'TEST-DATA.php';
               
               var mapCanvas = document.getElementById("map");
               var myCenter=new google.maps.LatLng(51.508742,-0.120850);
-              var myC=new google.maps.LatLng(0,0);
+              var myC=new google.maps.LatLng(-90,0);
               var mapOptions = {center: myCenter, zoom: 5};
               var map = new google.maps.Map(mapCanvas, mapOptions);
               if(mcnt==0){
@@ -123,7 +123,7 @@ include_once 'TEST-DATA.php';
 
 </form>
 
-<!--action must be modified-->
+
 <script>
     function validateForm(){
 
