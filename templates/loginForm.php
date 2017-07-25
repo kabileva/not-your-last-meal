@@ -24,7 +24,7 @@
 
 </script>
 
-<form name="logForm" action="templates/loginForm.php" method="post" onsubmit="return validateForm()">
+<form name="logForm" action="main.php" method="post" onsubmit="return validateForm()">
   <?php include('errors.php'); ?>
   <fieldset>
         <legend>Username</legend>
