@@ -63,6 +63,7 @@ class Dish {
            <div class=\"dish-type\"><b>Type:</b> $this->type</div>
            <div class=\"dish-country\"><b>Country:</b> $this->country</div>
            <div class=\"dish-ingrediences\"><b>Ingredients:</b> $ingredients</div>
+           <div class=\"dish-presentation\"><b>About:</b> $this->presentation</div>
       </div>
     ";
   }
