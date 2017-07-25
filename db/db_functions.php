@@ -1,5 +1,5 @@
 <?php 
-function listItems($link, $table, $column) {
+function listItems($link, $table) {
 	$query = 'Select * From ' . $table;
 	$result = mysqli_query($link, $query);   
 	if (!$result)   

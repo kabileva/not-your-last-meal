@@ -3,7 +3,7 @@
 
 class User {
 
-  public $name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation, $comments;
+  public $id, $name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation, $comments;
 
   function __construct($name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation){
     $this->name = $name;
@@ -16,24 +16,39 @@ class User {
     $this->presentation = $presentation;
   }
   function createInDatabase(){
-    include_once("../db/db_init.php");
+      include_once("../db/db_init.php");
+    include_once("../db/db_functions.php");
 
     $query = "INSERT INTO Users(UserID, Password, UserName, Email, WantNotifications, CountryID, Presentation, Image) VALUES (DEFAULT,'".$this->password."','".$this->name."','".$this->email."',".$this->want_notifications.",".$this->country.",'".$this->presentation."','".$this->image."')";
 
-    mysqli_query($link, $query);   
-    $id = $this->findID();
+    mysqli_query($link, $query); 
+    $users = listItems($link,"Users");
+    //Finding User's ID
+    foreach($users as $user) {
+      if($user['UserName']==$this->name) {
+        $this->id=$user['UserID'];
+        break;
+      }
+    }
+    echo $this->id;  
 
-    // foreach($this->allergies as $allergy) {
-    //     $query = "INSERT INTO users_allergens(UserID, IngredientID) VALUES (".$this->id.",".$allergy.")";
-    //     mysqli_query($link, $query); }
+    //Inserting allergies into users_allergies
+
+    foreach($this->allergies as $allergy) {
+       $query = "INSERT INTO users_allergens(UserID, IngredientID) VALUES (".$this->id.",".$allergy.")";
+        mysqli_query($link, $query); 
+      }
     
   }
+
   function findID() {
-    $query = "SELECT UserID FROM Users WHERE UserName='".$this->name."'";
-    echo $query;
-    $result= mysqli_query($link, $query); 
-    echo $result;
-    return $result; 
+    include_once("../db/db_functions.php");
+
+    // $query = "SELECT * FROM Users WHERE UserName='".$this->name."'";
+    // echo $query;
+    // $result= mysqli_query($link, $query); 
+    print_r(listItems($link,"Users"));
+   
   }
 
   function updateInDatabase(){
