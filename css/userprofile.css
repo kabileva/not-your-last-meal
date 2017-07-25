@@ -12,9 +12,9 @@
     margin-bottom: 63px;
 }
 
-#user-picture{
+#user-picture img {
     width: 200px;
-    height: 200px;
+
 }
 
 .user-name {
