@@ -7,10 +7,11 @@ include_once 'templates/layout.php';
 
 <title>Not your last meal</title>
 
+<?php  if (isset($_SESSION['username'])) : ?>
 <div id="profile-wrapper">
    <div id="user-profile">User profile</div>
    <div id="user-picture"><img src="user-picture" alt="pic"></div>
-   <div id="user-name">User name</div>
+   <div id="user-name"><?php echo $_SESSION['username']; ?></div>
    <strong>
       <div id="user-email">user@gmail.com</div>
    </strong>
@@ -24,4 +25,3 @@ include_once 'templates/layout.php';
       <p>Info about user</p>
    </div>
 </div>
-

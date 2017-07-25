@@ -1,24 +1,12 @@
+
 <?php
-
-session_start();
-
-if (!isset($_SESSION['username'])) {
-	$_SESSION['msg'] = "You must log in first";
-	header('location: templates/loginForm.php');
-}
-
-if (isset($_GET['logout'])) {
-	session_destroy();
-	unset($_SESSION['username']);
-	header("location: templates/loginForm.php");
-}
 
 include_once 'templates/layout.php';
 
 include_once 'TEST-DATA.php';
 
 ?>
-<!DOCTYPE HTML>
+
 <html>
 <title>Not your last meal</title>
 <h1><?php print($userCountry) ?></h1>
