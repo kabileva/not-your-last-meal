@@ -23,6 +23,11 @@ $questionList = array($testQuestion1, $testQuestion1, $testQuestion1, $testQuest
   if(isset($_GET['selectedQuestion'])){
     $content = $testQuestion1->getContent();
     echo $content;
+
+    echo '<div style="padding: 40px 0px 40px 0px;">';
+    include_once 'templates/commentForm.php';
+    echo '</div>';
+
     echo '<h2>More questions</h2>';
   }
   else {

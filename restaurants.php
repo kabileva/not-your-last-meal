@@ -22,6 +22,12 @@ $restaurantList = array($testRestaurant1, $testRestaurant1, $testRestaurant1, $t
   if(isset($_GET['selectedRestaurant'])){
     $content = $testRestaurant1->getContent();
     echo $content;
+
+    echo '<div style="padding: 40px 0px 40px 0px;">';
+    include_once 'templates/ratingForm.php';
+    include_once 'templates/commentForm.php';
+    echo '</div>';
+
     echo '<h2>More restaurants</h2>';
   }
   else {

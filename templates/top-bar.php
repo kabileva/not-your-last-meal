@@ -21,7 +21,7 @@ session_start();
       <a href="dishes.php">Dishes</a>
       <a href="restaurants.php">Restaurants</a>
       <a href="forum.php">Questions and answers</a>
-      <a href="people.php">People</a>
+      <a href="people.php?country=".$_GET>People</a>
 
       <div style="float:right;">
       <a href="people.php?selectedUser=<?php echo $_SESSION['userName']; ?>">
