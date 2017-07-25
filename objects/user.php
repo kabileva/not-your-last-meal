@@ -30,7 +30,6 @@ class User {
         break;
       }
     }
-    echo $this->id;  
 
     //Inserting allergies into users_allergies
 
@@ -39,16 +38,6 @@ class User {
         mysqli_query($link, $query); 
       }
     
-  }
-
-  function findID() {
-    include_once("../db/db_functions.php");
-
-    // $query = "SELECT * FROM Users WHERE UserName='".$this->name."'";
-    // echo $query;
-    // $result= mysqli_query($link, $query); 
-    print_r(listItems($link,"Users"));
-   
   }
 
   function updateInDatabase(){

@@ -9,7 +9,7 @@
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'root', '951129', 'notlastmeal');
+	$db = mysqli_connect('localhost', 'root', 'root', 'id2305220_data');
 
 
 	// REGISTER USER
