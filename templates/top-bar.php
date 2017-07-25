@@ -5,7 +5,7 @@ session_start();
 
 <header>
    <div class="topnav" id="myTopnav">
-      <a href="main.php"><img src="img/burger.gif" alt="logo" style="width:50px;height:50px;"></a>
+      <a href="main.php"><img src="img/logo-top-bar.svg" alt="logo" style="width:auto;height:70px;"></a>
 
 	  <a>
       <form id="countrylist">
