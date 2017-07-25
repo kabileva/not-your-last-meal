@@ -54,7 +54,7 @@ class Dish {
 
   function getTeaser(){
     return "
-      <a class=\"dish-teaser-wrapper\" href=\"dishes.php?selectedDish=$this->name\">
+      <a class=\"dish-teaser-wrapper\" href=\"dishes.php?selectedDish=$this->id\">
       <div class=\"dish-teaser\">
         <div class=\"dish-image\"><img src=\"$this->image\"></div>
         <h2 class=\"dish-name\"> $this->name </h2>
@@ -112,4 +112,13 @@ function createFromDatabase($link, $dish) {
     $newDish->id = $dish["DishID"];
    
     return $newDish;
+  }
+
+  function findByID($id, $dishList) {
+    foreach ($dishList as $dish) {
+      if ($dish->id==$id) {
+        return $dish;
+      }
+    }
+
   }

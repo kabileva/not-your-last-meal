@@ -29,7 +29,8 @@ foreach ($dishes as $dish) {
 
 <?php
   if(isset($_GET['selectedDish'])){
-    $content = $testDish1->getContent();
+    $selectedDish = findByID($_GET['selectedDish'], $dishList);
+    $content = $selectedDish->getContent();
     echo $content;
 
     echo '<div style="padding: 40px 0px 40px 0px;">';
