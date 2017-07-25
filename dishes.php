@@ -23,6 +23,12 @@ $dishList = array($testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $t
   if(isset($_GET['selectedDish'])){
     $content = $testDish1->getContent();
     echo $content;
+
+    echo '<div style="padding: 40px 0px 40px 0px;">';
+    include_once 'templates/ratingForm.php';
+    include_once 'templates/commentForm.php';
+    echo '</div>';
+
     echo '<h2>More dishes</h2>';
   }
   else {
