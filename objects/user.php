@@ -27,6 +27,7 @@ class User {
     foreach($users as $user) {
       if($user['UserName']==$this->name) {
         $this->id=$user['UserID'];
+        //$this->image=$user['Image'];
         break;
       }
     }
@@ -68,10 +69,11 @@ class User {
   }
 
   function getContent(){
-
+    include_once("../db/db_functions.php");
    // Make a string with list of alergies
-   if($this->allergies != null){
-      $allergies;
+    if($this->allergies != null){
+
+      //$allergies = "";
       foreach($this->allergies as $value){
         $allergies .= $value . ', ';
       }
@@ -95,7 +97,7 @@ class User {
 
 function createUserFromDatabase($link, $user) {
     $query = "SELECT *
-              FROM users LEFT JOIN countries
+              FROM Users LEFT JOIN countries
               ON users.CountryID = countries.CountryID
               WHERE UserID=".$user['UserID'];
 

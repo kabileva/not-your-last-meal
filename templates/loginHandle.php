@@ -24,8 +24,8 @@
       }
       //Password, UserName, Email, Image, Presentation, CountryName
       $sql = "SELECT *
-                FROM users LEFT JOIN countries
-                ON users.CountryID = countries.CountryID
+                FROM Users LEFT JOIN countries
+                ON Users.CountryID = countries.CountryID
                 WHERE username='$username' AND password='$password'";
 
       $result = mysqli_query($conn, $sql);
