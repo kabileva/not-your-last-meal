@@ -198,7 +198,144 @@ h1{
     color: white;
 }
 
-.required {
-  color: red;
-  font-weight: bold;
+
+
+
+
+
+	.dish-image img{
+	max-width: 400px;
+     display: block;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.dish-name{
+	text-align: center;
+    margin: 30px;	
+}
+
+.dish-picture img{
+	max-width: 400px;
+     display: block;
+    margin: auto;
+    margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.dish-type, .dish-country, .dish-ingrediences, .dish-presentation {
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+	margin-top: 40px;
+	color: #558C89;
+}
+
+.dish-teaser .dish-image img{
+
+max-width: 40%;;
+
+}
+
+.dish-teaser .dish-image img:hover{
+
+opacity: 0.8;
+
+}
+
+.dish-content .dish-picture img {
+	
+	max-width: 40%;
+	
+}
+
+
+.dish-content .dish-picture img:hover {
+	
+	opacity: 0.8;
+	
+}
+
+
+
+.dish-teaser{
+
+       display: inline-block;
+    width: 49%;
+
+}
+
+.dish-name{
+	
+	 text-align: center;
+    margin: 30px;
+    font-size: 18px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+	
+	
+	
+.dish-image img{
+	max-width: 400px;
+     display: block;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.dish-teaser .dish-name {
+    text-align: center;
+    margin: 30px;
+    font-size: 16px;
+}
+
+.dish-picture img{
+	max-width: 400px;
+     display: block;
+    margin: auto;
+    margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.dish-type, .dish-country, .dish-ingrediences, .dish-presentation {
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+	margin-top: 40px;
+	color: #558C89;
+}
+
+.dish-teaser .dish-image img{
+
+max-width: 100%;
+
+}
+
+.dish-content .dish-picture img {
+	
+	max-width: 100%;
+	
+}
+	
+	
+	
+	
+
 }
