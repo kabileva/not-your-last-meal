@@ -49,7 +49,7 @@
 </script>
 
 
-<form name="regForm" action="../db/save_user.php" method="post" onsubmit="return validateForm()">
+<form name="regForm" action="db/save_user.php" method="post" onsubmit="return validateForm()">
 
     <fieldset>
         <legend>Name</legend>
@@ -75,9 +75,9 @@
     <fieldset>
         <legend>Country</legend>
         <?php 
-        //php script for listing all the countries
-        include_once("../db/db_init.php");
-        include_once("../db/db_functions.php");
+        // //php script for listing all the countries
+        require_once("db/db_init.php");
+        require("db/db_functions.php");
         $countries = listItems($link, 'Countries', 'CountryName');
         echo '<select name="Country">';
         foreach ($countries as $country) {

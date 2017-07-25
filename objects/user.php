@@ -20,9 +20,8 @@ class User {
 
     $query = "INSERT INTO Users(UserID, Password, UserName, Email, WantNotifications, CountryID, Presentation, Image) VALUES (DEFAULT,'".$this->password."','".$this->name."','".$this->email."',".$this->want_notifications.",".$this->country.",'".$this->presentation."','".$this->image."')";
 
-    $result = mysqli_query($link, $query);   
-    //  $id = $this->findID();
-    //  echo $id;
+    mysqli_query($link, $query);   
+    $id = $this->findID();
 
     // foreach($this->allergies as $allergy) {
     //     $query = "INSERT INTO users_allergens(UserID, IngredientID) VALUES (".$this->id.",".$allergy.")";
@@ -30,7 +29,7 @@ class User {
     
   }
   function findID() {
-    $query = "SELECT UserID FROM Users WHERE Email='".$this->email."'";
+    $query = "SELECT UserID FROM Users WHERE UserName='".$this->name."'";
     echo $query;
     $result= mysqli_query($link, $query); 
     echo $result;
