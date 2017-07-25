@@ -86,9 +86,6 @@ class Dish {
     ";
   }
 
-  function setID($id) {
-    //$this->id = $id;
-  }
 
 
 }
@@ -114,7 +111,6 @@ function createFromDatabase($link, $dish) {
       $ingredients[] = $row;
 
     }
-    //print_r($ingredients);
     $newDish = new Dish($dish['DishName'], $dish['CountryID'], $ingredients ,$dish['Presentation'], $dish['Image'], $dish['Type']);
     $newDish->id = $dish["DishID"];
 
@@ -136,7 +132,29 @@ function createFromDatabase($link, $dish) {
         $filteredDishes[] = $dish;
       }
     }
-     // print_r($filteredDishes);
       return $filteredDishes;
   
 }
+
+function filterByAllergies($allergies, $dishList) {
+  $filteredDishes = array();
+  $allergic = false;
+  $allergiesID = array_column($allergies, "IngredientID"); 
+  foreach ($dishList as $dish) {
+    $ingredientsID = array_column($dish->ingredients, "IngredientID");
+    foreach ($allergiesID as $allergyID) {
+      if(in_array($allergyID, $ingredientsID)) {
+        $allergic = true;
+        break;
+      }
+    }
+    if($allergic){
+      $allergic = false;
+    } else {
+      $filteredDishes[] = $dish;
+    }
+  }
+  return $filteredDishes;
+  
+}
+

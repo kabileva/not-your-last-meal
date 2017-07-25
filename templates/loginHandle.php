@@ -38,6 +38,8 @@
         $_SESSION['userID'] = $row['UserID'];
         $_SESSION['userCountry'] = $row['CountryID'];
         $_SESSION['selectedCountry'] = $row['CountryID'];
+
+        $_SESSION['selectedCountry'] = $row['CountryID'];
         $_SESSION['userImage'] = $row['Image'];
 
 				header('location: ../main.php');

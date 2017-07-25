@@ -97,7 +97,7 @@ class User {
 
 }
 
-function createUserFromDatabase($link, $user) {
+function createUserFromDatabase($link, $userID) {
     $query = "SELECT *
               FROM Users LEFT JOIN countries
               ON Users.CountryID = countries.CountryID
@@ -117,11 +117,34 @@ function createUserFromDatabase($link, $user) {
       $users[] = $row;
 
     }
-    //print_r($ingredients);
     $newUser = new User($user['UserName'], $user['Email'], $user['Password'], $user['WantNotifications'], $user['CountryName'], $user['UserID'], $user['Image'], $user['Presentation']);
     $newUser->name = $user["UserName"];
 
     return $newUser;
+}
+
+function retrieveAllergies($link, $UserID) {
+    $query = "SELECT Ingredients.IngredientName, users_allergens.IngredientID
+      FROM users_allergens
+      INNER JOIN Ingredients
+      ON users_allergens.IngredientID=Ingredients.IngredientID
+      WHERE users_allergens.UserID = ".$UserID;
+    $result = mysqli_query($link, $query);
+
+    if (!$result)
+    {
+      echo "no result for query ";
+      $error = 'Error fetching users: ' . mysqli_error($link);
+      include '../db/error.html.php';
+      exit();
+    }
+
+    while ($row = mysqli_fetch_array($result))
+    {
+      $allergies[] = $row;
+
+    }
+    return $allergies;
 }
 
 function findByName($name, $userList) {

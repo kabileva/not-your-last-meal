@@ -16,9 +16,6 @@ $dishes = listItems($link, "Dishes");
 foreach ($dishes as $dish) {
   $dishList[]=createFromDatabase($link, $dish);
 }
-  //echo $_SESSION['selectedCountry']);
-  //$dishList = filterByCountry($_SESSION['selectedCountry'], $dishes);
-
 
 ?>
 
@@ -30,19 +27,24 @@ foreach ($dishes as $dish) {
 <a href="dishForm.php" class="callToAction">Add dish<a>
 
 <?php
+  include_once('objects/user.php');
+
   //Filter dishes by selected country
-  $dishListFiltered = filterByCountry($_SESSION['selectedCountry'], $dishList);
+  $dishListFiltered_tmp= filterByCountry($_SESSION['selectedCountry'], $dishList);
+  $userAllergies = retrieveAllergies($link,$_SESSION['userID']);
+  $dishListFiltered = filterByAllergies($userAllergies, $dishListFiltered_tmp);
+
+  echo "<br><br>";
+
   if(isset($_GET['selectedDish'])){
     $selectedDish = findByID($_GET['selectedDish'], $dishListFiltered);
 
     $content = $selectedDish->getContent();
     echo $content;
-
     echo '<div style="padding: 40px 0px 40px 0px;">';
     include_once 'templates/ratingForm.php';
     include_once 'templates/commentForm.php';
     echo '</div>';
-
     echo '<h2>More dishes</h2>';
   }
   else {
