@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
    $country = $_POST['country'];
    $type = "lunch";
    //CHANGE LATER:
-   $image = 'img/dish_default.jpg';
+   $image = 'uploads/' . $_FILES["image"]["name"];
 
    $newDish = new Dish($name, $country, $ingredients, $presentation, $image, $type);
    return $newDish;
