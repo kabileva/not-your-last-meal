@@ -36,8 +36,8 @@ class Question {
   function getTeaser(){
     return "
       <a class=\"question-teaser-wrapper\" href=\"forum.php?selectedQuestion=$this->name\">
-      <div class=\"profile-teaser\">
-        <h2 class=\"question-name\"> $this->questionTitle </h2>
+      <div class=\"question-teaser\">
+        <h3 class=\"question-name\"> $this->questionTitle </h3>
       </div>
       </a>
     ";
