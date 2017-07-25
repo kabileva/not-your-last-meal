@@ -2,7 +2,7 @@
 
 class Dish {
 
-  private $id, $name, $country, $ingredients, $presentation, $image, $type, $comments;
+  public $id, $name, $country, $ingredients, $presentation, $image, $type, $comments;
 
   function __construct($name, $country, $ingredients, $presentation, $image, $type){
     $this->name = $name;
@@ -29,7 +29,6 @@ class Dish {
         break;
       }
     }
-    echo $this->id;
 
     foreach($this->ingredients as $ingredient) {
        $query = "INSERT INTO ingredients_dishes(IngredientID, DishID) VALUES (".$ingredient.",".$this->id.")";
@@ -65,7 +64,7 @@ class Dish {
   }
 
   function getContent(){
-
+    include_once("../db/db_functions.php");
    // Make a string with list of alergies
    if($this->ingredients != null){
       $ingredients;
@@ -87,6 +86,30 @@ class Dish {
     ";
   }
 
+  function setID($id) {
+    //$this->id = $id;
+  }
+
 
 }
 
+function createFromDatabase($link, $dish) {
+
+    $query = "SELECT * FROM ingredients_dishes WHERE DishID=".$dish['DishID'];
+    $result = mysqli_query($link, $query);   
+    if (!$result)   
+    {   
+      $error = 'Error fetching ingredients_dishes: ' . mysqli_error($link);   
+      include '../db/error.html.php';   
+      exit();   
+    }   
+       
+    while ($row = mysqli_fetch_array($result))   
+    {   
+      $ingredients[] = $row;  
+    }  
+    $newDish = new Dish($dish['DishName'], $dish['CountryID'], $ingredients,$dish['Presentation'], $dish['Image'], $dish['Type']);
+    $newDish->id = $dish["DishID"];
+   
+    return $newDish;
+  }

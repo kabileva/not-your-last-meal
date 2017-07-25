@@ -4,11 +4,19 @@
 include_once 'templates/layout.php';
 
 include_once 'objects/dish.php';
-
+include_once 'db/db_init.php';
 // Some test data to be removed when database is implemented
 include_once 'TEST-DATA.php';
-$testDish1 = new Dish('A dish from south-korea', 'South-Korea', array('Rice', 'Nudles', 'tomato', 'spice', 'suprises'), 'This is some food from South-Korea, doesnt it look yummi?', 'test-data/images/korea.jpg', 'Dinner', '');
-$dishList = array($testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1);
+// $testDish1 = new Dish('A dish from south-korea', 'South-Korea', array('Rice', 'Nudles', 'tomato', 'spice', 'suprises'), 'This is some food from South-Korea, doesnt it look yummi?', 'test-data/images/korea.jpg', 'Dinner', '');
+// $dishList = array($testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1);
+include_once 'db/db_functions.php';
+$dishes = listItems($link, "Dishes");
+$dishList = array();
+
+foreach ($dishes as $dish) {
+  $dishList[]=createFromDatabase($link, $dish);
+}
+
 
 ?>
 
