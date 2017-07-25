@@ -35,44 +35,77 @@ include_once 'TEST-DATA.php';
 
     <fieldset>
         <legend>Location</legend>
+        <table>
+        <tr>
+        <td>
+            <input id="addressinput" type="text" style="width: 447px" />
+        </td>
+        <td>
+            <input id="Button1" type="button" value="Find" onclick="return Button1_onclick()" /></td>
+        </tr>
+        <tr>
+        <td colspan ="2">
+        <div id ="map" style="height: 253px" >
+        </div>
+        </td>
+        </tr>
+        </table>
+
         <input type="text" id = latFld name="location"> <span id="locaSp" class="required"></span>
         <input type="text" id = lngFld name="location1"> <span id="locaSp1" class="required"></span>
-        
 
-        <div id="map" style="width:25%;height:300px;"></div>
-        <script>
-            var mcnt=0;
-            
-            function myMap() {
-              
-              var mapCanvas = document.getElementById("map");
-              var myCenter=new google.maps.LatLng(51.508742,-0.120850);
-              var myC=new google.maps.LatLng(-90,0);
-              var mapOptions = {center: myCenter, zoom: 5};
-              var map = new google.maps.Map(mapCanvas, mapOptions);
-              if(mcnt==0){
-                var marker = new google.maps.Marker({position: myC, map: map});
-                mcnt++;
-              }
-              google.maps.event.addListener(map, 'click', function(event) {
-                  
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQM1k2mpuAAjPy9OglzU9reT00thxdGzA&callback=myMap"></script>
+        <script language="javascript" type="text/javascript">
 
-                      marker.setPosition = event.latLng;
+            var map;
+            var geocoder;
+            function InitializeMap() {
 
-
-                  document.getElementById("latFld").value = event.latLng.lat();
-                  document.getElementById("lngFld").value = event.latLng.lng();
-                  
-                  
-              });
+                var latlng = new google.maps.LatLng(-34.397, 150.644);
+                var myOptions =
+                {
+                    zoom: 8,
+                    center: latlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    disableDefaultUI: true
+                };
+                map = new google.maps.Map(document.getElementById("map"), myOptions);
             }
-            
 
+            function FindLocaiton() {
+                geocoder = new google.maps.Geocoder();
+                InitializeMap();
+
+                var address = document.getElementById("addressinput").value;
+                geocoder.geocode({ 'address': address }, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+
+
+                  document.getElementById("latFld").value = marker.position.lat();
+                  document.getElementById("lngFld").value = marker.position.lng();
+                    }
+                    else {
+                        alert("Geocode was not successful for the following reason: " + status);
+                    }
+                });
+
+            }
+
+
+            function Button1_onclick() {
+                FindLocaiton();
+            }
+
+            window.onload = InitializeMap;
 
         </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQM1k2mpuAAjPy9OglzU9reT00thxdGzA&callback=myMap"></script>
     </fieldset>
-
+  
     <fieldset>
         <legend>Type</legend>
         <select name="type">
