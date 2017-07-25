@@ -16,7 +16,7 @@ include_once 'TEST-DATA.php';
 <h1>Register a restaurant</h1>
 <title>Register a restaurant</title>
 
-<form name="resForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
+<form id="formRes" name="resForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
 
     <fieldset>
         <legend>Name</legend>
@@ -83,7 +83,7 @@ include_once 'TEST-DATA.php';
     </fieldset>
 
     <fieldset>
-    <input type="submit" value="Confirm"> <input type="reset" value="Clear">
+    <input class="restobutton" type="submit" value="Confirm"> <input class="restobutton" type="reset" value="Clear">
     </fieldset>
 
 </form>

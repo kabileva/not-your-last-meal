@@ -1,4 +1,5 @@
 <?php
+
 	session_start();
 
 	// variable declaration
@@ -9,6 +10,7 @@
 
 	// connect to database
 	$db = mysqli_connect('localhost', 'root', '951129', 'notlastmeal');
+
 
 	// REGISTER USER
 	/*if (isset($_POST['reg_user'])) {

@@ -36,7 +36,7 @@
                 document.getElementById("passSp").innerHTML="Must be same as password confirm";
                 document.getElementById("passconfSp").innerHTML="Must be same as password";
                 count++;
-             }   
+             }
         }
 
 
@@ -51,11 +51,12 @@
 
 <form name="regForm" action="db/save_user.php" method="post" onsubmit="return validateForm()">
 
+
     <fieldset>
         <legend>Name</legend>
         <input type="text" name="name"> <span id="nameSp"></span>
     </fieldset>
-    
+
     <fieldset>
       <legend>Password</legend>
       <input type="password" name="password"> <span id="passSp"></span>
@@ -71,10 +72,10 @@
         <input type="email" name="email"> <span id="emailSp"></span>
     </fieldset>
 
-    
+
     <fieldset>
         <legend>Country</legend>
-        <?php 
+        <?php
         // //php script for listing all the countries
         require_once("db/db_init.php");
         require("db/db_functions.php");
@@ -103,12 +104,12 @@
     </fieldset>
 
 
- 
+
     <fieldset>
         <legend>Profile image</legend>
         <input type="file" name="image" id="image">
     </fieldset>
-        
+
     <fieldset>
         <legend>About me</legend>
         <textarea name="message" rows="5" cols="30">Present yourself</textarea>
@@ -123,4 +124,5 @@
     <fieldset>
         <input type="submit" value="Confirm"> <input type="reset" value="Clear">
     </fieldset>
+
 </form>
