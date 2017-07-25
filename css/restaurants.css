@@ -14,3 +14,37 @@
 .restaurants_link:hover{
 	background-color: #74AFAD;
 }
+
+.restaurant-teaser-wrapper {
+    margin: 20px;
+    text-align: center;
+}
+
+
+
+
+
+.restaurant-content {
+	text-align: center;
+}
+
+
+@media screen and (max-width: 600px){
+	
+	
+	
+	.restaurant-image img {
+	max-width: 100%;
+	opacity: 0.7;
+}
+
+
+.restaurant-picture img {
+	
+		max-width: 100%;
+
+	
+}
+	
+	
+}

@@ -1,3 +1,4 @@
+<div>
 <script>
     function validateForm(){
 
@@ -23,12 +24,9 @@
 <form name="comForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
 
     <fieldset>
-        <legend>Comment</legend>
+        <legend>Your comment</legend>
         <textarea name="comment" rows="2" cols="50"></textarea> <span id="commSp" class="required"></span>
     </fieldset>
-
-    <fieldset>
         <input type="submit" name="submit" value="Submit">
-    </fieldset>
 </form>
-
+</div>

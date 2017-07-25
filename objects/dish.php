@@ -2,7 +2,7 @@
 
 class Dish {
 
-  private $id, $name, $country, $ingredients, $presentation, $image, $type, $comments;
+  public $id, $name, $country, $ingredients, $presentation, $image, $type, $comments;
 
   function __construct($name, $country, $ingredients, $presentation, $image, $type){
     $this->name = $name;
@@ -29,7 +29,6 @@ class Dish {
         break;
       }
     }
-    echo $this->id;
 
     foreach($this->ingredients as $ingredient) {
        $query = "INSERT INTO ingredients_dishes(IngredientID, DishID) VALUES (".$ingredient.",".$this->id.")";
@@ -55,7 +54,7 @@ class Dish {
 
   function getTeaser(){
     return "
-      <a class=\"dish-teaser-wrapper\" href=\"dishes.php?selectedDish=$this->name\">
+      <a class=\"dish-teaser-wrapper\" href=\"dishes.php?selectedDish=$this->id\">
       <div class=\"dish-teaser\">
         <div class=\"dish-image\"><img src=\"$this->image\"></div>
         <h2 class=\"dish-name\"> $this->name </h2>
@@ -65,12 +64,12 @@ class Dish {
   }
 
   function getContent(){
-
+    include_once("../db/db_functions.php");
    // Make a string with list of alergies
    if($this->ingredients != null){
       $ingredients;
       foreach($this->ingredients as $value){
-        $ingredients .= $value . ', ';
+        $ingredients .= $value["IngredientName"] . ', ';
       }
    }
 
@@ -87,6 +86,45 @@ class Dish {
     ";
   }
 
+  function setID($id) {
+    //$this->id = $id;
+  }
+
 
 }
 
+function createFromDatabase($link, $dish) {
+
+    $query = "SELECT Ingredients.IngredientName, ingredients_dishes.IngredientID
+      FROM ingredients_dishes 
+      INNER JOIN Ingredients
+      ON Ingredients.IngredientID=ingredients_dishes.IngredientID
+      WHERE ingredients_dishes.DishID=".$dish['DishID'];
+    $result = mysqli_query($link, $query);   
+    if (!$result)   
+    {   
+      $error = 'Error fetching ingredients_dishes: ' . mysqli_error($link);   
+      include '../db/error.html.php';   
+      exit();   
+    }   
+       
+    while ($row = mysqli_fetch_array($result))   
+    {   
+      $ingredients[] = $row; 
+
+    }  
+    //print_r($ingredients);
+    $newDish = new Dish($dish['DishName'], $dish['CountryID'], $ingredients ,$dish['Presentation'], $dish['Image'], $dish['Type']);
+    $newDish->id = $dish["DishID"];
+   
+    return $newDish;
+  }
+
+  function findByID($id, $dishList) {
+    foreach ($dishList as $dish) {
+      if ($dish->id==$id) {
+        return $dish;
+      }
+    }
+
+  }
