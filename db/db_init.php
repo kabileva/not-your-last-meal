@@ -40,5 +40,4 @@ if (!mysqli_select_db($link, 'id2305220_data'))
   exit();
 }
 
-
 ?>

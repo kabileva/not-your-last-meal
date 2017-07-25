@@ -69,7 +69,7 @@ class Dish {
    if($this->ingredients != null){
       $ingredients;
       foreach($this->ingredients as $value){
-        $ingredients .= $value . ', ';
+        $ingredients .= $value["IngredientName"] . ', ';
       }
    }
 
@@ -95,7 +95,11 @@ class Dish {
 
 function createFromDatabase($link, $dish) {
 
-    $query = "SELECT * FROM ingredients_dishes WHERE DishID=".$dish['DishID'];
+    $query = "SELECT Ingredients.IngredientName, ingredients_dishes.IngredientID
+      FROM ingredients_dishes 
+      INNER JOIN Ingredients
+      ON Ingredients.IngredientID=ingredients_dishes.IngredientID
+      WHERE ingredients_dishes.DishID=".$dish['DishID'];
     $result = mysqli_query($link, $query);   
     if (!$result)   
     {   
@@ -106,9 +110,11 @@ function createFromDatabase($link, $dish) {
        
     while ($row = mysqli_fetch_array($result))   
     {   
-      $ingredients[] = $row;  
+      $ingredients[] = $row; 
+
     }  
-    $newDish = new Dish($dish['DishName'], $dish['CountryID'], $ingredients,$dish['Presentation'], $dish['Image'], $dish['Type']);
+    //print_r($ingredients);
+    $newDish = new Dish($dish['DishName'], $dish['CountryID'], $ingredients ,$dish['Presentation'], $dish['Image'], $dish['Type']);
     $newDish->id = $dish["DishID"];
    
     return $newDish;
