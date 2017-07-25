@@ -32,7 +32,7 @@
 <input type="radio" name="star" value="3">★★★☆☆
 <input type="radio" name="star" value="4">★★★★☆
 <input type="radio" name="star" value="5">★★★★★
-<br><span id="starSp"></span>
+<br><span id="starSp" class="required"></span>
 <br><br>
 </fieldset>
 <fieldset>

@@ -20,7 +20,7 @@ include_once 'TEST-DATA.php';
 
     <fieldset>
         <legend>Name</legend>
-        <input type="text" name="name"> <span id="nameSp"></span>
+        <input type="text" name="name"> <span id="nameSp" class="required"></span>
     </fieldset>
 
     <fieldset>
@@ -35,7 +35,7 @@ include_once 'TEST-DATA.php';
 
     <fieldset>
         <legend>Location</legend>
-        <input type="text" name="location"> <span id="locaSp"></span>
+        <input type="text" name="location"> <span id="locaSp" class="required"></span>
     </fieldset>
 
     <fieldset>
@@ -55,14 +55,14 @@ include_once 'TEST-DATA.php';
 
     <fieldset>
         <legend>Image</legend>
-        <input type="file" name="image" id="image"> <span id="imageSp"></span>
+        <input type="file" name="image" id="image"> <span id="imageSp" class="required"></span>
     </fieldset>
 
     <fieldset>
         <legend>Does the restaurant have informative menues?</legend>
         <input type="radio" name="is_menu_friendly" value="Yes">Yes
         <input type="radio" name="is_menu_friendly" value="No">No
-        <span id="menufSp"></span><br>
+        <span id="menufSp" class="required"></span><br>
     </fieldset>
 
     <fieldset>
@@ -79,7 +79,7 @@ include_once 'TEST-DATA.php';
         echo '</select>';
         ?>
 
-        <span id="alerfSp"></span>
+        <span id="alerfSp" class="required"></span>
     </fieldset>
 
     <fieldset>

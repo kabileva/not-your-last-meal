@@ -63,7 +63,7 @@ include_once 'TEST-DATA.php';
   <fieldset>
     <legend>Title</legend>
     <input type="text" name="title" size="60">
-      <span id="titleSp"></span>
+      <span id="titleSp" class="required"></span>
   </fieldset>
   <br><br>
 
@@ -75,7 +75,7 @@ include_once 'TEST-DATA.php';
   <input type="checkbox" name="dinner" value="dinner" >dinner
   <input type="checkbox" name="brunch" value="brunch" >brunch
   <input type="checkbox" name="dessert" value="dessert">dessert
-<br><span id="typeSp"></span>
+<br><span id="typeSp" class="required"></span>
   <br><br>
   </fieldset>
 
@@ -120,7 +120,7 @@ include_once 'TEST-DATA.php';
   <legend>Image upload</legend>
   <br>
   <input type="file" name="image" id="image">
-<span id="imageSp"></span>
+<span id="imageSp" class="required"></span>
   <br>
 </fieldset>
 

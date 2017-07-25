@@ -20,14 +20,14 @@ include_once 'TEST-DATA.php';
     
     <fieldset>
         <legend>Title</legend>
-        <input type="text" name="title"> <span id="titleSp"></span>
+        <input type="text" name="title"> <span id="titleSp" class="required"></span>
     </fieldset>
     
     
     <fieldset>
         <legend>Post a question</legend>
         <textarea name="question" rows="10" cols="60"></textarea>
-        <span id="quesSp"></span>
+        <span id="quesSp" class="required"></span>
     </fieldset>
     
     

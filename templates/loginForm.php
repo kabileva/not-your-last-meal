@@ -28,12 +28,12 @@
   <?php include('errors.php'); ?>
   <fieldset>
         <legend>Username</legend>
-        <input type="text" name="username"> <span id="nameSp"></span>
+        <input type="text" name="username"> <span id="nameSp" class="required"></span>
     </fieldset>
 
     <fieldset>
         <legend>Password</legend>
-        <input type="password" name="password"> <span id="passSp"></span>
+        <input type="password" name="password"> <span id="passSp" class="required"></span>
     </fieldset>
 
     <fieldset>

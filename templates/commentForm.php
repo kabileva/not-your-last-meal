@@ -24,7 +24,7 @@
 
     <fieldset>
         <legend>Comment</legend>
-        <textarea name="comment" rows="2" cols="50"></textarea> <span id="commSp"></span>
+        <textarea name="comment" rows="2" cols="50"></textarea> <span id="commSp" class="required"></span>
     </fieldset>
 
     <fieldset>

@@ -54,22 +54,22 @@
 
     <fieldset>
         <legend>Name</legend>
-        <input type="text" name="name"> <span id="nameSp"></span>
+        <input type="text" name="name"> <span id="nameSp" class="required"></span>
     </fieldset>
 
     <fieldset>
       <legend>Password</legend>
-      <input type="password" name="password"> <span id="passSp"></span>
+      <input type="password" name="password"> <span id="passSp" class="required"></span>
     </fieldset>
 
     <fieldset>
         <legend>Password Confirm</legend>
-        <input type="password" name="passconf"> <span id="passconfSp"></span>
+        <input type="password" name="passconf"> <span id="passconfSp" class="required"></span>
     </fieldset>
 
     <fieldset>
         <legend>E-mail</legend>
-        <input type="email" name="email"> <span id="emailSp"></span>
+        <input type="email" name="email"> <span id="emailSp" class="required"></span>
     </fieldset>
 
 
@@ -118,7 +118,7 @@
     <fieldset>
         <legend>Receive email notification</legend>
         <input type="radio" name="want_notifications" value="Yes">Yes
-        <input type="radio" name="want_notifications" value="No">No <span id="notifSp"></span>
+        <input type="radio" name="want_notifications" value="No">No <span id="notifSp" class="required"></span>
     </fieldset>
 
     <fieldset>
