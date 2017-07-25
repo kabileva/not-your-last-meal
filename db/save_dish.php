@@ -1,4 +1,6 @@
 <?php 
+include_once 'upload_images.php';
+
 header( "refresh:5;url=../main.php" );
 echo "The dish is added. You will be soon redirected to the main page...";
  include_once "../objects/dish.php";

@@ -59,7 +59,7 @@ include_once 'TEST-DATA.php';
 <h1>Add a dish</h1>
 <title>Add a dish</title>
 
-<form name="dishForm" action="db/save_dish.php" method="post" onsubmit="return validateForm()">
+<form name="dishForm" action="db/save_dish.php" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
   <fieldset>
     <legend>Title</legend>
     <input type="text" name="title" size="60">
