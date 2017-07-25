@@ -98,7 +98,7 @@ class User {
 function createUserFromDatabase($link, $user) {
     $query = "SELECT *
               FROM Users LEFT JOIN countries
-              ON users.CountryID = countries.CountryID
+              ON Users.CountryID = countries.CountryID
               WHERE UserID=".$user['UserID'];
 
     $result = mysqli_query($link, $query);
