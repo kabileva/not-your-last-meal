@@ -11,7 +11,8 @@ h1{
     font-size: 32px;
     text-align: center;
     vertical-align: center;
-    margin-top: 90px;	 
+    margin-top: 90px;
+	margin-bottom: 90px;
 }
 
 /*  Back-button style  */
