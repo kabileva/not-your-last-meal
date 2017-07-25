@@ -2,7 +2,7 @@
 
 	// LOGIN USER
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
-  
+
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
@@ -35,6 +35,7 @@
         session_start();
 
         $_SESSION['userName'] = $row['UserName'];
+        $_SESSION['userID'] = $row['UserID'];
         $_SESSION['userCountry'] = $row['CountryName'];
         $_SESSION['selectedCountry'] = $row['CountryID'];
         $_SESSION['userImage'] = $row['Image'];

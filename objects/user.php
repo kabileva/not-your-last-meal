@@ -17,11 +17,11 @@ class User {
   }
   function createInDatabase(){
       include_once("../db/db_init.php");
-    include_once("../db/db_functions.php");
+      include_once("../db/db_functions.php");
 
     $query = "INSERT INTO Users(UserID, Password, UserName, Email, WantNotifications, CountryID, Presentation, Image) VALUES (DEFAULT,'".$this->password."','".$this->name."','".$this->email."',".$this->want_notifications.",".$this->country.",'".$this->presentation."','".$this->image."')";
 
-    mysqli_query($link, $query); 
+    mysqli_query($link, $query);
     $users = listItems($link,"Users");
     //Finding User's ID
     foreach($users as $user) {
@@ -35,9 +35,9 @@ class User {
 
     foreach($this->allergies as $allergy) {
        $query = "INSERT INTO users_allergens(UserID, IngredientID) VALUES (".$this->id.",".$allergy.")";
-        mysqli_query($link, $query); 
+        mysqli_query($link, $query);
       }
-    
+
   }
 
   function updateInDatabase(){
@@ -90,4 +90,40 @@ class User {
     ";
   }
 
+
+}
+
+function createUserFromDatabase($link, $user) {
+    $query = "SELECT *
+              FROM users LEFT JOIN countries
+              ON users.CountryID = countries.CountryID
+              WHERE UserID=".$user['UserID'];
+
+    $result = mysqli_query($link, $query);
+    if (!$result)
+    {
+      echo "no result for query ";
+      $error = 'Error fetching users: ' . mysqli_error($link);
+      include '../db/error.html.php';
+      exit();
+    }
+
+    while ($row = mysqli_fetch_array($result))
+    {
+      $users[] = $row;
+
+    }
+    //print_r($ingredients);
+    $newUser = new User($user['UserName'], $user['UserID'], $user['Presentation'], $user['Image'], $user['CountryName']);
+    $newUser->name = $user["UserName"];
+
+    return $newUser;
+}
+
+function findByName($name, $userList) {
+  foreach ($userList as $user) {
+    if ($user->name==$name) {
+      return $user;
+    }
+  }
 }
