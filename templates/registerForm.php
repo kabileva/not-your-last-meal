@@ -78,7 +78,7 @@
         // //php script for listing all the countries
         require_once("db/db_init.php");
         require("db/db_functions.php");
-        $countries = listItems($link, 'Countries', 'CountryName');
+        $countries = listItems($link, 'Countries');
         echo '<select name="Country">';
         foreach ($countries as $country) {
         echo '<option value=' . $country['CountryID'] . '>' . $country['CountryName'] . '</option>';
@@ -94,7 +94,7 @@
         //php script for listing all the ingredients
 
         echo '<select name="Allergens[]" multiple>';
-        $ingredients = listItems($link, 'Ingredients', 'IngredientName');
+        $ingredients = listItems($link, 'Ingredients');
         foreach ($ingredients as $ingredient) {
         echo  '<option value=' . $ingredient['IngredientID'] .'>' .$ingredient['IngredientName']. '</option>';
         }
