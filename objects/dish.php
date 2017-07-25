@@ -36,7 +36,7 @@ class Dish {
 
   function getTeaser(){
     return "
-      <a class=\"disc-teaser-wrapper\" href=\"dishes.php?selectedDish=$this->name\">
+      <a class=\"dish-teaser-wrapper\" href=\"dishes.php?selectedDish=$this->name\">
       <div class=\"dish-teaser\">
         <div class=\"dish-image\"><img src=\"$this->image\"></div>
         <h2 class=\"dish-name\"> $this->name </h2>
