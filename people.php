@@ -6,9 +6,19 @@ include_once 'templates/layout.php';
 include_once 'objects/user.php';
 
 // Some test data to be removed when database is implemented
-include_once 'TEST-DATA.php';
+/*include_once 'TEST-DATA.php';
 $testUser1 = new User("User1", "test@test.com", "myPassword", TRUE, "Argentina", array("milk", "nuts", "cats", "dogs"), 'test-data/images/user1.jpg', 'Hi, my name is polly');
 $userList = array($testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1);
+?>*/
+include_once 'db/db_init.php';
+include_once 'db/db_functions.php';
+
+$users = listItems($link, "users");
+$userList = array();
+
+foreach ($users as $user) {
+  $userList[]=createUserFromDatabase($link, $user);
+}
 ?>
 
 <ul class="breadcrumb">
@@ -18,7 +28,8 @@ $userList = array($testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $t
 
 <?php
   if(isset($_GET['selectedUser'])){
-    $content = $testUser1->getContent();
+    $selectedUser = findByName($_GET['selectedUser'], $userList);
+    $content = $selectedUser->getContent();
     echo $content;
     echo '<h2>More people</h2>';
   }

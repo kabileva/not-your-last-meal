@@ -20,7 +20,7 @@ class Dish {
 
     $query = "INSERT INTO Dishes(DishID, DishName, CountryID, Presentation, Image, Type) VALUES (DEFAULT,'".$this->name."','".$this->country."','".$this->presentation."','".$this->image."','".$this->type."')";
 
-    mysqli_query($link, $query); 
+    mysqli_query($link, $query);
     $dishes = listItems($link,"Dishes");
     //Finding User's ID
     foreach($dishes as $dish) {
@@ -32,7 +32,7 @@ class Dish {
 
     foreach($this->ingredients as $ingredient) {
        $query = "INSERT INTO ingredients_dishes(IngredientID, DishID) VALUES (".$ingredient.",".$this->id.")";
-        mysqli_query($link, $query); 
+        mysqli_query($link, $query);
       }
   }
 
@@ -96,27 +96,28 @@ class Dish {
 function createFromDatabase($link, $dish) {
 
     $query = "SELECT Ingredients.IngredientName, ingredients_dishes.IngredientID
-      FROM ingredients_dishes 
+      FROM ingredients_dishes
       INNER JOIN Ingredients
       ON Ingredients.IngredientID=ingredients_dishes.IngredientID
       WHERE ingredients_dishes.DishID=".$dish['DishID'];
-    $result = mysqli_query($link, $query);   
-    if (!$result)   
-    {   
-      $error = 'Error fetching ingredients_dishes: ' . mysqli_error($link);   
-      include '../db/error.html.php';   
-      exit();   
-    }   
-       
-    while ($row = mysqli_fetch_array($result))   
-    {   
-      $ingredients[] = $row; 
+    $result = mysqli_query($link, $query);
+    if (!$result)
+    {
+      echo "no result from query ";
+      $error = 'Error fetching ingredients_dishes: ' . mysqli_error($link);
+      include '../db/error.html.php';
+      exit();
+    }
 
-    }  
+    while ($row = mysqli_fetch_array($result))
+    {
+      $ingredients[] = $row;
+
+    }
     //print_r($ingredients);
     $newDish = new Dish($dish['DishName'], $dish['CountryID'], $ingredients ,$dish['Presentation'], $dish['Image'], $dish['Type']);
     $newDish->id = $dish["DishID"];
-   
+
     return $newDish;
   }
 
