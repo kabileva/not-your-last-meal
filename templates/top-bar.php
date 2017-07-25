@@ -10,7 +10,7 @@ session_start();
 	  <a>
 	  <form id="country-list" method="get">
 		 <select>
-		  <option value="ar">Argentine</option>
+		  <option value="1">Argentine</option>
 		  <option value="no">Norway</option>
 		  <option value="ko">South Korea</option>
 		  <option value="ky">Kazakhstan</option>
@@ -24,7 +24,7 @@ session_start();
       <a href="people.php">People</a>
 
       <div style="float:right;">
-      <a href="userprofile.php">
+      <a href="people.php?selectedUser=<?php echo $_SESSION['userName']; ?>">
         <img class="topbar profile-teaser" src="<?php echo $_SESSION['userImage']; ?>">
         <strong style="vertical-align: top;"><?php echo $_SESSION['userName']; ?></strong>
       </a>
