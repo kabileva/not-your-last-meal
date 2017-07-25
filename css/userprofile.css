@@ -13,8 +13,8 @@
 }
 
 #user-picture{
-    max-width: 400px;
-    margin: auto;
+    width: 200px;
+    height: 200px;
 }
 
 .user-name {
