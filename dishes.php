@@ -11,11 +11,13 @@ include_once 'TEST-DATA.php';
 // $dishList = array($testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1);
 include_once 'db/db_functions.php';
 $dishes = listItems($link, "Dishes");
-$dishList = array();
+//$dishList = array();
 
 foreach ($dishes as $dish) {
   $dishList[]=createFromDatabase($link, $dish);
 }
+  //echo $_SESSION['selectedCountry']);
+  //$dishList = filterByCountry($_SESSION['selectedCountry'], $dishes);
 
 
 ?>
@@ -28,8 +30,11 @@ foreach ($dishes as $dish) {
 <a href="dishForm.php" class="callToAction">Add dish<a>
 
 <?php
+  //Filter dishes by selected country
+  $dishListFiltered = filterByCountry($_SESSION['selectedCountry'], $dishList);
   if(isset($_GET['selectedDish'])){
-    $selectedDish = findByID($_GET['selectedDish'], $dishList);
+    $selectedDish = findByID($_GET['selectedDish'], $dishListFiltered);
+
     $content = $selectedDish->getContent();
     echo $content;
 
@@ -52,7 +57,7 @@ foreach ($dishes as $dish) {
 
 <!-- Lists of users -->
 <?php
-foreach($dishList as $dish){
+foreach($dishListFiltered as $dish){
   $teaser = $dish->getTeaser();
   echo $teaser;
 }

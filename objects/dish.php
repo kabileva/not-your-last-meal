@@ -129,3 +129,14 @@ function createFromDatabase($link, $dish) {
     }
 
   }
+  function filterByCountry($CountryID, $dishList) {
+    $filteredDishes = array();
+    foreach ($dishList as $dish) {
+      if ($dish->country==$CountryID) {
+        $filteredDishes[] = $dish;
+      }
+    }
+     // print_r($filteredDishes);
+      return $filteredDishes;
+  
+}
