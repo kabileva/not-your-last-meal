@@ -2,20 +2,39 @@
 
 class Dish {
 
-  private $name, $country, $ingredients, $presentation, $image, $type, $comments;
+  private $id, $name, $country, $ingredients, $presentation, $image, $type, $comments;
 
-  function __construct($name, $country, $ingredients, $presentation, $image, $type, $comments){
+  function __construct($name, $country, $ingredients, $presentation, $image, $type){
     $this->name = $name;
     $this->country = $country;
     $this->ingredients = $ingredients;
     $this->presentation = $presentation;
     $this->image = $image;
     $this->type = $type;
-    $this->comments = $comments;
+   // $this->comments = $comments;
   }
 
   function createInDatabase(){
-    // call to MYSQL file here
+    include_once("../db/db_init.php");
+    include_once("../db/db_functions.php");
+
+    $query = "INSERT INTO Dishes(DishID, DishName, CountryID, Presentation, Image, Type) VALUES (DEFAULT,'".$this->name."','".$this->country."','".$this->presentation."','".$this->image."','".$this->type."')";
+
+    mysqli_query($link, $query); 
+    $dishes = listItems($link,"Dishes");
+    //Finding User's ID
+    foreach($dishes as $dish) {
+      if($dish['DishName']==$this->name&&$dish['CountryID']==$this->country) {
+        $this->id=$dish['DishID'];
+        break;
+      }
+    }
+    echo $this->id;
+
+    foreach($this->ingredients as $ingredient) {
+       $query = "INSERT INTO ingredients_dishes(IngredientID, DishID) VALUES (".$ingredient.",".$this->id.")";
+        mysqli_query($link, $query); 
+      }
   }
 
   function updateInDatabase(){

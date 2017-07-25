@@ -3,48 +3,48 @@
 <script>
     function validateForm(){
 
-        var name=document.forms["regForm"]["name"].value;
-        var pass=document.forms["regForm"]["password"].value;
-        var passconf=document.forms["regForm"]["passconf"].value;
-        var email=document.forms["regForm"]["email"].value;
-        var notification=document.forms["regForm"]["want_notifications"].value;
-        var count= 0;
+        // var name=document.forms["regForm"]["name"].value;
+        // var pass=document.forms["regForm"]["password"].value;
+        // var passconf=document.forms["regForm"]["passconf"].value;
+        // var email=document.forms["regForm"]["email"].value;
+        // var notification=document.forms["regForm"]["want_notifications"].value;
+        // var count= 0;
 
-        if((name=="")||(email=="")||(notification=="")){
+        // if((name=="")||(email=="")||(notification=="")){
 
-            if(name==""){
-                document.getElementById("nameSp").innerHTML="Required area";
-            }
+        //     if(name==""){
+        //         document.getElementById("nameSp").innerHTML="Required area";
+        //     }
 
-            if(email==""){
-                document.getElementById("emailSp").innerHTML="Required area";
-            }
+        //     if(email==""){
+        //         document.getElementById("emailSp").innerHTML="Required area";
+        //     }
 
-            if(notification==""){
-                document.getElementById("notifSp").innerHTML="Required area";
-            }
-            count++;
-        }
+        //     if(notification==""){
+        //         document.getElementById("notifSp").innerHTML="Required area";
+        //     }
+        //     count++;
+        // }
 
-        if(pass.length<7){
-            document.getElementById("passSp").innerHTML="7 characters minimum";
-            document.getElementById("passconfSp").innerHTML="7 characters minimum";
-            count++;
-        }
-        else{
-            if(!(pass==passconf)){
-                document.getElementById("passSp").innerHTML="Must be same as password confirm";
-                document.getElementById("passconfSp").innerHTML="Must be same as password";
-                count++;
-             }
-        }
+        // if(pass.length<7){
+        //     document.getElementById("passSp").innerHTML="7 characters minimum";
+        //     document.getElementById("passconfSp").innerHTML="7 characters minimum";
+        //     count++;
+        // }
+        // else{
+        //     if(!(pass==passconf)){
+        //         document.getElementById("passSp").innerHTML="Must be same as password confirm";
+        //         document.getElementById("passconfSp").innerHTML="Must be same as password";
+        //         count++;
+        //      }
+        // }
 
 
-        if(count==0)
-            return true;
-        else
-            return false;
-       // return true;
+        // if(count==0)
+        //     return true;
+        // else
+        //     return false;
+        return true;
     }
 
 </script>
