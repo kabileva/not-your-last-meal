@@ -36,4 +36,39 @@ class Restaurant {
     // Retrieve comments for node from database
   }
 
+  function getTeaser(){
+    return "
+      <a class=\"restaurant-teaser-wrapper\" href=\"restaurants.php?selectedRestaurant=$this->name\">
+      <div class=\"restaurant-teaser\">
+        <div class=\"restaurant-image\"><img src=\"$this->image\"></div>
+        <h2 class=\"restaurant-name\"> $this->name </h2>
+      </div>
+      </a>
+    ";
+  }
+
+  function getContent(){
+
+   // Make a string with list of alergies
+   if($this->is_alergen_friendly != null){
+      $is_alergen_friendly;
+      foreach($this->is_alergen_friendly as $value){
+        $is_alergen_friendly .= $value . ', ';
+      }
+   }
+
+    return "
+      <div class=\"restaurant-content\">
+           <title>$this->name</title>
+           <h2 class=\"restaurant-name\">$this->name</h2>
+           <div class=\"restaurant-picture\"><img src=\"$this->image\" alt=\"$this->image\"></div>
+           <div class=\"restaurant-type\"><b>Type:</b> $this->type</div>
+           <div class=\"restaurant-country\"><b>Country:</b> $this->country</div>
+           <div class=\"restaurant-menu-friendly\"><b>Informative menus:</b> $this->is_menu_friendly</div>
+           <div class=\"restaurant-ingrediences\"><b>Has option for alergens:</b> $is_alergen_friendly</div>
+           <div class=\"restaurant-presentation\"><b>About:</b> $this->presentation</div>
+      </div>
+    ";
+  }
+
 }
