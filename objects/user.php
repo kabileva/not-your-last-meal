@@ -28,6 +28,8 @@ class User {
       if($user['UserName']==$this->name) {
         $this->id=$user['UserID'];
         //$this->image=$user['Image'];
+        $this->email=$user['Email'];
+        $this->presentation=$user['Presentation'];
         break;
       }
     }
@@ -83,7 +85,7 @@ class User {
       <div class=\"profile-content\">
            <title>$this->name</title>
            <h2 class=\"user-name\">$this->name</h2>
-           <div id=\"user-picture\"><img src=\"$this->image\" alt=\"$this->name\"></div>
+           <div id=\"user-picture\"><img src=\"$this->image\" alt=\"$this->name\" ></div>
            <a class=\"user-contact\" href=\"mailto:$this->email\"><div class=\"callToAction\"><b>Contact</b></div></a>
            <div class=\"user-country\"><b>Country:</b> $this->country</div>
            <div id=\"user-alergies\"><b>Alergies:</b> $allergies</div>
@@ -116,7 +118,7 @@ function createUserFromDatabase($link, $user) {
 
     }
     //print_r($ingredients);
-    $newUser = new User($user['UserName'], $user['UserID'], $user['Presentation'], $user['Image'], $user['CountryName']);
+    $newUser = new User($user['UserName'], $user['Email'], $user['Password'], $user['WantNotifications'], $user['CountryName'], $user['UserID'], $user['Image'], $user['Presentation']);
     $newUser->name = $user["UserName"];
 
     return $newUser;
