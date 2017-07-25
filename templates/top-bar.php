@@ -1,10 +1,6 @@
 <!DOCTYPE HTML>
 <?php
 session_start();
-
-if(isset($_POST["country"])){
-  $_SESSION['selectedCountry'] = $_POST["country"];
-}
 ?>
 
 <header>
@@ -12,13 +8,13 @@ if(isset($_POST["country"])){
       <a href="main.php"><img src="img/logo-top-bar.svg" alt="logo" style="width:auto;height:70px;"></a>
 
 	  <a>
-      <form id="countrylist" method="post">
+      <form id="countrylist">
 	  <div id="country-list">
              <select name="country" id="countrySel" onchange="clickcountry()">
-              <option value="1">Argentine</option>
-              <option value="4">Norway</option>
-              <option value="3">South Korea</option>
-              <option value="2">Kazakhstan</option>
+              <option value="ar">Argentine</option>
+              <option value="no">Norway</option>
+              <option value="ko">South Korea</option>
+              <option value="ky">Kazakhstan</option>
             </select>
       </div>
 	  </form>
@@ -27,20 +23,21 @@ if(isset($_POST["country"])){
       <a href="dishes.php">Dishes</a>
       <a href="restaurants.php">Restaurants</a>
       <a href="forum.php">Questions and answers</a>
-      <a href="people.php">People</a>
+      <a href="people.php?country=".$_GET>People</a>
 
-
-      <a style="float:right;" href="people.php?selectedUser=<?php echo $_SESSION['userName']; ?>">
-        <img style="float: right; height: 30px;" class="topbar profile-teaser" src="<?php echo $_SESSION['userImage']; ?>">
+      <div style="float:right;">
+      <a href="people.php?selectedUser=<?php echo $_SESSION['userName']; ?>">
+        <img class="topbar profile-teaser" src="<?php echo $_SESSION['userImage']; ?>">
         <strong style="vertical-align: top;"><?php echo $_SESSION['userName']; ?></strong>
       </a>
-      <a style="float:right;" href="index.php"><strong>Log Out</strong></a>
-
+      <a href="templates/logout.php"><strong>Log Out</strong></a>
+      </div>
 
       <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
    </div>
 
    <script type="text/javascript">
+      var selIndex;
       var sel = document.getElementById("countrySel");
       function myFunction() {
       	var x = document.getElementById("myTopnav");
@@ -51,28 +48,29 @@ if(isset($_POST["country"])){
       	}
       }
        function clickcountry(){
+           selIndex = sel.selectedIndex;
            document.getElementById("countrylist").submit();
        }
-       
+
        onload = function(){
            var x;
 
-           switch('<?php echo $_SESSION["selectedCountry"]; ?>'){
-                  case '1' :
+           switch('<?php echo $_GET["country"]; ?>'){
+                  case 'ar' :
                     x=0;
                     break;
-                  case '4' :
+                  case 'no' :
                     x=1;
                     break;
-                  case '3' :
+                  case 'ko' :
                     x=2;
                     break;
-                  case '2' :
+                  case 'ky' :
                     x=3;
                     break;
                   default :
                     break;
-                  
+
                   }
            sel.selectedIndex = x;
        }
