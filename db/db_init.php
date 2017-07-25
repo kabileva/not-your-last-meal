@@ -31,7 +31,7 @@ if (!mysqli_set_charset($link, 'utf8'))
   exit();
 }
 
-$db = mysqli_select_db($link, 'id2305220_data')
+$db = mysqli_select_db($link, 'id2305220_data');
 
 if (!mysqli_select_db($link, 'id2305220_data'))
 {
