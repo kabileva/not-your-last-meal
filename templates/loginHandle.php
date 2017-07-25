@@ -9,7 +9,12 @@
 	$_SESSION['success'] = "";
 
 	// connect to database
+<<<<<<< HEAD
 	$db = mysqli_select_db($link, 'notlastmeal');
+=======
+	$db = mysqli_connect('localhost', 'root', 'root', 'id2305220_data');
+
+>>>>>>> bc2f698ac38e412e9e597565cd84ef30ebb913c6
 
 	// REGISTER USER
 	/*if (isset($_POST['reg_user'])) {
