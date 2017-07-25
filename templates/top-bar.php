@@ -1,5 +1,4 @@
 
-<html>
 <header>
    <div class="topnav" id="myTopnav">
       <a href="main.php"><img src="img/burger.gif" alt="Mountain View" style="width:50px;height:50px;"></a>
@@ -19,12 +18,11 @@
       <a href="restaurants.php">Restaurants</a>
       <a href="forum.php">Questions and answers</a>
       <a href="people.php">People</a>
-
-      <?php (isset($_SESSION['username'])) : ?>
+      <?php if (isset($_SESSION['username'])) : ?>
         <a href="userprofile.php" style="float:right;"><strong><?php echo $_SESSION['username']; ?></strong></a>
       <?php endif ?>
       <a href="index.php" style="float:right;"><strong>Log Out</strong></a>
-
+    
       <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
    </div>
 
@@ -41,4 +39,3 @@
    </script>
 
 </header>
-</html>

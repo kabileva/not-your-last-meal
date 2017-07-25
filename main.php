@@ -1,9 +1,10 @@
-
 <?php
+session_start();
 
 include_once 'templates/layout.php';
 
 include_once 'TEST-DATA.php';
+
 
 ?>
 

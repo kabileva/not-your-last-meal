@@ -18,11 +18,11 @@
    <div class="login-wrapper">
       <div class="form">
          <h3 class="title">Log in</h3>
-         <?php include_once 'templates/loginForm.php'?>
+      	 <?php require_once 'templates/loginForm.php' ?>
       </div>
       <div class="form">
          <h3 class="title">Register</h3>
-         <?php require_once ('templates/registerForm.php')?>
+         <?php require_once ('templates/registerForm.php') ?>
       </div>
    </div>
 </body>

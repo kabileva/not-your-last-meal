@@ -4,7 +4,7 @@
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width">
    <link rel="stylesheet" href="css/styles.css">
-   <link rel="stylesheet" href="css/comments.css">
+   <!-- <link rel="stylesheet" href="css/comments.css">-->
    <link rel="stylesheet" href="css/dish.css">
    <link rel="stylesheet" href="css/forum.css">
    <link rel="stylesheet" href="css/forms.css">

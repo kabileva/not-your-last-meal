@@ -49,10 +49,10 @@
 	if (isset($_POST['login_user'])) {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		/*$username2 = stripcslashes($username);
+		$username2 = stripcslashes($username);
 	  $password2 = stripcslashes($password);
 	  $username2 = mysqli_real_escape_string($username2);
-	  $password2 = mysqli_real_escape_string($password2);*/
+	  $password2 = mysqli_real_escape_string($password2);
 
 
 		if (empty($username)) {
