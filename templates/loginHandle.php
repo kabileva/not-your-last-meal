@@ -1,5 +1,5 @@
 <?php
-
+  include_once("../db/db_init.php");
 	session_start();
 
 	// variable declaration
@@ -9,8 +9,7 @@
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'root', '951129', 'notlastmeal');
-
+	$db = mysqli_select_db($link, 'notlastmeal');
 
 	// REGISTER USER
 	/*if (isset($_POST['reg_user'])) {
