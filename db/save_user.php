@@ -1,4 +1,6 @@
 <?php
+include_once 'upload_images.php';
+
 header( "refresh:5;url=../main.php" );
 echo "You will be soon redirected to the main page...";
  include_once "../objects/user.php";
@@ -16,9 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
    } else {
    	$want_notifications = 0;
    }
-
-   //CHANGE LATER:
-   $image = 'img/user_default.jpg';
+   $image = 'uploads/' . $_FILES["image"]["name"];
 
    include_once "user.php";
 

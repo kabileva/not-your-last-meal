@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
    $ingredients = $_POST["Ingredients"];
    $country = $_POST['country'];
    $type = "lunch";
-   //CHANGE LATER:
    $image = 'uploads/' . $_FILES["image"]["name"];
 
    $newDish = new Dish($name, $country, $ingredients, $presentation, $image, $type);
