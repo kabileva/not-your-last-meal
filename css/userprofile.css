@@ -68,7 +68,8 @@ div.profile-teaser {
   margin: 10px;
 }
 
-.profile-teaser img{
+.profile-teaser img,
+img.profile-teaser{
   width: 150px;
   height: 150px;
   border-radius: 150px;
@@ -95,4 +96,9 @@ div.profile-teaser {
 
 .profile-teaser-wrapper {
 float:left;
+}
+
+img.profile-teaser.topbar {
+  height: 50px;
+  width: auto;
 }

@@ -1,28 +1,36 @@
+<!DOCTYPE HTML>
+<?php
+session_start();
+?>
 
 <header>
    <div class="topnav" id="myTopnav">
-      <a href="main.php"><img src="img/burger.gif" alt="Mountain View" style="width:50px;height:50px;"></a>
+      <a href="main.php"><img src="img/burger.gif" alt="logo" style="width:50px;height:50px;"></a>
 
 	  <a>
-	  <div id="country-list">
+	  <form id="country-list" method="get">
 		 <select>
 		  <option value="ar">Argentine</option>
 		  <option value="no">Norway</option>
 		  <option value="ko">South Korea</option>
 		  <option value="ky">Kazakhstan</option>
 		</select>
-	  </div>
+	  </form>
 	  </a>
 
       <a href="dishes.php">Dishes</a>
       <a href="restaurants.php">Restaurants</a>
       <a href="forum.php">Questions and answers</a>
       <a href="people.php">People</a>
-      <?php if (isset($_SESSION['username'])) : ?>
-        <a href="userprofile.php" style="float:right;"><strong><?php echo $_SESSION['username']; ?></strong></a>
-      <?php endif ?>
-      <a href="index.php" style="float:right;"><strong>Log Out</strong></a>
-    
+
+      <div style="float:right;">
+      <a href="userprofile.php">
+        <img class="topbar profile-teaser" src="<?php echo $_SESSION['userImage']; ?>">
+        <strong style="vertical-align: top;"><?php echo $_SESSION['userName']; ?></strong>
+      </a>
+      <a href="index.php"><strong>Log Out</strong></a>
+      </div>
+
       <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
    </div>
 

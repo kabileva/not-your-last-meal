@@ -8,6 +8,11 @@
 	$errors = array();
 	$_SESSION['success'] = "";
 
+        // Some test sesssion variables
+        $_SESSION['userName'] = 'TestUser';
+        $_SESSION['userCountry'] = 'Argentina';
+        $_SESSION['userImage'] = 'test-data/images/user1.jpg';
+
 	// LOGIN USER
 	if (isset($_POST['login_user'])) {
 		$username = $_POST['username'];
