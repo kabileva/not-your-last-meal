@@ -8,7 +8,7 @@ include_once 'TEST-DATA.php';
 ?>
 
 <ul class="breadcrumb">
-  <li><a href="main.php"><?php print($_GET['country']) ?></a></li>
+  <li><a href="main.php"><?php print($_SESSION['selectedCountry']) ?></a></li>
   <li><a href="restaurants.php">Restaurants</a></li>
   <li><a href="restaurantForm.php">Add a restaurant</a></li>
 </ul>

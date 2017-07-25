@@ -21,7 +21,7 @@ foreach ($dishes as $dish) {
 ?>
 
 <ul class="breadcrumb">
-  <li><a href="main.php"><?php print($_GET['country']) ?></a></li>
+  <li><a href="main.php"><?php print($_SESSION['selectedCountry']) ?></a></li>
   <li><a href="dishes.php">Dishes</a></li>
 </ul>
 
