@@ -35,7 +35,42 @@ include_once 'TEST-DATA.php';
 
     <fieldset>
         <legend>Location</legend>
-        <input type="text" name="location"> <span id="locaSp" class="required"></span>
+        <input type="text" id = latFld name="location"> <span id="locaSp" class="required"></span>
+        <input type="text" id = lngFld name="location1"> <span id="locaSp1" class="required"></span>
+        
+
+        <div id="map" style="width:25%;height:300px;"></div>
+        <script>
+            var mcnt=0;
+            
+            function myMap() {
+              
+              var mapCanvas = document.getElementById("map");
+              var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+              var myC=new google.maps.LatLng(0,0);
+              var mapOptions = {center: myCenter, zoom: 5};
+              var map = new google.maps.Map(mapCanvas, mapOptions);
+              if(mcnt==0){
+                var marker = new google.maps.Marker({position: myC, map: map});
+                mcnt++;
+              }
+              google.maps.event.addListener(map, 'click', function(event) {
+                  
+
+                      marker.setPosition = event.latLng;
+
+
+                  document.getElementById("latFld").value = event.latLng.lat();
+                  document.getElementById("lngFld").value = event.latLng.lng();
+                  
+                  
+              });
+            }
+            
+
+
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQM1k2mpuAAjPy9OglzU9reT00thxdGzA&callback=myMap"></script>
     </fieldset>
 
     <fieldset>
