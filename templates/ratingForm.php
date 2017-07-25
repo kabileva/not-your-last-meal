@@ -1,9 +1,4 @@
-<html>
-<head>
-</head>
-
-<body>
-
+<div style="float: left;">
   <script>
       function validateForm(){
           var star=document.forms["ratingForm"]["star"].value;
@@ -21,24 +16,17 @@
       }
   </script>
 
-<h1>Star rating:</h1><br>
-
-
 <form name="ratingForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
 <fieldset>
-<input type="radio" name="star" value="0">☆☆☆☆☆
-<input type="radio" name="star" value="1">★☆☆☆☆
-<input type="radio" name="star" value="2">★★☆☆☆
-<input type="radio" name="star" value="3">★★★☆☆
-<input type="radio" name="star" value="4">★★★★☆
-<input type="radio" name="star" value="5">★★★★★
+<legend>Your rating:</legend>
+<div><input type="radio" name="star" value="0">☆☆☆☆☆</div>
+<div><input type="radio" name="star" value="1">★☆☆☆☆</div>
+<div><input type="radio" name="star" value="2">★★☆☆☆</div>
+<div><input type="radio" name="star" value="3">★★★☆☆</div>
+<div><input type="radio" name="star" value="4">★★★★☆</div>
+<div><input type="radio" name="star" value="5">★★★★★</div>
 <br><span id="starSp" class="required"></span>
-<br><br>
 </fieldset>
-<fieldset>
 <input type="submit" name="submit" value="Submit">
-</fieldset>
 </form>
-
-</body>
-</html>
+</div>
