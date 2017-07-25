@@ -7,7 +7,7 @@ include_once 'TEST-DATA.php';
 ?>
 
 <ul class="breadcrumb">
-  <li><a href="main.php"><?php print($userCountry) ?></a></li>
+  <li><a href="main.php"><?php print($_GET['country']) ?></a></li>
   <li><a href="forum.php">Questions and answers</a></li>
   <li><a href="questionForm.php">Ask a question</a></li>
 </ul>

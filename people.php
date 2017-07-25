@@ -12,7 +12,7 @@ $userList = array($testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $t
 ?>
 
 <ul class="breadcrumb">
-  <li><a href="main.php"><?php print($userCountry) ?></a></li>
+  <li><a href="main.php"><?php print($_GET['country']) ?></a></li>
   <li><a href="people.php">People</a></li>
 </ul>
 

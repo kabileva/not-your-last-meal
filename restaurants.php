@@ -12,7 +12,7 @@ $restaurantList = array($testRestaurant1, $testRestaurant1, $testRestaurant1, $t
 ?>
 
 <ul class="breadcrumb">
-  <li><a href="main.php"><?php print($userCountry) ?></a></li>
+  <li><a href="main.php"><?php print($_GET['country']) ?></a></li>
   <li><a href="restaurants.php">Restaurants</a></li>
 </ul>
 

@@ -13,7 +13,7 @@ $dishList = array($testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $t
 ?>
 
 <ul class="breadcrumb">
-  <li><a href="main.php"><?php print($userCountry) ?></a></li>
+  <li><a href="main.php"><?php print($_GET['country']) ?></a></li>
   <li><a href="dishes.php">Dishes</a></li>
 </ul>
 

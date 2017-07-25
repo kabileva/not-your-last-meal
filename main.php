@@ -25,7 +25,7 @@ $testUser1 = new User("User1", "test@test.com", "myPassword", TRUE, "Argentina",
 $userList = array($testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1);
 ?>
 
-<title>Not your last meal - <?php print($userCountry) ?></title>
+<title>Not your last meal - <?php print($_GET['country']) ?></title>
 <h1><?php print($userCountry) ?></h1>
 
 <div id="main">
