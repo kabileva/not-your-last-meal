@@ -13,7 +13,7 @@ $userList = array($testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $t
 include_once 'db/db_init.php';
 include_once 'db/db_functions.php';
 
-$users = listItems($link, "users");
+$users = listItems($link, "Users");
 $userList = array();
 
 foreach ($users as $user) {
