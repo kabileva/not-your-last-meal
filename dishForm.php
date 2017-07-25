@@ -59,7 +59,7 @@ include_once 'TEST-DATA.php';
 <h1>Add a dish</h1>
 <title>Add a dish</title>
 
-<form name="dishForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
+<form name="dishForm" action="db/save_dish.php" method="post" onsubmit="return validateForm()">
   <fieldset>
     <legend>Title</legend>
     <input type="text" name="title" size="60">
@@ -101,7 +101,7 @@ include_once 'TEST-DATA.php';
         <?php
         //php script for listing all the ingredients
 
-        echo '<select name="Allergens[]" multiple>';
+        echo '<select name="Ingredients[]" multiple>';
         $ingredients = listItems($link, 'Ingredients');
         foreach ($ingredients as $ingredient) {
         echo  '<option value=' . $ingredient['IngredientID'] .'>' .$ingredient['IngredientName']. '</option>';
