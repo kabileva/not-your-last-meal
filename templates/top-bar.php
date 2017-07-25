@@ -25,13 +25,13 @@ session_start();
       <a href="forum.php">Questions and answers</a>
       <a href="people.php?country=".$_GET>People</a>
 
-      <div style="float:right;">
-      <a href="people.php?selectedUser=<?php echo $_SESSION['userName']; ?>">
-        <img class="topbar profile-teaser" src="<?php echo $_SESSION['userImage']; ?>">
+
+      <a style="float:right;" href="people.php?selectedUser=<?php echo $_SESSION['userName']; ?>">
+        <img style="float: right; height: 30px;" class="topbar profile-teaser" src="<?php echo $_SESSION['userImage']; ?>">
         <strong style="vertical-align: top;"><?php echo $_SESSION['userName']; ?></strong>
       </a>
-      <a href="index.php"><strong>Log Out</strong></a>
-      </div>
+      <a style="float:right;" href="index.php"><strong>Log Out</strong></a>
+
 
       <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
    </div>
