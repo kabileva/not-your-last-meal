@@ -1,7 +1,8 @@
 <?php
-include_once 'upload_images.php';
 
 header( "refresh:5;url=../main.php" );
+include_once 'upload_images.php';
+
 echo "You will be soon redirected to the main page...";
  include_once "../objects/user.php";
 function makeUser() {
