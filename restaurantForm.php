@@ -133,22 +133,6 @@ include_once 'TEST-DATA.php';
         <span id="menufSp" class="required"></span><br>
     </fieldset>
 
-    <fieldset>
-        <legend>What alergens does the restaurant has optional food for?</legend>
-        <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
-        <?php
-        //php script for listing all the ingredients
-
-        echo '<select name="Allergens[]" multiple>';
-        $ingredients = listItems($link, 'Ingredients', 'IngredientName');
-        foreach ($ingredients as $ingredient) {
-        echo  '<option value=' . $ingredient['IngredientName'] .'>' .$ingredient['IngredientName']. '</option>';
-        }
-        echo '</select>';
-        ?>
-
-        <span id="alerfSp" class="required"></span>
-    </fieldset>
 
     <fieldset>
     <input class="restobutton" type="submit" value="Confirm"> <input class="restobutton" type="reset" value="Clear">
