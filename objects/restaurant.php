@@ -2,7 +2,7 @@
 
 class Restaurant {
 
-  private $name, $country, $location, $presentation, $image, $type, $is_menu_friendly, $is_alergen_friendly, $comments;
+  private $name, $country, $location, $presentation, $image, $type, $is_menu_friendly, $is_alergen_friendly;
 
   function __construct($name, $country, $location, $presentation, $image, $type, $is_menu_friendly, $is_alergen_friendly){
     $this->name = $name;

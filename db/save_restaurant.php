@@ -3,7 +3,7 @@
 
 echo "The restaurant is added. You will be soon redirected to the main page...";
 include_once 'upload_images.php';
- include_once "../objects/restaurant.php";
+include_once "../objects/restaurant.php";
 
 
 function makeRest() {
