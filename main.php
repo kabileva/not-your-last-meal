@@ -49,12 +49,14 @@ $questionList = array($testQuestion1, $testQuestion1, $testQuestion1, $testQuest
 // Users
 $testUser1 = new User("User1", "test@test.com", "myPassword", TRUE, "Argentina", array("milk", "nuts", "cats", "dogs"), 'test-data/images/user1.jpg', 'Hi, my name is polly');
 //$userList = array($testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1);
+$countryName = itemByID($link, "Countries", "CountryName",$_SESSION["selectedCountry"], "CountryID");
+
 ?>
 
 
 <title>Not your last meal_<?php echo $_SESSION['selectedCountry']; ?></title>
 
-<h1><?php echo $_SESSION['userCountry']; ?></h1>
+<h1><?php echo $countryName; ?></h1>
 
 <div id="main">
 
