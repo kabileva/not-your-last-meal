@@ -1,9 +1,9 @@
 <?php
 
-header( "refresh:5;url=../main.php" );
+header( "refresh:5;url=../index.php" );
 include_once 'upload_images.php';
 
-echo "You will be soon redirected to the main page...";
+echo "You will be soon redirected to the login page...";
  include_once "../objects/user.php";
 function makeUser() {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
