@@ -2,7 +2,9 @@
 <html>
 
 <body>
-
+  
+latitude : <input type="text" id="latitude"> , longitude : <input type="text" id="longitude">
+<button onClick="setMap()">submit</button>
 <div id="map" style="width:50%;height:300px"></div>
 
 <script>
