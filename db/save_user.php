@@ -1,7 +1,7 @@
 <?php
 
-header( "refresh:5;url=../main.php" );
-include_once 'upload_images.php';
+header( "refresh:5;url=../index.php" );
+//include_once 'upload_images.php';
 
 echo "You will be soon redirected to the login page...";
  include_once "../objects/user.php";
@@ -19,7 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
    } else {
    	$want_notifications = 0;
    }
-   $image = 'uploads/' . $_FILES["image"]["name"];
+   //$image = 'uploads/' . $_FILES["image"]["name"];
+   $image = 'img/user3.jpg';
    
    include_once "user.php";
 
