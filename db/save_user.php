@@ -1,6 +1,6 @@
 <?php
 
-header( "refresh:5;url=../index.php" );
+header( "refresh:5;url=../main.php" );
 include_once 'upload_images.php';
 
 echo "You will be soon redirected to the login page...";
@@ -19,13 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
    } else {
    	$want_notifications = 0;
    }
-   //if ($uploadOk==1) {
    $image = 'uploads/' . $_FILES["image"]["name"];
-   // }
-   // else {
-   //    $image = 'img/user_default.jpg';
-   // }
-
+   
    include_once "user.php";
 
    $newUser = new User($name, $email, $password, $want_notifications, $country, $allergies, $image, $presentation);
