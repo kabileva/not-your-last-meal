@@ -19,7 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
    } else {
    	$want_notifications = 0;
    }
+   if ($uploadOk==1) {
    $image = 'uploads/' . $_FILES["image"]["name"];
+   }
+   else {
+      $image = 'img/user_default.jpg';
+   }
 
    include_once "user.php";
 

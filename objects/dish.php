@@ -64,7 +64,11 @@ class Dish {
   }
 
   function getContent(){
+    include_once("../db/db_init.php");
+
     include_once("../db/db_functions.php");
+    //itemByID($link, "Countries", "CountryName", $this->country, "CountryID");
+
    // Make a string with list of alergies
    if($this->ingredients != null){
       $ingredients;
@@ -113,7 +117,6 @@ function createFromDatabase($link, $dish) {
     }
     $newDish = new Dish($dish['DishName'], $dish['CountryID'], $ingredients ,$dish['Presentation'], $dish['Image'], $dish['Type']);
     $newDish->id = $dish["DishID"];
-
     return $newDish;
   }
 
