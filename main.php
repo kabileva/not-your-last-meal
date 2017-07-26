@@ -27,7 +27,7 @@ $userList = array($testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $t
 
 <title>Not your last meal_<?php echo $_SESSION['selectedCountry']; ?></title>
 
-<h1><?php print($userCountry) ?></h1>
+<h1><?php echo $_SESSION['userCountry']; ?></h1>
 
 <div id="main">
 

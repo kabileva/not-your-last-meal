@@ -36,9 +36,7 @@
 
         $_SESSION['userName'] = $row['UserName'];
         $_SESSION['userID'] = $row['UserID'];
-        $_SESSION['userCountry'] = $row['CountryID'];
-        $_SESSION['selectedCountry'] = $row['CountryID'];
-
+        $_SESSION['userCountry'] = $row['CountryName'];
         $_SESSION['selectedCountry'] = $row['CountryID'];
         $_SESSION['userImage'] = $row['Image'];
 
