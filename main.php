@@ -24,6 +24,19 @@ foreach ($dishes as $dish) {
   $dishListFiltered = filterByAllergies($userAllergies, $dishListFiltered_tmp);
   $finalDishList = array_slice($dishListFiltered,0, 4);
 
+// Some test data to be removed when database is implemented
+/*include_once 'TEST-DATA.php';
+$testUser1 = new User("User1", "test@test.com", "myPassword", TRUE, "Argentina", array("milk", "nuts", "cats", "dogs"), 'test-data/images/user1.jpg', 'Hi, my name is polly');
+$userList = array($testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1);
+?>*/
+
+$users = listItems($link, "Users");
+$userList = array();
+
+foreach ($users as $user) {
+  $userList[]=createUserFromDatabase($link, $user);
+}
+
 // Dishes
 $testDish1 = new Dish('A dish from south-korea', 'South-Korea', array('Rice', 'Nudles', 'tomato', 'spice', 'suprises'), 'This is some food from South-Korea, doesnt it look yummi?', 'test-data/images/korea.jpg', 'Dinner', '');
 $dishList2 = array($testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1);
@@ -35,7 +48,7 @@ $testQuestion1 = new Question('Im alergic to milk, what do I need to think about
 $questionList = array($testQuestion1, $testQuestion1, $testQuestion1, $testQuestion1, $testQuestion1, $testQuestion1, $testQuestion1);
 // Users
 $testUser1 = new User("User1", "test@test.com", "myPassword", TRUE, "Argentina", array("milk", "nuts", "cats", "dogs"), 'test-data/images/user1.jpg', 'Hi, my name is polly');
-$userList = array($testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1);
+//$userList = array($testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $testUser1);
 ?>
 
 
