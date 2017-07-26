@@ -2,9 +2,10 @@
 
 class Dish {
 
-  public $id, $name, $country, $ingredients, $presentation, $image, $type, $comments;
+  public $id, $name, $country, $ingredients, $presentation, $image, $type, $comments, $countryName;
 
   function __construct($name, $country, $ingredients, $presentation, $image, $type){
+
     $this->name = $name;
     $this->country = $country;
     $this->ingredients = $ingredients;
@@ -67,8 +68,6 @@ class Dish {
     include_once("../db/db_init.php");
 
     include_once("../db/db_functions.php");
-    //itemByID($link, "Countries", "CountryName", $this->country, "CountryID");
-
    // Make a string with list of alergies
    if($this->ingredients != null){
       $ingredients;
@@ -83,7 +82,6 @@ class Dish {
            <h2 class=\"dish-name\">$this->name</h2>
            <div class=\"dish-picture\"><img src=\"$this->image\" alt=\"$this->image\"></div>
            <div class=\"dish-type\"><b>Type:</b> $this->type</div>
-           <div class=\"dish-country\"><b>Country:</b> $this->country</div>
            <div class=\"dish-ingrediences\"><b>Ingredients:</b> $ingredients</div>
            <div class=\"dish-presentation\"><b>About:</b> $this->presentation</div>
       </div>
@@ -95,7 +93,7 @@ class Dish {
 }
 
 function createFromDatabase($link, $dish) {
-
+    include_once("..db/db_functions.php");
     $query = "SELECT Ingredients.IngredientName, ingredients_dishes.IngredientID
       FROM ingredients_dishes
       INNER JOIN Ingredients
@@ -115,8 +113,11 @@ function createFromDatabase($link, $dish) {
       $ingredients[] = $row;
 
     }
+    // $countryName = itemByID($link, "Countries", "CountryName",$dish["CountryID"], "CountryID");
+   // echo $countryName;
     $newDish = new Dish($dish['DishName'], $dish['CountryID'], $ingredients ,$dish['Presentation'], $dish['Image'], $dish['Type']);
     $newDish->id = $dish["DishID"];
+    $newDish->countryName;
     return $newDish;
   }
 
@@ -160,4 +161,3 @@ function filterByAllergies($allergies, $dishList) {
   return $filteredDishes;
   
 }
-

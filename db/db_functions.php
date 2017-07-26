@@ -17,9 +17,7 @@ function listItems($link, $table) {
 }
 
 function itemByID($link, $table, $column, $id, $idName) {
-
-	$query = 'Select '. $column. ' From '.$table. ' where '.$idName. '=' .$id;
-	echo $query;
+	$query = 'SELECT '. $column. ' FROM '.$table. ' WHERE '.$idName. '=' .$id;
 	$result = mysqli_query($link, $query);   
 	if (!$result)   
 	{   
@@ -31,6 +29,9 @@ function itemByID($link, $table, $column, $id, $idName) {
 	{   
 	  $list[] = $row;  
 	}
-	print_r($list);  
+	foreach ($list as $c) {
+		$country = $c[$column];
+	}
+	return $country;
 }
 ?>

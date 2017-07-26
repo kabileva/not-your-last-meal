@@ -11,6 +11,9 @@ include_once 'TEST-DATA.php';
 // $dishList = array($testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1);
 include_once 'db/db_functions.php';
 $dishes = listItems($link, "Dishes");
+$countryName = itemByID($link, "Countries", "CountryName",$_SESSION["selectedCountry"], "CountryID");
+
+//print_r($country);
 //$dishList = array();
 
 foreach ($dishes as $dish) {
@@ -20,7 +23,7 @@ foreach ($dishes as $dish) {
 ?>
 
 <ul class="breadcrumb">
-  <li><a href="main.php"><?php print($_SESSION['selectedCountry']) ?></a></li>
+  <li><a href="main.php"><?php print($countryName) ?></a></li>
   <li><a href="dishes.php">Dishes</a></li>
 </ul>
 
