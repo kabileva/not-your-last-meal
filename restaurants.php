@@ -26,6 +26,7 @@ $restaurantList = array($testRestaurant1, $testRestaurant1, $testRestaurant1, $t
     echo '<div style="padding: 40px 0px 40px 0px;">';
     include_once 'templates/ratingForm.php';
     include_once 'templates/commentForm.php';
+    include_once 'templates/map.php';
     echo '</div>';
 
     echo '<h2>More restaurants</h2>';
