@@ -30,6 +30,7 @@ class User {
         //$this->image=$user['Image'];
         $this->email=$user['Email'];
         $this->presentation=$user['Presentation'];
+        $this->country = $user['CountryName'];
         break;
       }
     }
@@ -64,7 +65,7 @@ class User {
       <a class=\"profile-teaser-wrapper\" href=\"people.php?selectedUser=$this->name\">
       <div class=\"profile-teaser\">
         <div class=\"user-profile\"><img src=\"$this->image\"></div>
-        <h2 class=\"user-name\"> $this->name </h2>
+        <h2 class=\"user-name\" > $this->name </h2>
       </div>
       </a>
     ";
@@ -88,7 +89,7 @@ class User {
            <div id=\"user-picture\"><img src=\"$this->image\" alt=\"$this->name\"  ></div>
            <a class=\"user-contact\" href=\"mailto:$this->email\"><div class=\"callToAction\"><b>Contact</b></div></a>
            <div class=\"user-country\"><b>Country:</b> $this->country</div>
-           <div id=\"user-alergies\"><b>Alergies:</b> $allergies</div>
+           <div id=\"user-alergies\"><b>Allergies:</b> $allergies</div>
            <div id=\"user-about\"><b>About me:</b> $this->presentation</div>
       </div>
     ";
