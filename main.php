@@ -1,6 +1,7 @@
 <?php
 
 include_once 'templates/layout.php';
+include_once 'db/db_init.php';
 
 include_once 'objects/user.php';
 include_once 'objects/question.php';
@@ -10,9 +11,22 @@ include_once 'objects/restaurant.php';
 // Some test data to be removed when database is implemented
 include_once 'TEST-DATA.php';
 
+include_once 'db/db_functions.php';
+
+$dishes = listItems($link, "Dishes");
+$countryName = itemByID($link, "Countries", "CountryName",$_SESSION["selectedCountry"], "CountryID");
+
+foreach ($dishes as $dish) {
+  $dishList[]=createFromDatabase($link, $dish);
+}
+  $dishListFiltered_tmp= filterByCountry($_SESSION['selectedCountry'], $dishList);
+  $userAllergies = retrieveAllergies($link,$_SESSION['userID']);
+  $dishListFiltered = filterByAllergies($userAllergies, $dishListFiltered_tmp);
+  $finalDishList = array_slice($dishListFiltered,0, 4);
+
 // Dishes
 $testDish1 = new Dish('A dish from south-korea', 'South-Korea', array('Rice', 'Nudles', 'tomato', 'spice', 'suprises'), 'This is some food from South-Korea, doesnt it look yummi?', 'test-data/images/korea.jpg', 'Dinner', '');
-$dishList = array($testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1);
+$dishList2 = array($testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1, $testDish1);
 // Restaurants
 $testRestaurant1 = new Restaurant('Restaurantname', 'Kazakstan', array('log','lat'), 'Enjou your meal in this cool place', 'test-data/images/kazakstan-eating.jpg', 'Dinner', TRUE, array('gluten', 'nuts'), '');
 $restaurantList = array($testRestaurant1, $testRestaurant1, $testRestaurant1, $testRestaurant1, $testRestaurant1, $testRestaurant1, $testRestaurant1);
@@ -35,8 +49,8 @@ $userList = array($testUser1, $testUser1, $testUser1, $testUser1, $testUser1, $t
 
 // Print dishes
 for($i = 0; $i < 6; $i++){
-  if($dishList[$i] != null) {
-    $teaser = $dishList[$i]->getTeaser();
+  if($finalDishList[$i] != null) {
+    $teaser = $finalDishList[$i]->getTeaser();
     echo $teaser;
   }
 }
