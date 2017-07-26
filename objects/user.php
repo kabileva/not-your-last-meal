@@ -85,7 +85,7 @@ class User {
       <div class=\"profile-content\">
            <title>$this->name</title>
            <h2 class=\"user-name\">$this->name</h2>
-           <div id=\"user-picture\"><img src=\"$this->image\" alt=\"$this->name\" ></div>
+           <div id=\"user-picture\"><img src=\"$this->image\" alt=\"$this->name\"  ></div>
            <a class=\"user-contact\" href=\"mailto:$this->email\"><div class=\"callToAction\"><b>Contact</b></div></a>
            <div class=\"user-country\"><b>Country:</b> $this->country</div>
            <div id=\"user-alergies\"><b>Alergies:</b> $allergies</div>
@@ -97,10 +97,10 @@ class User {
 
 }
 
-function createUserFromDatabase($link, $userID) {
+function createUserFromDatabase($link, $user) {
     $query = "SELECT *
-              FROM Users LEFT JOIN countries
-              ON Users.CountryID = countries.CountryID
+              FROM Users LEFT JOIN Countries
+              ON Users.CountryID = Countries.CountryID
               WHERE UserID=".$user['UserID'];
 
     $result = mysqli_query($link, $query);
@@ -117,34 +117,11 @@ function createUserFromDatabase($link, $userID) {
       $users[] = $row;
 
     }
+    //print_r($ingredients);
     $newUser = new User($user['UserName'], $user['Email'], $user['Password'], $user['WantNotifications'], $user['CountryName'], $user['UserID'], $user['Image'], $user['Presentation']);
     $newUser->name = $user["UserName"];
 
     return $newUser;
-}
-
-function retrieveAllergies($link, $UserID) {
-    $query = "SELECT Ingredients.IngredientName, users_allergens.IngredientID
-      FROM users_allergens
-      INNER JOIN Ingredients
-      ON users_allergens.IngredientID=Ingredients.IngredientID
-      WHERE users_allergens.UserID = ".$UserID;
-    $result = mysqli_query($link, $query);
-
-    if (!$result)
-    {
-      echo "no result for query ";
-      $error = 'Error fetching users: ' . mysqli_error($link);
-      include '../db/error.html.php';
-      exit();
-    }
-
-    while ($row = mysqli_fetch_array($result))
-    {
-      $allergies[] = $row;
-
-    }
-    return $allergies;
 }
 
 function findByName($name, $userList) {
