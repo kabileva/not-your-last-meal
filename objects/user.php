@@ -125,6 +125,30 @@ function createUserFromDatabase($link, $user) {
     return $newUser;
 }
 
+function retrieveAllergies($link, $UserID) {
+    $query = "SELECT Ingredients.IngredientName, users_allergens.IngredientID
+      FROM users_allergens
+      INNER JOIN Ingredients
+      ON users_allergens.IngredientID=Ingredients.IngredientID
+      WHERE users_allergens.UserID = ".$UserID;
+    $result = mysqli_query($link, $query);
+
+    if (!$result)
+    {
+      echo "no result for query ";
+      $error = 'Error fetching users: ' . mysqli_error($link);
+      include '../db/error.html.php';
+      exit();
+    }
+
+    while ($row = mysqli_fetch_array($result))
+    {
+      $allergies[] = $row;
+
+    }
+    return $allergies;
+}
+
 function findByName($name, $userList) {
   foreach ($userList as $user) {
     if ($user->name==$name) {
