@@ -16,7 +16,7 @@ include_once 'TEST-DATA.php';
 <h1>Register a restaurant</h1>
 <title>Register a restaurant</title>
 
-<form id="formRes" name="resForm" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validateForm()">
+<form id="formRes" name="resForm" action="db/save_restaurant.php" method="post" onsubmit="return validateForm()">
 
     <fieldset>
         <legend>Name</legend>
@@ -24,14 +24,22 @@ include_once 'TEST-DATA.php';
     </fieldset>
 
     <fieldset>
-        <legend>Country</legend>
-        <select name="country">
-              <option value="argentina">Argentina</option>
-              <option value="kazakhstan">Kazakhstan</option>
-              <option value="norway">Norway</option>
-              <option value="republic of Korea">Republic of Korea</option>
-        </select>
+    <legend>Country</legend>
+    <?php
+        // //php script for listing all the countries
+        require_once("db/db_init.php");
+        require("db/db_functions.php");
+        $countries = listItems($link, 'Countries');
+        echo '<select name="country">';
+        foreach ($countries as $country) {
+        echo '<option value=' . $country['CountryID'] . '>' . $country['CountryName'] . '</option>';
+        }
+        echo '</select>';
+        ?>
+    <br><br>
     </fieldset>
+
+
 
     <fieldset>
         <legend>Location</legend>

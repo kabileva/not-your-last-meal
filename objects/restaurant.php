@@ -4,7 +4,7 @@ class Restaurant {
 
   private $name, $country, $location, $presentation, $image, $type, $is_menu_friendly, $is_alergen_friendly, $comments;
 
-  function __construct($name, $country, $location, $presentation, $image, $type, $is_menu_friendly, $is_alergen_friendly, $comments){
+  function __construct($name, $country, $location, $presentation, $image, $type, $is_menu_friendly, $is_alergen_friendly){
     $this->name = $name;
     $this->country = $country;
     $this->location = $location;
@@ -13,11 +13,25 @@ class Restaurant {
     $this->type = $type;
     $this->is_menu_friendly = $is_menu_friendly; // Does the restaurant have informative menues?
     $this->is_alergen_friendly = $is_alergen_friendly; // List of alergens that the restaurant have optional food for
-    $this->comments = $comments;
   }
 
   function createInDatabase(){
-    // call to MYSQL file here
+    // include_once("../db/db_init.php");
+    // include_once("../db/db_functions.php");
+
+    // $query = "INSERT INTO Restaurant(UserID, Password, UserName, Email, WantNotifications, CountryID, Presentation, Image) VALUES (DEFAULT,'".$this->password."','".$this->name."','".$this->email."',".$this->want_notifications.",".$this->country.",'".$this->presentation."','".$this->image."')";
+
+    // mysqli_query($link, $query);
+    // $users = listItems($link,"Users");
+    // //Finding User's ID
+    // foreach($users as $user) {
+    //   if($user['UserName']==$this->name) {
+    //     $this->id=$user['UserID'];
+    //     //$this->image=$user['Image'];
+    //     $this->email=$user['Email'];
+    //     $this->presentation=$user['Presentation'];
+    //     break;
+    //   }
   }
 
   function updateInDatabase(){
