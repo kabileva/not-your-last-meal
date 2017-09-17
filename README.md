@@ -4,7 +4,7 @@ School project at summer school in Web Application Development at ECE Paris Éco
 
 http://summer.pariseiffel.fr/summer-programs.php
 
-## Konsept
+## Concept
 
 * Personalized information about food & restaurants
 * Forum for questions and discussions
